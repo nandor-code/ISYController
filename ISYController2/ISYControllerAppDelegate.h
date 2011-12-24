@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ISYBrain.h"
 
 @interface ISYControllerAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) ISYBrain *brain;
+
+- (NSMutableArray*)getDevices;
+- (NSMutableArray*)getScenes;
 
 @end

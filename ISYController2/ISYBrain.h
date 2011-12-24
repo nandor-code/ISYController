@@ -26,12 +26,12 @@ enum eState
 
 @property (nonatomic, strong) NSMutableArray* isyDeviceStack;
 @property (nonatomic, strong) NSMutableArray* isySceneStack;
-@property (nonatomic, strong) NSMutableArray* isyTypesStack;
-
 
 @property enum eState curState;
 
 - (void)getData:(NSURL*)url;
+- (NSString*)execCmd:(NSURL*)url;
+
 - (NSMutableArray*)getArrayForType:(enum eISYDeviceType)type;
 
 @end

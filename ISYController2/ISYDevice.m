@@ -30,29 +30,40 @@
     return _sID;
 }
 
-- initWithType:(enum eISYDeviceType)type
+- (id)initWithType:(enum eISYDeviceType)type
 {
+    self = [self init];
+    
     self.deviceType = type;
     
     return self;
 }
 
-- initWithType:(enum eISYDeviceType)type withName:(NSString*)name
+- (id)initWithType:(enum eISYDeviceType)type withName:(NSString*)name
 {
+    self = [self init];
+    
     self.deviceType = type;
     self.sName      = name;
     
     return self;
 }
 
-- (void)setName:(NSString *)deviceName
+- (void)setDeviceName:(NSString *)deviceName
 {
     self.sName = deviceName;
 }
 
-- (void)setID:(NSString *)deviceID
+- (void)setDeviceID:(NSString *)deviceID
 {
-    self.sID   = deviceID;
+    self.sID = deviceID;
+}
+
+- (NSComparisonResult)compareDevices:(ISYDevice *)p
+{
+    return [ self.sName
+            compare: 
+            p.sName ];
 }
 
 @end

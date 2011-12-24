@@ -15,7 +15,6 @@
 
 @implementation ISYBrain
 
-@synthesize isyTypesStack  = _isyTypesStack;
 @synthesize isySceneStack  = _isySceneStack;
 @synthesize isyDeviceStack = _isyDeviceStack;
 @synthesize sCurrentText   = _sCurrentText;
@@ -37,14 +36,6 @@
     return _isyDeviceStack;
 }
 
-- (NSMutableArray *)isyTypesStack
-{
-    if( _isyTypesStack == nil )
-        _isyTypesStack = [[NSMutableArray alloc] init];
-    
-    return _isyTypesStack;
-}
-
 - (NSMutableString *)sCurrentText
 {
     if( _sCurrentText == nil )
@@ -62,20 +53,29 @@
         case ID_DEVICE:
             return self.isyDeviceStack;
         default:
-            return self.isyTypesStack;
+            return nil;
     }
+}
+
+- (NSString*)execCmd:(NSURL*)url
+{
+    NSXMLParser* xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
+    
+    [xmlParser setDelegate:self];
+    
+    [xmlParser parse];
+    
+    xmlParser = nil;
+    
+    return @"OK";
 }
 
 - (void)getData:(NSURL*)url
 {
     [self.sCurrentText setString:@""];
             
-    [self.isyTypesStack removeAllObjects];
     [self.isyDeviceStack removeAllObjects];
     [self.isySceneStack removeAllObjects];
-    
-    [self.isyTypesStack addObject:[[ISYDevice alloc] initWithType:ID_DEVICE withName:@"Devices"]];
-    [self.isyTypesStack addObject:[[ISYDevice alloc] initWithType:ID_SCENE withName:@"Scenes"]];
     
     self.curState = IB_NONE;
     
@@ -85,7 +85,10 @@
     
     [xmlParser parse];
         
-    xmlParser = nil;       
+    xmlParser = nil;    
+    
+    // sort it
+    [self.isySceneStack sortUsingSelector:@selector(compareDevices:)];
 }
 
 #pragma mark Delegate calls
@@ -103,7 +106,6 @@ didStartElement:(NSString *)elementName
         ISYDevice* newDevice = [[ISYDevice alloc] initWithType:ID_DEVICE];
         
         [self.isyDeviceStack addObject:newDevice];
-        
         self.curState = IB_DEV;
     }
     else if( [elementName isEqualToString:@"group"] )
@@ -112,7 +114,6 @@ didStartElement:(NSString *)elementName
         ISYDevice* newDevice = [[ISYDevice alloc] initWithType:ID_SCENE];
         
         [self.isySceneStack addObject:newDevice];
-        
         self.curState = IB_SCENE;
     } 
     else if( [elementName isEqualToString:@"name"] )
@@ -153,16 +154,19 @@ didStartElement:(NSString *)elementName
     if (self.sCurrentText.length > 0)
     {
         ISYDevice* curDevice = nil;
+        enum eState eNextState = IB_NONE; 
         
         switch( self.curState )
         {
             case IB_SCENE_ADDRESS:
             case IB_SCENE_NAME:
                 curDevice = [self.isySceneStack lastObject];
+                eNextState = IB_SCENE;
                 break;
             case IB_DEV_ADDRESS:
             case IB_DEV_NAME:
                 curDevice = [self.isyDeviceStack lastObject];
+                eNextState = IB_DEV;
                 break;
             default:
                 break;
@@ -170,7 +174,7 @@ didStartElement:(NSString *)elementName
         
         if( curDevice == nil )
         {
-            NSLog( @"Got a name but not in a valid state!" );
+            [self.sCurrentText setString:@""];
             return;
         }
 
@@ -178,16 +182,17 @@ didStartElement:(NSString *)elementName
         {
             case IB_SCENE_ADDRESS:
             case IB_DEV_ADDRESS:
-                [curDevice setID:elementName];
+                [curDevice setDeviceID:self.sCurrentText];
                 break;
             case IB_SCENE_NAME:
             case IB_DEV_NAME:
-                [curDevice setName:elementName];
+                [curDevice setDeviceName:self.sCurrentText];
                 break;
             default:
                 break;
         }
         
+        self.curState = eNextState;
         [self.sCurrentText setString:@""];
     }
 }

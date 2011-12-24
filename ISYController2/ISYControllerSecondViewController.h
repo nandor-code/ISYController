@@ -7,7 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ISYBrain.h"
+#import "ISYDevice.h"
+#import "ISYControllerAppDelegate.h"
+#import "SceneDetailsViewController.h"
 
-@interface ISYControllerSecondViewController : UIViewController
+@interface ISYControllerSecondViewController : UIViewController <SceneDetailsViewControllerDelegate>
+
+@property (nonatomic, assign) ISYControllerAppDelegate* delegate;
+@property (nonatomic, weak) ISYBrain* brain;
+@property enum eISYDeviceType eCurType;
+@property (weak, nonatomic) IBOutlet UITableView *sceneTableView;
+
+- (void)sceneDetailsViewControllerClose:(SceneDetailsViewController *)controller;
+- (void)toggleDevice:(NSString*)sID setOn:(BOOL)bOn;
 
 @end

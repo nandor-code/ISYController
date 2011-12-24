@@ -11,6 +11,18 @@
 @implementation ISYControllerAppDelegate
 
 @synthesize window = _window;
+@synthesize brain  = _brain;
+
+- (ISYBrain*)brain
+{
+    if( _brain == nil )
+    {
+        _brain = [[ISYBrain alloc] init];
+        [_brain getData:[[NSURL alloc] initWithString:@"http://nandor:xaqw2ggg@10.13.69.200/rest/nodes"]];
+    }
+    
+    return _brain;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -55,6 +67,16 @@
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
+}
+
+- (NSMutableArray*)getScenes
+{
+    return [self.brain getArrayForType:ID_SCENE];
+}
+
+- (NSMutableArray*)getDevices
+{
+    return [self.brain getArrayForType:ID_DEVICE];
 }
 
 @end

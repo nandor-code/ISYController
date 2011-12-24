@@ -10,6 +10,28 @@
 
 @implementation SceneDetailsViewController
 
+@synthesize delegate        = _delegate;
+@synthesize sceneNavBar     = _sceneNavBar;
+@synthesize segmentToggle   = _segmentToggle;
+@synthesize sCurDeviceName  = _sCurDeviceName;
+@synthesize sCurDeviceID    = _sCurDeviceID;
+
+- (NSString*)sCurDeviceName
+{
+    if( _sCurDeviceName == nil )
+        _sCurDeviceName = [[NSString alloc] initWithString:@"Scene"];
+    
+    return _sCurDeviceName;
+}
+
+- (NSString*)sCurDeviceID
+{
+    if( _sCurDeviceID == nil )
+        _sCurDeviceID = [[NSString alloc] initWithString:@"0"];
+    
+    return _sCurDeviceID;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -36,16 +58,20 @@
 }
 */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self.sceneNavBar setTitle:self.sCurDeviceName];
 }
-*/
+
 
 - (void)viewDidUnload
 {
+    [self setSceneNavBar:nil];
+    [self setSegmentToggle:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -55,6 +81,21 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (IBAction)done:(id)sender
+{
+	[self.delegate sceneDetailsViewControllerClose:self];
+}
+
+- (IBAction)toggled:(id)sender
+{
+    BOOL bOn = YES;
+    
+    if( [self.segmentToggle selectedSegmentIndex] == 0 )
+        bOn = NO;
+    
+	[self.delegate toggleDevice:self.sCurDeviceID setOn:bOn];
 }
 
 @end
