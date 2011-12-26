@@ -14,8 +14,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7AEFB96F14A4ECD800337F48"
-               BuildableName = "ISYController2.app"
-               BlueprintName = "ISYController2"
+               BuildableName = "ISYController.app"
+               BlueprintName = "ISYController"
                ReferencedContainer = "container:ISYController2.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,8 +32,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7AEFB96F14A4ECD800337F48"
-            BuildableName = "ISYController2.app"
-            BlueprintName = "ISYController2"
+            BuildableName = "ISYController.app"
+            BlueprintName = "ISYController"
             ReferencedContainer = "container:ISYController2.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -50,8 +50,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7AEFB96F14A4ECD800337F48"
-            BuildableName = "ISYController2.app"
-            BlueprintName = "ISYController2"
+            BuildableName = "ISYController.app"
+            BlueprintName = "ISYController"
             ReferencedContainer = "container:ISYController2.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -68,8 +68,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7AEFB96F14A4ECD800337F48"
-            BuildableName = "ISYController2.app"
-            BlueprintName = "ISYController2"
+            BuildableName = "ISYController.app"
+            BlueprintName = "ISYController"
             ReferencedContainer = "container:ISYController2.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
