@@ -12,7 +12,8 @@
 
 @synthesize delegate        = _delegate;
 @synthesize sceneNavBar     = _sceneNavBar;
-@synthesize segmentToggle   = _segmentToggle;
+@synthesize switchToggle    = _switchToggle;
+@synthesize sliderBar = _sliderBar;
 @synthesize sCurDeviceName  = _sCurDeviceName;
 @synthesize sCurDeviceID    = _sCurDeviceID;
 
@@ -65,13 +66,16 @@
     [super viewDidLoad];
     
     [self.sceneNavBar setTitle:self.sCurDeviceName];
+    
+    
 }
 
 
 - (void)viewDidUnload
 {
     [self setSceneNavBar:nil];
-    [self setSegmentToggle:nil];
+    [self setSwitchToggle:nil];
+    [self setSliderBar:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -90,12 +94,16 @@
 
 - (IBAction)toggled:(id)sender
 {
-    BOOL bOn = YES;
-    
-    if( [self.segmentToggle selectedSegmentIndex] == 0 )
-        bOn = NO;
+    BOOL bOn = !self.switchToggle.on;
     
 	[self.delegate toggleDevice:self.sCurDeviceID setOn:bOn];
+}
+
+- (IBAction)dim:(id)sender
+{
+    int iValue = (int)self.sliderBar.value;
+    
+    [self.delegate dimDevice:self.sCurDeviceID setDim:iValue];
 }
 
 @end

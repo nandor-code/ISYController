@@ -107,13 +107,28 @@
     if( bOn )
     {
         NSLog(@"Setting Device %@ ON", sID );
-        url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://nandor:xaqw2ggg@10.13.69.200/rest/nodes/%@/cmd/DFON", [sID stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] ] ];
+        url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@/%@/cmd/DFON", self.brain.sServerAddress, [sID stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] ] ];
     }
     else
     {
         NSLog(@"Setting Device %@ OFF", sID );
-        url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://nandor:xaqw2ggg@10.13.69.200/rest/nodes/%@/cmd/DFOF", [sID stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] ] ];
+        url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@/%@/cmd/DFOF", self.brain.sServerAddress, [sID stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] ] ];
     }
+    
+    [self.brain execCmd:url];
+}
+
+- (void)dimDevice:(NSString*)sID setDim:(int)iValue
+{
+    NSURL* url;
+        
+    NSLog(@"Setting Device %@ to DIM: %d", sID, iValue );
+    url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@/%@/cmd/DON/%d", 
+                                         self.brain.sServerAddress, 
+                                         [sID stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
+                                         iValue
+                                         ] ];
+
     
     [self.brain execCmd:url];
 }

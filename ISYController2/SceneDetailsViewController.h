@@ -13,6 +13,7 @@
 @protocol SceneDetailsViewControllerDelegate <NSObject>
 - (void)sceneDetailsViewControllerClose:(SceneDetailsViewController*)controller;
 - (void)toggleDevice:(NSString*)sID setOn:(BOOL)bOn;
+- (void)dimDevice:(NSString*)sID setDim:(int)iValue;
 @end
 
 @interface SceneDetailsViewController : UIViewController
@@ -23,9 +24,11 @@
 @property (nonatomic, strong) NSString* sCurDeviceID;
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *sceneNavBar;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentToggle;
+@property (weak, nonatomic) IBOutlet UISwitch *switchToggle;
+@property (weak, nonatomic) IBOutlet UISlider *sliderBar;
 
 - (IBAction)done:(id)sender;
 - (IBAction)toggled:(id)sender;
+- (IBAction)dim:(id)sender;
 
 @end

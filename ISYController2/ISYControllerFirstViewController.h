@@ -21,5 +21,6 @@
 
 - (void)sceneDetailsViewControllerClose:(SceneDetailsViewController *)controller;
 - (void)toggleDevice:(NSString*)sID setOn:(BOOL)bOn;
+- (void)dimDevice:(NSString*)sID setDim:(int)iValue;
 
 @end

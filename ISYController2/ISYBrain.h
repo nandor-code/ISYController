@@ -26,6 +26,7 @@ enum eState
 
 @property (nonatomic, strong) NSMutableArray* isyDeviceStack;
 @property (nonatomic, strong) NSMutableArray* isySceneStack;
+@property (nonatomic, strong) NSString* sServerAddress;
 
 @property enum eState curState;
 

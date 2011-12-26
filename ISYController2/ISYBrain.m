@@ -19,6 +19,7 @@
 @synthesize isyDeviceStack = _isyDeviceStack;
 @synthesize sCurrentText   = _sCurrentText;
 @synthesize curState       = _curState;
+@synthesize sServerAddress = _sServerAddress;
 
 - (NSMutableArray *)isySceneStack
 {
@@ -42,6 +43,14 @@
         _sCurrentText = [[NSMutableString alloc] init];
     
     return _sCurrentText;
+}
+
+- (NSString *)sServerAddress
+{
+    if( _sServerAddress == nil )
+        _sServerAddress = [[NSString alloc] initWithFormat:@"http://nandor:xaqw2ggg@10.13.69.200/rest/nodes" ];
+    
+    return _sServerAddress;
 }
 
 - (NSMutableArray*)getArrayForType:(enum eISYDeviceType)type
@@ -79,6 +88,14 @@
     
     self.curState = IB_NONE;
     
+    NSError *error;
+    
+    NSString* sData = [NSString stringWithContentsOfURL:url 
+                                               encoding:NSASCIIStringEncoding
+                                                  error:&error];
+    
+    NSLog( @"DATA : %@ / ERR: %@", sData, error );
+    
     NSXMLParser* xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
     
     [xmlParser setDelegate:self];
@@ -100,6 +117,7 @@ didStartElement:(NSString *)elementName
     attributes:(NSDictionary *)attributeDict
 {
 
+    NSLog( @"%@", elementName );
     if( [elementName isEqualToString:@"node"] )
     {
         // new node.

@@ -18,7 +18,7 @@
     if( _brain == nil )
     {
         _brain = [[ISYBrain alloc] init];
-        [_brain getData:[[NSURL alloc] initWithString:@"http://nandor:xaqw2ggg@10.13.69.200/rest/nodes"]];
+        [_brain getData:[[NSURL alloc] initWithString:_brain.sServerAddress]];
     }
     
     return _brain;
