@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A8B70A014A7EBC900A434B6 /* devices_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A8B709D14A7EBC900A434B6 /* devices_icon.png */; };
+		7A8B70A114A7EBC900A434B6 /* scenes_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A8B709E14A7EBC900A434B6 /* scenes_icon.png */; };
+		7A8B70A214A7EBC900A434B6 /* settings_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A8B709F14A7EBC900A434B6 /* settings_icon.png */; };
 		7AEFB97514A4ECD800337F48 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AEFB97414A4ECD800337F48 /* UIKit.framework */; };
 		7AEFB97714A4ECD800337F48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AEFB97614A4ECD800337F48 /* Foundation.framework */; };
 		7AEFB97914A4ECD800337F48 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AEFB97814A4ECD800337F48 /* CoreGraphics.framework */; };
@@ -15,19 +18,19 @@
 		7AEFB98514A4ECD800337F48 /* ISYControllerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEFB98414A4ECD800337F48 /* ISYControllerAppDelegate.m */; };
 		7AEFB98814A4ECD900337F48 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AEFB98614A4ECD900337F48 /* MainStoryboard.storyboard */; };
 		7AEFB98B14A4ECD900337F48 /* ISYControllerFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEFB98A14A4ECD900337F48 /* ISYControllerFirstViewController.m */; };
-		7AEFB98D14A4ECD900337F48 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AEFB98C14A4ECD900337F48 /* first.png */; };
-		7AEFB98F14A4ECD900337F48 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AEFB98E14A4ECD900337F48 /* first@2x.png */; };
 		7AEFB99214A4ECD900337F48 /* ISYControllerSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEFB99114A4ECD900337F48 /* ISYControllerSecondViewController.m */; };
-		7AEFB99414A4ECD900337F48 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AEFB99314A4ECD900337F48 /* second.png */; };
-		7AEFB99614A4ECD900337F48 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AEFB99514A4ECD900337F48 /* second@2x.png */; };
 		7AEFB99F14A4ED2200337F48 /* ISYBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEFB99E14A4ED2200337F48 /* ISYBrain.m */; };
 		7AEFB9A314A4ED3A00337F48 /* ISYDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEFB9A214A4ED3A00337F48 /* ISYDevice.m */; };
 		7AEFB9A514A4ED9300337F48 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AEFB9A414A4ED9300337F48 /* libxml2.dylib */; };
 		7AEFB9AF14A5408700337F48 /* SceneDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEFB9AE14A5408700337F48 /* SceneDetailsViewController.m */; };
+		7AF2383C14A65F59009854CC /* ISYControllerConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF2383B14A65F59009854CC /* ISYControllerConfigViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7AEFB97014A4ECD800337F48 /* ISYController2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ISYController2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A8B709D14A7EBC900A434B6 /* devices_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = devices_icon.png; sourceTree = "<group>"; };
+		7A8B709E14A7EBC900A434B6 /* scenes_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scenes_icon.png; sourceTree = "<group>"; };
+		7A8B709F14A7EBC900A434B6 /* settings_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings_icon.png; sourceTree = "<group>"; };
+		7AEFB97014A4ECD800337F48 /* ISYController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ISYController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AEFB97414A4ECD800337F48 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7AEFB97614A4ECD800337F48 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7AEFB97814A4ECD800337F48 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -40,12 +43,8 @@
 		7AEFB98714A4ECD900337F48 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		7AEFB98914A4ECD900337F48 /* ISYControllerFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISYControllerFirstViewController.h; sourceTree = "<group>"; };
 		7AEFB98A14A4ECD900337F48 /* ISYControllerFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ISYControllerFirstViewController.m; sourceTree = "<group>"; };
-		7AEFB98C14A4ECD900337F48 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		7AEFB98E14A4ECD900337F48 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
 		7AEFB99014A4ECD900337F48 /* ISYControllerSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISYControllerSecondViewController.h; sourceTree = "<group>"; };
 		7AEFB99114A4ECD900337F48 /* ISYControllerSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ISYControllerSecondViewController.m; sourceTree = "<group>"; };
-		7AEFB99314A4ECD900337F48 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
-		7AEFB99514A4ECD900337F48 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		7AEFB99D14A4ED2200337F48 /* ISYBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYBrain.h; sourceTree = "<group>"; };
 		7AEFB99E14A4ED2200337F48 /* ISYBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYBrain.m; sourceTree = "<group>"; };
 		7AEFB9A114A4ED3A00337F48 /* ISYDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYDevice.h; sourceTree = "<group>"; };
@@ -53,6 +52,8 @@
 		7AEFB9A414A4ED9300337F48 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		7AEFB9AD14A5408700337F48 /* SceneDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDetailsViewController.h; sourceTree = "<group>"; };
 		7AEFB9AE14A5408700337F48 /* SceneDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDetailsViewController.m; sourceTree = "<group>"; };
+		7AF2383A14A65F59009854CC /* ISYControllerConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYControllerConfigViewController.h; sourceTree = "<group>"; };
+		7AF2383B14A65F59009854CC /* ISYControllerConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYControllerConfigViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +83,7 @@
 		7AEFB97114A4ECD800337F48 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7AEFB97014A4ECD800337F48 /* ISYController2.app */,
+				7AEFB97014A4ECD800337F48 /* ISYController.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,6 +111,8 @@
 				7AEFB98A14A4ECD900337F48 /* ISYControllerFirstViewController.m */,
 				7AEFB99014A4ECD900337F48 /* ISYControllerSecondViewController.h */,
 				7AEFB99114A4ECD900337F48 /* ISYControllerSecondViewController.m */,
+				7AF2383A14A65F59009854CC /* ISYControllerConfigViewController.h */,
+				7AF2383B14A65F59009854CC /* ISYControllerConfigViewController.m */,
 				7AEFB9AD14A5408700337F48 /* SceneDetailsViewController.h */,
 				7AEFB9AE14A5408700337F48 /* SceneDetailsViewController.m */,
 				7AEFB97B14A4ECD800337F48 /* Supporting Files */,
@@ -158,10 +161,9 @@
 		7AEFB9A714A4EDE400337F48 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				7AEFB98C14A4ECD900337F48 /* first.png */,
-				7AEFB98E14A4ECD900337F48 /* first@2x.png */,
-				7AEFB99314A4ECD900337F48 /* second.png */,
-				7AEFB99514A4ECD900337F48 /* second@2x.png */,
+				7A8B709D14A7EBC900A434B6 /* devices_icon.png */,
+				7A8B709E14A7EBC900A434B6 /* scenes_icon.png */,
+				7A8B709F14A7EBC900A434B6 /* settings_icon.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -169,9 +171,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7AEFB96F14A4ECD800337F48 /* ISYController2 */ = {
+		7AEFB96F14A4ECD800337F48 /* ISYController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7AEFB99914A4ECD900337F48 /* Build configuration list for PBXNativeTarget "ISYController2" */;
+			buildConfigurationList = 7AEFB99914A4ECD900337F48 /* Build configuration list for PBXNativeTarget "ISYController" */;
 			buildPhases = (
 				7AEFB96C14A4ECD800337F48 /* Sources */,
 				7AEFB96D14A4ECD800337F48 /* Frameworks */,
@@ -181,9 +183,9 @@
 			);
 			dependencies = (
 			);
-			name = ISYController2;
+			name = ISYController;
 			productName = ISYController2;
-			productReference = 7AEFB97014A4ECD800337F48 /* ISYController2.app */;
+			productReference = 7AEFB97014A4ECD800337F48 /* ISYController.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -207,7 +209,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7AEFB96F14A4ECD800337F48 /* ISYController2 */,
+				7AEFB96F14A4ECD800337F48 /* ISYController */,
 			);
 		};
 /* End PBXProject section */
@@ -219,10 +221,9 @@
 			files = (
 				7AEFB97F14A4ECD800337F48 /* InfoPlist.strings in Resources */,
 				7AEFB98814A4ECD900337F48 /* MainStoryboard.storyboard in Resources */,
-				7AEFB98D14A4ECD900337F48 /* first.png in Resources */,
-				7AEFB98F14A4ECD900337F48 /* first@2x.png in Resources */,
-				7AEFB99414A4ECD900337F48 /* second.png in Resources */,
-				7AEFB99614A4ECD900337F48 /* second@2x.png in Resources */,
+				7A8B70A014A7EBC900A434B6 /* devices_icon.png in Resources */,
+				7A8B70A114A7EBC900A434B6 /* scenes_icon.png in Resources */,
+				7A8B70A214A7EBC900A434B6 /* settings_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +241,7 @@
 				7AEFB99F14A4ED2200337F48 /* ISYBrain.m in Sources */,
 				7AEFB9A314A4ED3A00337F48 /* ISYDevice.m in Sources */,
 				7AEFB9AF14A5408700337F48 /* SceneDetailsViewController.m in Sources */,
+				7AF2383C14A65F59009854CC /* ISYControllerConfigViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,13 +348,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7AEFB99914A4ECD900337F48 /* Build configuration list for PBXNativeTarget "ISYController2" */ = {
+		7AEFB99914A4ECD900337F48 /* Build configuration list for PBXNativeTarget "ISYController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7AEFB99A14A4ECD900337F48 /* Debug */,
 				7AEFB99B14A4ECD900337F48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -47,7 +47,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Devices" image="first" id="7"/>
+                    <tabBarItem key="tabBarItem" title="Devices" image="devices_icon.png" id="7"/>
                     <connections>
                         <outlet property="deviceTableView" destination="pvq-g7-kHa" id="Qrj-jD-FWY"/>
                     </connections>
@@ -97,7 +97,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Scenes" image="second" id="6"/>
+                    <tabBarItem key="tabBarItem" title="Scenes" image="scenes_icon.png" id="6"/>
                     <navigationItem key="navigationItem" id="cqL-cl-IW4"/>
                     <connections>
                         <outlet property="SceneTableView" destination="LT3-Ya-mhR" id="xWc-bf-X8n"/>
@@ -130,17 +130,22 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bezeled" selectedSegmentIndex="0" id="LAD-Vj-gol">
-                                <rect key="frame" x="57" y="150" width="207" height="44"/>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="QES-No-e61">
+                                <rect key="frame" x="121" y="104" width="79" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Off"/>
-                                    <segment title="On"/>
-                                </segments>
                                 <connections>
-                                    <action selector="toggled:" destination="fgD-EU-q4U" eventType="valueChanged" id="h6R-YN-pIa"/>
+                                    <action selector="toggled:" destination="fgD-EU-q4U" eventType="valueChanged" id="HJ2-kG-ev4"/>
                                 </connections>
-                            </segmentedControl>
+                            </switch>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" id="H5c-2n-oDj">
+                                <rect key="frame" x="18" y="190" width="284" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="minimumTrackTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="maximumTrackTintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <connections>
+                                    <action selector="dim:" destination="fgD-EU-q4U" eventType="valueChanged" id="eG1-JX-iL1"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -149,7 +154,8 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="SceneNavBar" destination="8iA-qE-cPa" id="WdS-4q-gIA"/>
-                        <outlet property="SegmentToggle" destination="LAD-Vj-gol" id="g1e-QF-exI"/>
+                        <outlet property="sliderBar" destination="H5c-2n-oDj" id="k3P-8e-9HL"/>
+                        <outlet property="switchToggle" destination="QES-No-e61" id="qt2-h1-ebH"/>
                     </connections>
                 </viewController>
             </objects>
@@ -168,39 +174,92 @@
                     <connections>
                         <segue destination="2" kind="relationship" relationship="viewControllers" id="26"/>
                         <segue destination="3" kind="relationship" relationship="viewControllers" id="27"/>
+                        <segue destination="P2p-bs-zBq" kind="relationship" relationship="viewControllers" id="7Rx-pc-k5Z"/>
                     </connections>
                 </tabBarController>
             </objects>
-            <point key="canvasLocation" x="132" y="180"/>
+            <point key="canvasLocation" x="88" y="498"/>
+        </scene>
+        <scene sceneID="VNb-cH-uH1">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZHE-es-ZHO" sceneMemberID="firstResponder"/>
+                <viewController title="Second" id="P2p-bs-zBq" customClass="ISYControllerConfigViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kV8-D9-Jvx">
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="95c-zm-q6r">
+                                <rect key="frame" x="106" y="20" width="194" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Host" lineBreakMode="tailTruncation" minimumFontSize="10" id="nkn-VC-Hv1">
+                                <rect key="frame" x="14" y="25" width="51" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="X71-tw-puT">
+                                <rect key="frame" x="106" y="94" width="194" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="User" lineBreakMode="tailTruncation" minimumFontSize="10" id="mIY-h0-7RA">
+                                <rect key="frame" x="14" y="99" width="51" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="enk-VJ-eQ6">
+                                <rect key="frame" x="106" y="133" width="194" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Password" lineBreakMode="tailTruncation" minimumFontSize="10" id="tNv-VX-w8I">
+                                <rect key="frame" x="14" y="138" width="76" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="SSL" lineBreakMode="tailTruncation" minimumFontSize="10" id="QIE-Ns-rRC">
+                                <rect key="frame" x="14" y="62" width="51" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="iLq-z9-QI7">
+                                <rect key="frame" x="221" y="59" width="79" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings_icon.png" id="14X-Wd-g5n"/>
+                    <navigationItem key="navigationItem" id="zop-PJ-PYN"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="hostName" destination="95c-zm-q6r" id="ILS-Vx-lNx"/>
+                        <outlet property="passWord" destination="enk-VJ-eQ6" id="lSc-fQ-G5E"/>
+                        <outlet property="useSSLSwitch" destination="iLq-z9-QI7" id="smb-jP-uzF"/>
+                        <outlet property="userName" destination="X71-tw-puT" id="7dQ-Qj-pu0"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="653" y="1075"/>
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="16" height="16"/>
-        <image name="second" width="16" height="16"/>
+        <image name="devices_icon.png" width="14" height="21"/>
+        <image name="scenes_icon.png" width="20" height="25"/>
+        <image name="settings_icon.png" width="26" height="28"/>
     </resources>
-    <classes>
-        <class className="ISYControllerFirstViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ISYControllerFirstViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="deviceTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="ISYControllerSecondViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ISYControllerSecondViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="sceneTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="SceneDetailsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SceneDetailsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="action" name="toggled:"/>
-                <relationship kind="outlet" name="sceneNavBar" candidateClass="UINavigationItem"/>
-                <relationship kind="outlet" name="segmentToggle" candidateClass="UISegmentedControl"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
