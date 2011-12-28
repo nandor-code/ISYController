@@ -9,12 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "ISYBrain.h"
 
-@interface ISYControllerAppDelegate : UIResponder <UIApplicationDelegate>
+@interface ISYControllerAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) ISYBrain *brain;
+@property (weak, nonatomic) IBOutlet UITabBarController *tabBar;
 
 - (NSMutableArray*)getDevices;
 - (NSMutableArray*)getScenes;
+- (void)refreshBrain;
 
 @end

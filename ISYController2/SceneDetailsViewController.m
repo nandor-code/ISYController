@@ -7,6 +7,8 @@
 //
 
 #import "SceneDetailsViewController.h"
+#import "ISYControllerDeviceViewController.h"
+#import "ISYControllerSceneViewController.h"
 
 @implementation SceneDetailsViewController
 
@@ -66,8 +68,6 @@
     [super viewDidLoad];
     
     [self.sceneNavBar setTitle:self.sCurDeviceName];
-    
-    
 }
 
 
@@ -84,7 +84,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
 }
 
 - (IBAction)done:(id)sender

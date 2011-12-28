@@ -11,6 +11,7 @@
 
 @interface ISYBrain()
 @property (nonatomic, strong) NSMutableString* sCurrentText;
+@property (nonatomic) BOOL bError;
 @end
 
 @implementation ISYBrain
@@ -20,6 +21,7 @@
 @synthesize sCurrentText   = _sCurrentText;
 @synthesize curState       = _curState;
 @synthesize sServerAddress = _sServerAddress;
+@synthesize bError         = _bError;
 
 - (NSMutableArray *)isySceneStack
 {
@@ -48,7 +50,7 @@
 - (NSString *)sServerAddress
 {
     if( _sServerAddress == nil )
-        _sServerAddress = [[NSString alloc] initWithFormat:@"http://nandor:xaqw2ggg@10.13.69.200/rest/nodes" ];
+        _sServerAddress = [[NSString alloc] init ];
     
     return _sServerAddress;
 }
@@ -66,8 +68,17 @@
     }
 }
 
+- (void)setBaseURL:(NSString*)hostName userName:(NSString*)userName passWord:(NSString*)passWord
+{
+    self.sServerAddress = nil;
+    
+    self.sServerAddress = [[NSString alloc] initWithFormat:@"http://%@:%@@%@/rest/nodes", userName, passWord, hostName ];
+}
+
 - (NSString*)execCmd:(NSURL*)url
 {
+    self.bError = NO;
+    
     NSXMLParser* xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
     
     [xmlParser setDelegate:self];
@@ -76,10 +87,13 @@
     
     xmlParser = nil;
     
+    if( self.bError )
+        return @"ERROR";
+    
     return @"OK";
 }
 
-- (void)getData:(NSURL*)url
+- (NSString*)getData:(NSURL*)url
 {
     [self.sCurrentText setString:@""];
             
@@ -88,13 +102,7 @@
     
     self.curState = IB_NONE;
     
-    NSError *error;
-    
-    NSString* sData = [NSString stringWithContentsOfURL:url 
-                                               encoding:NSASCIIStringEncoding
-                                                  error:&error];
-    
-    NSLog( @"DATA : %@ / ERR: %@", sData, error );
+    self.bError = NO;
     
     NSXMLParser* xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
     
@@ -106,6 +114,11 @@
     
     // sort it
     [self.isySceneStack sortUsingSelector:@selector(compareDevices:)];
+    
+    if( self.bError )
+        return @"ERROR";
+    
+    return @"OK";
 }
 
 #pragma mark Delegate calls
@@ -227,6 +240,7 @@ foundCharacters:(NSString *)string
 parseErrorOccurred:(NSError *)parseError
 {
     NSLog( @"Error: %@", parseError );
+    self.bError = YES;
 }
 
 @end

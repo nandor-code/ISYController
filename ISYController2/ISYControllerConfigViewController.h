@@ -14,4 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextField *passWord;
 @property (weak, nonatomic) IBOutlet UISwitch *useSSLSwitch;
+
+-(IBAction)updated:(id)sender;
+
 @end

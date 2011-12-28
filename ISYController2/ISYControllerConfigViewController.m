@@ -40,13 +40,17 @@
 }
 */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [hostName setText:[[NSUserDefaults standardUserDefaults] stringForKey:@"Hostname"]];
+    [userName setText:[[NSUserDefaults standardUserDefaults] stringForKey:@"Username"]];
+    [passWord setText:[[NSUserDefaults standardUserDefaults] stringForKey:@"Password"]];
 }
-*/
+
 
 - (void)viewDidUnload
 {
@@ -62,7 +66,41 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
+}
+
+-(IBAction)updated:(id)sender
+{
+    if (sender == passWord) 
+    {
+        [[NSUserDefaults standardUserDefaults] setValue:passWord.text forKey:@"Password"];
+    }
+    else if( sender == hostName )
+    {
+        [[NSUserDefaults standardUserDefaults] setValue:hostName.text forKey:@"Hostname"];
+    }
+    else if( sender == userName )
+    {
+        [[NSUserDefaults standardUserDefaults] setValue:userName.text forKey:@"Username"];
+    }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField 
+{
+    if (textField == passWord) 
+    {
+        [textField resignFirstResponder];
+    }
+    else if( textField == hostName )
+    {
+        [userName becomeFirstResponder];
+    }
+    else if( textField == userName )
+    {
+        [passWord becomeFirstResponder];
+    }
+    
+    return NO;
 }
 
 @end

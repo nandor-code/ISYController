@@ -12,13 +12,13 @@
 
 @synthesize window = _window;
 @synthesize brain  = _brain;
+@synthesize tabBar = _tabBar;
 
 - (ISYBrain*)brain
 {
     if( _brain == nil )
     {
         _brain = [[ISYBrain alloc] init];
-        [_brain getData:[[NSURL alloc] initWithString:_brain.sServerAddress]];
     }
     
     return _brain;
@@ -27,6 +27,27 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    NSDictionary *appDefaults = [NSDictionary
+                                 dictionaryWithObjects:
+                                    [NSArray arrayWithObjects:
+                                        [NSString stringWithString:@""],
+                                        [NSString stringWithString:@"admin"],
+                                        [NSString stringWithString:@""],
+                                        nil ] 
+                                 forKeys:
+                                    [NSArray arrayWithObjects:
+                                        [NSString stringWithString:@"Hostname"],
+                                        [NSString stringWithString:@"Username"],
+                                        [NSString stringWithString:@"Password"],
+                                        nil ] ];
+    
+    [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
+    
+    if ( [self.window.rootViewController isKindOfClass:[UITabBarController class]] ) 
+    {
+        self.tabBar = (UITabBarController*)self.window.rootViewController;
+    }
+    
     return YES;
 }
 							
@@ -77,6 +98,24 @@
 - (NSMutableArray*)getDevices
 {
     return [self.brain getArrayForType:ID_DEVICE];
+}
+
+- (void)refreshBrain
+{ 
+    [self.brain setBaseURL:[[NSUserDefaults standardUserDefaults] stringForKey:@"Hostname"]
+                  userName:[[NSUserDefaults standardUserDefaults] stringForKey:@"Username"]
+                  passWord:[[NSUserDefaults standardUserDefaults] stringForKey:@"Password"]];
+    
+    NSString* ret = [self.brain getData:[[NSURL alloc] initWithString:self.brain.sServerAddress]];
+    
+    if( [ret isEqualToString:@"ERROR"] )
+    {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"There was an error getting data from your ISY.  Please make sure your configuration is correct." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        alert.alertViewStyle = UIAlertViewStyleDefault;
+        [alert show];
+    }
+    
+    NSLog( @"Ret = %@", ret );
 }
 
 @end

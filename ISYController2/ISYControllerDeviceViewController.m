@@ -1,19 +1,22 @@
 //
-//  ISYControllerFirstViewController.m
+//  ISYControllerDeviceViewController.m
 //  ISYController2
 //
 //  Created by Nandor Szots on 12/23/11.
 //  Copyright (c) 2011 Umbra LLC. All rights reserved.
 //
 
-#import "ISYControllerFirstViewController.h"
+#import "ISYControllerDeviceViewController.h"
+#import "dispatch/dispatch.h"
 
-@implementation ISYControllerFirstViewController
+@implementation ISYControllerDeviceViewController
 
 @synthesize delegate = _delegate;
 @synthesize brain    = _brain;
 @synthesize eCurType = _eCurType;
 @synthesize deviceTableView = _deviceTableView;
+@synthesize refreshButton = _refreshButton;
+@synthesize refreshView = _refreshView;
 
 - (void)didReceiveMemoryWarning
 {
@@ -34,38 +37,38 @@
     self.brain = self.delegate.brain;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    if ( [[[NSUserDefaults standardUserDefaults] stringForKey:@"Hostname"] isEqualToString:@""] ) 
+    {
+        // user hasn't configured us yet!  oh no!  
+        UITabBarController* parentTabbar = self.delegate.tabBar;
+        
+        [parentTabbar setSelectedIndex:2];
+    }
+    else
+    {
+        [self refreshDevices:nil];
+    }
+    
+    [super viewDidAppear:animated];
+}
+
 - (void)viewDidUnload
 {
     [self setDeviceTableView:nil];
+    [self setRefreshButton:nil];
+    [self setRefreshView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
-}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    return YES;
 }
 
 // Customize the number of rows in the table view.
@@ -147,8 +150,27 @@
         sceneDetailsViewController.sCurDeviceName = curDevice.sName;
         sceneDetailsViewController.sCurDeviceID   = curDevice.sID;
         
+        // clear selection
+        [self.deviceTableView deselectRowAtIndexPath:[self.deviceTableView indexPathForSelectedRow] animated:NO];
+        
         NSLog( @"Seg from %@", curDevice.sName );
 	}
+}
+
+- (IBAction)refreshDevices:(id)sender
+{
+    [self.refreshView setHidden:NO];
+
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+    
+    dispatch_async(queue, ^{
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [self.delegate refreshBrain];
+            [self.view setNeedsLayout];
+            [self.deviceTableView reloadData];
+            [self.refreshView setHidden:YES];
+        });
+    });
 }
 
 @end

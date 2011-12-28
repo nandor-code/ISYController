@@ -30,9 +30,10 @@ enum eState
 
 @property enum eState curState;
 
-- (void)getData:(NSURL*)url;
+- (NSString*)getData:(NSURL*)url;
 - (NSString*)execCmd:(NSURL*)url;
 
 - (NSMutableArray*)getArrayForType:(enum eISYDeviceType)type;
+- (void)setBaseURL:(NSString*)hostName userName:(NSString*)userName passWord:(NSString*)passWord;
 
 @end
