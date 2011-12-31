@@ -40,10 +40,10 @@
 		7AEFB97414A4ECD800337F48 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7AEFB97614A4ECD800337F48 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7AEFB97814A4ECD800337F48 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		7AEFB97C14A4ECD800337F48 /* ISYController2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ISYController2-Info.plist"; sourceTree = "<group>"; };
+		7AEFB97C14A4ECD800337F48 /* ISYController-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ISYController-Info.plist"; sourceTree = "<group>"; };
 		7AEFB97E14A4ECD800337F48 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7AEFB98014A4ECD800337F48 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7AEFB98214A4ECD800337F48 /* ISYController2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ISYController2-Prefix.pch"; sourceTree = "<group>"; };
+		7AEFB98214A4ECD800337F48 /* ISYController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ISYController-Prefix.pch"; sourceTree = "<group>"; };
 		7AEFB98314A4ECD800337F48 /* ISYControllerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISYControllerAppDelegate.h; sourceTree = "<group>"; };
 		7AEFB98414A4ECD800337F48 /* ISYControllerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ISYControllerAppDelegate.m; sourceTree = "<group>"; };
 		7AEFB98714A4ECD900337F48 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 		7AEFB96514A4ECD800337F48 = {
 			isa = PBXGroup;
 			children = (
-				7AEFB97A14A4ECD800337F48 /* ISYController2 */,
+				7AEFB97A14A4ECD800337F48 /* ISYController */,
 				7AEFB97314A4ECD800337F48 /* Frameworks */,
 				7AEFB97114A4ECD800337F48 /* Products */,
 			);
@@ -105,7 +105,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7AEFB97A14A4ECD800337F48 /* ISYController2 */ = {
+		7AEFB97A14A4ECD800337F48 /* ISYController */ = {
 			isa = PBXGroup;
 			children = (
 				7AEFB9A614A4EDBD00337F48 /* UI */,
@@ -123,16 +123,16 @@
 				7AEFB9AE14A5408700337F48 /* SceneDetailsViewController.m */,
 				7AEFB97B14A4ECD800337F48 /* Supporting Files */,
 			);
-			path = ISYController2;
+			path = ISYController;
 			sourceTree = "<group>";
 		};
 		7AEFB97B14A4ECD800337F48 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7AEFB97C14A4ECD800337F48 /* ISYController2-Info.plist */,
+				7AEFB97C14A4ECD800337F48 /* ISYController-Info.plist */,
 				7AEFB97D14A4ECD800337F48 /* InfoPlist.strings */,
 				7AEFB98014A4ECD800337F48 /* main.m */,
-				7AEFB98214A4ECD800337F48 /* ISYController2-Prefix.pch */,
+				7AEFB98214A4ECD800337F48 /* ISYController-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -193,7 +193,7 @@
 			dependencies = (
 			);
 			name = ISYController;
-			productName = ISYController2;
+			productName = ISYController;
 			productReference = 7AEFB97014A4ECD800337F48 /* ISYController.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -206,7 +206,7 @@
 				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "Umbra LLC";
 			};
-			buildConfigurationList = 7AEFB96A14A4ECD800337F48 /* Build configuration list for PBXProject "ISYController2" */;
+			buildConfigurationList = 7AEFB96A14A4ECD800337F48 /* Build configuration list for PBXProject "ISYController" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -328,9 +328,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ISYController2/ISYController2-Prefix.pch";
+				GCC_PREFIX_HEADER = "ISYController/ISYController-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
-				INFOPLIST_FILE = "ISYController2/ISYController2-Info.plist";
+				INFOPLIST_FILE = "ISYController/ISYController-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -342,9 +342,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ISYController2/ISYController2-Prefix.pch";
+				GCC_PREFIX_HEADER = "ISYController/ISYController-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
-				INFOPLIST_FILE = "ISYController2/ISYController2-Info.plist";
+				INFOPLIST_FILE = "ISYController/ISYController-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -355,7 +355,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7AEFB96A14A4ECD800337F48 /* Build configuration list for PBXProject "ISYController2" */ = {
+		7AEFB96A14A4ECD800337F48 /* Build configuration list for PBXProject "ISYController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7AEFB99714A4ECD900337F48 /* Debug */,
