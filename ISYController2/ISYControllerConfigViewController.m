@@ -7,6 +7,7 @@
 //
 
 #import "ISYControllerConfigViewController.h"
+#import "SceneDetailsViewController.h"
 
 @implementation ISYControllerConfigViewController
 @synthesize hostName;
@@ -49,6 +50,14 @@
     [hostName setText:[[NSUserDefaults standardUserDefaults] stringForKey:@"Hostname"]];
     [userName setText:[[NSUserDefaults standardUserDefaults] stringForKey:@"Username"]];
     [passWord setText:[[NSUserDefaults standardUserDefaults] stringForKey:@"Password"]];
+    useSSLSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"UseSSL"];
+
+    SceneDetailsViewController *sceneDetailsViewController = [[self.splitViewController viewControllers] lastObject];
+    
+    if( sceneDetailsViewController != nil )
+    {
+        [sceneDetailsViewController showConfigPage];
+    }
 }
 
 
@@ -82,6 +91,10 @@
     else if( sender == userName )
     {
         [[NSUserDefaults standardUserDefaults] setValue:userName.text forKey:@"Username"];
+    }
+    else if( sender == useSSLSwitch )
+    {
+        [[NSUserDefaults standardUserDefaults] setBool:useSSLSwitch.on forKey:@"UseSSL"];
     }
 }
 

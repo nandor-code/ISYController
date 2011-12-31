@@ -9,14 +9,22 @@
 #import "ISYControllerDeviceViewController.h"
 #import "dispatch/dispatch.h"
 
+@interface ISYControllerDeviceViewController()
+
+@property (nonatomic) BOOL bHaveValidData;
+
+@end
+
 @implementation ISYControllerDeviceViewController
 
-@synthesize delegate = _delegate;
-@synthesize brain    = _brain;
-@synthesize eCurType = _eCurType;
+@synthesize delegate        = _delegate;
+@synthesize brain           = _brain;
+@synthesize eCurType        = _eCurType;
 @synthesize deviceTableView = _deviceTableView;
-@synthesize refreshButton = _refreshButton;
-@synthesize refreshView = _refreshView;
+@synthesize refreshButton   = _refreshButton;
+@synthesize refreshView     = _refreshView;
+@synthesize bHaveValidData  = _bHaveValidData;
+@synthesize sCurType        = _sCurType;
 
 - (void)didReceiveMemoryWarning
 {
@@ -24,11 +32,30 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+- (NSString*)sCurType
+{
+    if( _sCurType == nil )
+        _sCurType = [[NSString alloc] init];
+        
+    return _sCurType;
+}
+
+- (void)setCurType:(NSString*)type
+{    
+    _sCurType = nil;
+    _sCurType = [[NSString alloc] initWithString:type];
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if( [self.sCurType isEqualToString:@""] )
+        self.bHaveValidData = NO;
+    else
+        self.bHaveValidData = YES;
     
     self.eCurType = ID_DEVICE;
 
@@ -48,7 +75,11 @@
     }
     else
     {
-        [self refreshDevices:nil];
+        if( !self.bHaveValidData )
+        {
+            [self refreshDevices:nil];
+            self.bHaveValidData = YES;
+        }
     }
     
     [super viewDidAppear:animated];
@@ -75,7 +106,10 @@
 - (NSInteger)tableView:(UITableView *)tableView 
  numberOfRowsInSection:(NSInteger)section 
 {    
-    return [[self.brain getArrayForType:self.eCurType] count];
+    if( [self.sCurType isEqualToString:@""] )
+        return [[self.brain getAllDeviceTypes] count];
+    else
+        return [[self.brain getDeviceArrayForType:self.sCurType] count];
 }
 
 // Customize the appearance of table view cells.
@@ -91,16 +125,66 @@
                 reuseIdentifier:CellIdentifier];
     }
     
-    // Configure the cell.
-    ISYDevice* curDevice = (ISYDevice*)[[self.brain getArrayForType:self.eCurType] objectAtIndex:[indexPath row]];
-    
-    cell.textLabel.text = curDevice.sName;
+    if( [self.sCurType isEqualToString:@""] )
+    {
+        // device types
+        cell.textLabel.text = [[self.brain getAllDeviceTypes] objectAtIndex:[indexPath row]];
+    }
+    else
+    {
+        // devices.
+        
+        // Configure the cell.
+        ISYDevice* curDevice = (ISYDevice*)[[self.brain getDeviceArrayForType:self.sCurType] objectAtIndex:[indexPath row]];
+        
+        cell.textLabel.text = curDevice.sName;
+    }
+
     return cell;
 } 
+
+- (void)tableView:(UITableView *)aTableView 
+  didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self setSelectedDevice:indexPath];
+}
 
 - (void)sceneDetailsViewControllerClose:(SceneDetailsViewController *)controller
 {
 	[self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)setSelectedDevice:(NSIndexPath *)indexPath
+{
+    SceneDetailsViewController *sceneDetailsViewController = [[self.splitViewController viewControllers] lastObject];
+    
+    if( sceneDetailsViewController != nil )
+    {
+        sceneDetailsViewController.delegate = self;
+        
+        ISYDevice* curDevice = (ISYDevice*)[[self.brain getArrayForType:self.eCurType] objectAtIndex:[indexPath row]];
+        
+        sceneDetailsViewController.sCurDeviceName = curDevice.sName;
+        sceneDetailsViewController.sCurDeviceID   = curDevice.sID;
+        
+        [sceneDetailsViewController refreshView];
+        
+        NSLog( @"Selection of %@", curDevice.sName );     
+    }
+}
+
+- (void)tableReset
+{
+    //NSIndexPath *indexPath = [self.deviceTableView indexPathForSelectedRow];
+
+    //if( [indexPath row] < 1 )
+    //{
+    //    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection: 0];
+    //
+    //    [self.deviceTableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone ];
+    //    
+    //    [self setSelectedDevice:indexPath];
+    //}
 }
 
 - (void)toggleDevice:(NSString*)sID setOn:(BOOL)bOn
@@ -138,13 +222,13 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    NSIndexPath *indexPath = [self.deviceTableView indexPathForSelectedRow];
+
 	if ([segue.identifier isEqualToString:@"DeviceDetails"])
 	{
 		SceneDetailsViewController *sceneDetailsViewController = segue.destinationViewController;
 		sceneDetailsViewController.delegate = self;
-        
-        NSIndexPath *indexPath = [self.deviceTableView indexPathForSelectedRow];
-        
+                
         ISYDevice* curDevice = (ISYDevice*)[[self.brain getArrayForType:self.eCurType] objectAtIndex:[indexPath row]];
         
         sceneDetailsViewController.sCurDeviceName = curDevice.sName;
@@ -155,6 +239,12 @@
         
         NSLog( @"Seg from %@", curDevice.sName );
 	}
+    else if( [segue.identifier isEqualToString:@"TypesToDevice"] )
+    {
+        ISYControllerDeviceViewController *deviceController = segue.destinationViewController;
+        
+        [deviceController setCurType:[[self.brain getAllDeviceTypes] objectAtIndex:[indexPath row]]];
+    }
 }
 
 - (IBAction)refreshDevices:(id)sender
@@ -169,8 +259,14 @@
             [self.view setNeedsLayout];
             [self.deviceTableView reloadData];
             [self.refreshView setHidden:YES];
+            [self tableReset];
         });
     });
+}
+
+- (IBAction)selectDevice:(id)sender
+{
+
 }
 
 @end

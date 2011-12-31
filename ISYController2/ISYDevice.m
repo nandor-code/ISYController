@@ -14,6 +14,22 @@
 @synthesize sName      = _sName;
 @synthesize sID        = _sID;
 
++ (NSString*)getDeviceTypeByID:(NSString*)typeID
+{
+    if( [typeID isEqualToString:@"1.32.56.0"] )
+        return @"Lights";
+    if( [typeID isEqualToString:@"2.28.58.0"] )
+        return @"Lights";
+    if( [typeID isEqualToString:@"1.25.56.0"] )
+        return @"Lights";
+    if( [typeID isEqualToString:@"7.0.54.0"] )
+        return @"Link Controls";
+    if( [typeID isEqualToString:@"7.7.146.0"] )
+        return @"Sensors";
+    
+    return @"Generic";
+}
+
 - (NSString*)sName
 {
     if( _sName == nil )

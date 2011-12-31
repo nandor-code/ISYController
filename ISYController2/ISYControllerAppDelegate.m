@@ -104,7 +104,8 @@
 { 
     [self.brain setBaseURL:[[NSUserDefaults standardUserDefaults] stringForKey:@"Hostname"]
                   userName:[[NSUserDefaults standardUserDefaults] stringForKey:@"Username"]
-                  passWord:[[NSUserDefaults standardUserDefaults] stringForKey:@"Password"]];
+                  passWord:[[NSUserDefaults standardUserDefaults] stringForKey:@"Password"]
+                  useSSL:[[NSUserDefaults standardUserDefaults] boolForKey:@"UseSSL"]];
     
     NSString* ret = [self.brain getData:[[NSURL alloc] initWithString:self.brain.sServerAddress]];
     

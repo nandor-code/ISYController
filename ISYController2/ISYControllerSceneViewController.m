@@ -80,6 +80,27 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)aTableView 
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    SceneDetailsViewController *sceneDetailsViewController = [[self.splitViewController viewControllers] lastObject];
+    
+    if( sceneDetailsViewController != nil )
+    {
+        sceneDetailsViewController.delegate = self;
+        
+        ISYDevice* curDevice = (ISYDevice*)[[self.brain getArrayForType:self.eCurType] objectAtIndex:[indexPath row]];
+        
+        sceneDetailsViewController.sCurDeviceName = curDevice.sName;
+        sceneDetailsViewController.sCurDeviceID   = curDevice.sID;
+        
+        [sceneDetailsViewController refreshView];
+
+        NSLog( @"Selection of %@", curDevice.sName );     
+    }
+}
+
 - (void)sceneDetailsViewControllerClose:(SceneDetailsViewController *)controller
 {
 	[self dismissViewControllerAnimated:YES completion:nil];

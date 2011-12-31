@@ -20,10 +20,17 @@
 @property (weak, nonatomic) IBOutlet UITableView *deviceTableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *refreshButton;
 @property (weak, nonatomic) IBOutlet UIView *refreshView;
+@property (nonatomic, strong) NSString* sCurType;
 
 - (void)sceneDetailsViewControllerClose:(SceneDetailsViewController *)controller;
 - (void)toggleDevice:(NSString*)sID setOn:(BOOL)bOn;
 - (void)dimDevice:(NSString*)sID setDim:(int)iValue;
+
+- (void)setCurType:(NSString*)type;
+
+- (void)tableReset;
+- (void)setSelectedDevice:(NSIndexPath *)indexPath;
+
 - (IBAction)refreshDevices:(id)sender;
 
 @end

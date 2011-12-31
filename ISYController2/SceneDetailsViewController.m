@@ -12,12 +12,14 @@
 
 @implementation SceneDetailsViewController
 
-@synthesize delegate        = _delegate;
-@synthesize sceneNavBar     = _sceneNavBar;
-@synthesize switchToggle    = _switchToggle;
-@synthesize sliderBar = _sliderBar;
-@synthesize sCurDeviceName  = _sCurDeviceName;
-@synthesize sCurDeviceID    = _sCurDeviceID;
+@synthesize delegate            = _delegate;
+@synthesize sceneNavBar         = _sceneNavBar;
+@synthesize switchToggle        = _switchToggle;
+@synthesize sliderBar           = _sliderBar;
+@synthesize lightbulbImage      = _lightbulbImage;
+@synthesize configInstructions  = _configInstructions;
+@synthesize sCurDeviceName      = _sCurDeviceName;
+@synthesize sCurDeviceID        = _sCurDeviceID;
 
 - (NSString*)sCurDeviceName
 {
@@ -67,15 +69,31 @@
 {
     [super viewDidLoad];
     
-    [self.sceneNavBar setTitle:self.sCurDeviceName];
+    [self refreshView];
+    
+    [self.splitViewController setDelegate:self];
 }
 
+- (void)refreshView
+{
+    [self.sceneNavBar setTitle:self.sCurDeviceName];
+    self.lightbulbImage.image = [UIImage imageNamed:@"Light_Off.png"];    
+    
+    [self.configInstructions setHidden:YES];
+}
+
+- (void)showConfigPage
+{
+    [self.configInstructions setHidden:NO];  
+}
 
 - (void)viewDidUnload
 {
     [self setSceneNavBar:nil];
     [self setSwitchToggle:nil];
     [self setSliderBar:nil];
+    [self setLightbulbImage:nil];
+    [self setConfigInstructions:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -87,23 +105,43 @@
     return YES;
 }
 
-- (IBAction)done:(id)sender
-{
-	[self.delegate sceneDetailsViewControllerClose:self];
-}
-
 - (IBAction)toggled:(id)sender
 {
     BOOL bOn = !self.switchToggle.on;
     
 	[self.delegate toggleDevice:self.sCurDeviceID setOn:bOn];
+    
+    if( bOn )
+    {
+        self.lightbulbImage.image = [UIImage imageNamed:@"Light_On.png"];
+    }
+    else
+    {
+        self.lightbulbImage.image = [UIImage imageNamed:@"Light_Off.png"];
+    }
 }
 
 - (IBAction)dim:(id)sender
 {
     int iValue = (int)self.sliderBar.value;
     
-    [self.delegate dimDevice:self.sCurDeviceID setDim:iValue];
+    if( iValue > 1 )
+    {
+        [self.delegate dimDevice:self.sCurDeviceID setDim:iValue];   
+        self.lightbulbImage.image = [UIImage imageNamed:@"Light_On.png"];
+    }
+    else
+    {
+        [self.delegate toggleDevice:self.sCurDeviceID setOn:NO];
+        self.lightbulbImage.image = [UIImage imageNamed:@"Light_Off.png"];
+
+    }
+}
+
+// split view controls
+- (BOOL)splitViewController:(UISplitViewController *)svc shouldHideViewController:(UIViewController *)vc inOrientation:(UIInterfaceOrientation)orientation
+{
+    return NO;
 }
 
 @end

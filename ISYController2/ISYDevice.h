@@ -17,6 +17,8 @@ enum eISYDeviceType
     ID_SCENE
 };
 
++ (NSString*)getDeviceTypeByID:(NSString*)typeID;
+
 @property enum eISYDeviceType deviceType;
 @property (nonatomic, copy) NSString* sName;
 @property (nonatomic, copy) NSString* sID;

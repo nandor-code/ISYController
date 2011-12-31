@@ -16,7 +16,7 @@
 - (void)dimDevice:(NSString*)sID setDim:(int)iValue;
 @end
 
-@interface SceneDetailsViewController : UIViewController
+@interface SceneDetailsViewController : UIViewController <UISplitViewControllerDelegate>
 
 @property (nonatomic, weak) id <SceneDetailsViewControllerDelegate> delegate;
 
@@ -26,9 +26,13 @@
 @property (weak, nonatomic) IBOutlet UINavigationItem *sceneNavBar;
 @property (weak, nonatomic) IBOutlet UISwitch *switchToggle;
 @property (weak, nonatomic) IBOutlet UISlider *sliderBar;
+@property (weak, nonatomic) IBOutlet UIImageView *lightbulbImage;
+@property (weak, nonatomic) IBOutlet UIView *configInstructions;
 
-- (IBAction)done:(id)sender;
 - (IBAction)toggled:(id)sender;
 - (IBAction)dim:(id)sender;
+
+- (void)refreshView;
+- (void)showConfigPage;
 
 @end

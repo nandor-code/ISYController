@@ -14,14 +14,20 @@
 @property (nonatomic) BOOL bError;
 @end
 
+@interface NSURLRequest (DummyInterface)
++ (BOOL)allowsAnyHTTPSCertificateForHost:(NSString*)host;
++ (void)setAllowsAnyHTTPSCertificate:(BOOL)allow forHost:(NSString*)host;
+@end
+
 @implementation ISYBrain
 
-@synthesize isySceneStack  = _isySceneStack;
-@synthesize isyDeviceStack = _isyDeviceStack;
-@synthesize sCurrentText   = _sCurrentText;
-@synthesize curState       = _curState;
-@synthesize sServerAddress = _sServerAddress;
-@synthesize bError         = _bError;
+@synthesize isyDevicesByType = _isyDevicesByType;
+@synthesize isySceneStack    = _isySceneStack;
+@synthesize isyDeviceStack   = _isyDeviceStack;
+@synthesize sCurrentText     = _sCurrentText;
+@synthesize curState         = _curState;
+@synthesize sServerAddress   = _sServerAddress;
+@synthesize bError           = _bError;
 
 - (NSMutableArray *)isySceneStack
 {
@@ -29,6 +35,14 @@
         _isySceneStack = [[NSMutableArray alloc] init];
     
     return _isySceneStack;
+}
+
+- (NSMutableDictionary *)isyDevicesByType
+{
+    if( _isyDevicesByType == nil )
+        _isyDevicesByType = [[NSMutableDictionary alloc] init];
+    
+    return _isyDevicesByType;
 }
 
 - (NSMutableArray *)isyDeviceStack
@@ -68,11 +82,28 @@
     }
 }
 
-- (void)setBaseURL:(NSString*)hostName userName:(NSString*)userName passWord:(NSString*)passWord
+- (NSArray*)getDeviceArrayForType:(NSString*)sType
+{
+    return [self.isyDevicesByType objectForKey:sType];
+}
+
+- (NSArray*)getAllDeviceTypes
+{
+    return [self.isyDevicesByType allKeys];
+}
+
+- (void)setBaseURL:(NSString*)hostName userName:(NSString*)userName passWord:(NSString*)passWord useSSL:(BOOL)bUseSSL
 {
     self.sServerAddress = nil;
     
-    self.sServerAddress = [[NSString alloc] initWithFormat:@"http://%@:%@@%@/rest/nodes", userName, passWord, hostName ];
+    if( bUseSSL )
+    {
+        self.sServerAddress = [[NSString alloc] initWithFormat:@"https://%@:%@@%@/rest/nodes", userName, passWord, hostName ];
+    }
+    else
+    {
+        self.sServerAddress = [[NSString alloc] initWithFormat:@"http://%@:%@@%@/rest/nodes", userName, passWord, hostName ];        
+    }
 }
 
 - (NSString*)execCmd:(NSURL*)url
@@ -99,10 +130,14 @@
             
     [self.isyDeviceStack removeAllObjects];
     [self.isySceneStack removeAllObjects];
+    [self.isyDevicesByType removeAllObjects];
     
     self.curState = IB_NONE;
     
     self.bError = NO;
+    
+    [NSURLRequest setAllowsAnyHTTPSCertificate:YES
+                                       forHost:[url host]];
     
     NSXMLParser* xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
     
@@ -129,8 +164,6 @@ didStartElement:(NSString *)elementName
  qualifiedName:(NSString *)qName
     attributes:(NSDictionary *)attributeDict
 {
-
-    NSLog( @"%@", elementName );
     if( [elementName isEqualToString:@"node"] )
     {
         // new node.
@@ -175,6 +208,17 @@ didStartElement:(NSString *)elementName
                 break;
         }
     }
+    else if( [elementName isEqualToString:@"type"] )
+    {
+        switch( self.curState )
+        {
+            case IB_DEV:
+                self.curState = IB_DEV_TYPE;
+                break;
+            default:
+                break;
+        }
+    }
 }
 
 - (void)parser:(NSXMLParser *)parser
@@ -194,6 +238,7 @@ didStartElement:(NSString *)elementName
                 curDevice = [self.isySceneStack lastObject];
                 eNextState = IB_SCENE;
                 break;
+            case IB_DEV_TYPE:
             case IB_DEV_ADDRESS:
             case IB_DEV_NAME:
                 curDevice = [self.isyDeviceStack lastObject];
@@ -218,6 +263,30 @@ didStartElement:(NSString *)elementName
             case IB_SCENE_NAME:
             case IB_DEV_NAME:
                 [curDevice setDeviceName:self.sCurrentText];
+                break;
+            case IB_DEV_TYPE:
+                {
+                    NSString* curType = [ISYDevice getDeviceTypeByID:self.sCurrentText];
+                    NSArray* arrayForType = [self.isyDevicesByType objectForKey:curType];
+                    
+                    NSMutableArray* mutableArrayForType = nil;
+                    
+                    if( arrayForType == nil )
+                    {
+                        mutableArrayForType = [[NSMutableArray alloc] init];
+                    }
+                    else
+                    {
+                        mutableArrayForType = [arrayForType mutableCopy];
+                    }
+                                        
+                    [mutableArrayForType addObject:curDevice];
+                    
+                    [mutableArrayForType sortUsingSelector:@selector(compareDevices:)];
+                    
+                    [self.isyDevicesByType setObject:[mutableArrayForType copy] forKey:curType];
+                        
+                }
                 break;
             default:
                 break;
