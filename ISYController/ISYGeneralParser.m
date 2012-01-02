@@ -98,6 +98,18 @@ didStartElement:(NSString *)elementName
                 break;
         }
     }
+    else if( [elementName isEqualToString:@"property"] )
+    {
+        switch( self.pCurDevice.deviceType )
+        {
+            case ID_DEVICE:
+                // set state.
+                self.pCurDevice.fValue = [NSNumber numberWithFloat:[[attributeDict objectForKey:@"value"] floatValue]];
+                break;
+            default:
+                break;
+        }
+    }
 }
 
 - (void)parser:(NSXMLParser *)parser

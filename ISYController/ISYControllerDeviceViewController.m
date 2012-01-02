@@ -118,30 +118,45 @@
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView 
-         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    static NSString *CellIdentifier = @"ISYDeviceCell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]
-                initWithStyle:UITableViewCellStyleDefault
-                reuseIdentifier:CellIdentifier];
-    }
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath 
+{
+    UITableViewCell *cell = nil;
     
     if( [self.sCurType isEqualToString:@""] )
     {
+        static NSString *CellIdentifier = @"ISYDeviceTypeCell";
+        
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc]
+                    initWithStyle:UITableViewCellStyleDefault
+                    reuseIdentifier:CellIdentifier];
+        }
+        
         // device types
         cell.textLabel.text = [[self.brain getAllDeviceTypes] objectAtIndex:[indexPath row]];
     }
     else
     {
         // devices.
+        static NSString *CellIdentifier = @"ISYDeviceCell";
+        
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc]
+                    initWithStyle:UITableViewCellStyleDefault
+                    reuseIdentifier:CellIdentifier];
+        }
         
         // Configure the cell.
         ISYDevice* curDevice = (ISYDevice*)[[self.brain getDeviceArrayForType:self.sCurType] objectAtIndex:[indexPath row]];
         
         cell.textLabel.text = curDevice.sName;
+        
+        if( [curDevice.fValue floatValue] == 0.0f )
+            cell.imageView.image = [UIImage imageNamed:@"Light_Off.png"];
+        else
+            cell.imageView.image = [UIImage imageNamed:@"Light_On.png"];
     }
 
     return cell;

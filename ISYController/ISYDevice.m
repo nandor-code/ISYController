@@ -14,6 +14,7 @@
 @synthesize sName      = _sName;
 @synthesize sID        = _sID;
 @synthesize sType      = _sType;
+@synthesize fValue     = _fValue;
 
 + (NSString*)getDeviceTypeByID:(NSString*)typeID
 {
@@ -29,36 +30,6 @@
         return @"Sensors";
     
     return @"Generic";
-}
-
-- (NSString*)sName
-{
-    if( _sName == nil )
-        _sName = [[NSString alloc] init];
-    
-    //NSLog( @"Dev %@ name(%@)", self, _sName );
-    
-    return _sName;
-}
-
-- (NSString*)sID
-{
-    if( _sID == nil )
-        _sID = [[NSString alloc] init];
-    
-    //NSLog( @"Dev %@ addr(%@)", self, _sID );
-
-    return _sID;
-}
-
-- (NSString*)sType
-{
-    if( _sType == nil )
-        _sType = [[NSString alloc] init];
-    
-    //NSLog( @"Dev %@ type(%@)", self, _sType );
-
-    return _sType;
 }
 
 - (id)initWithType:(enum eISYDeviceType)type

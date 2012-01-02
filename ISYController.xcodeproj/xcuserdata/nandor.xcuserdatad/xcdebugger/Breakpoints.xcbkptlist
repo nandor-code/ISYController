@@ -78,20 +78,6 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "ISYController/ISYDevice.m"
-         timestampString = "347173231.181708"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "36"
-         endingLineNumber = "36"
-         landmarkName = "-sName"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
          filePath = "ISYController/SceneDetailsViewController.m"
          timestampString = "346740782.523145"
          startingColumnNumber = "9223372036854775807"
@@ -289,12 +275,12 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "ISYController/ISYControllerDeviceViewController.m"
-         timestampString = "347166211.293032"
+         timestampString = "347178075.494326"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "264"
-         endingLineNumber = "264"
-         landmarkName = "-prepareForSegue:sender:"
+         startingLineNumber = "279"
+         endingLineNumber = "279"
+         landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -303,12 +289,12 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "ISYController/ISYControllerDeviceViewController.m"
-         timestampString = "347166211.293032"
+         timestampString = "347178075.494326"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "245"
-         endingLineNumber = "245"
-         landmarkName = "-prepareForSegue:sender:"
+         startingLineNumber = "260"
+         endingLineNumber = "260"
+         landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -317,12 +303,12 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "ISYController/ISYControllerDeviceViewController.m"
-         timestampString = "347166211.293032"
+         timestampString = "347178075.494326"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "153"
-         endingLineNumber = "153"
-         landmarkName = "-tableView:didSelectRowAtIndexPath:"
+         startingLineNumber = "168"
+         endingLineNumber = "168"
+         landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -345,40 +331,12 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "ISYController/ISYGeneralParser.m"
-         timestampString = "347173546.413062"
+         timestampString = "347177363.031164"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "108"
-         endingLineNumber = "108"
-         landmarkName = "-parser:didEndElement:namespaceURI:qualifiedName:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "ISYController/ISYGeneralParser.m"
-         timestampString = "347174191.313961"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "179"
-         endingLineNumber = "179"
+         startingLineNumber = "191"
+         endingLineNumber = "191"
          landmarkName = "-parser:parseErrorOccurred:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "ISYController/ISYGeneralParser.m"
-         timestampString = "347174191.313961"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "173"
-         endingLineNumber = "173"
-         landmarkName = "-parser:foundCharacters:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -401,11 +359,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "ISYController/ISYDevice.m"
-         timestampString = "347174551.538409"
+         timestampString = "347176885.391633"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "20"
-         endingLineNumber = "20"
+         startingLineNumber = "21"
+         endingLineNumber = "21"
          landmarkName = "+getDeviceTypeByID:"
          landmarkType = "5">
       </FileBreakpoint>

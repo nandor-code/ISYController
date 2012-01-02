@@ -33,14 +33,14 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ISYDeviceCell" textLabel="nLK-D2-Fh5" style="IBUITableViewCellStyleDefault" id="T4Y-oM-NeT">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ISYDeviceCell" textLabel="L50-M3-us5" style="IBUITableViewCellStyleDefault" id="T4Y-oM-NeT">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nLK-D2-Fh5">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="L50-M3-us5">
                                                     <rect key="frame" x="10" y="0.0" width="280" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -349,7 +349,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ISYDeviceCell" textLabel="41c-2z-yV3" style="IBUITableViewCellStyleDefault" id="7ZI-LO-h6I">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ISYDeviceTypeCell" textLabel="41c-2z-yV3" style="IBUITableViewCellStyleDefault" id="7ZI-LO-h6I">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -419,48 +419,6 @@
         <image name="scenes_icon.png" width="20" height="25"/>
         <image name="settings_icon.png" width="26" height="28"/>
     </resources>
-    <classes>
-        <class className="ISYControllerConfigViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ISYControllerConfigViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="updated:"/>
-                <relationship kind="outlet" name="hostName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="passWord" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="useSSLSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="userName" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ISYControllerDeviceViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ISYControllerDeviceViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="refreshDevices:"/>
-                <relationship kind="outlet" name="deviceTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="refreshButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="refreshView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="ISYControllerSceneViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ISYControllerSceneViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="refreshDevices:"/>
-                <relationship kind="outlet" name="refreshButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="refreshView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="sceneTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="LightDetailsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LightDetailsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="dim:"/>
-                <relationship kind="action" name="toggled:"/>
-                <relationship kind="outlet" name="configInstructions" candidateClass="UIView"/>
-                <relationship kind="outlet" name="lightbulbImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="sceneNavBar" candidateClass="UINavigationItem"/>
-                <relationship kind="outlet" name="sliderBar" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="switchToggle" candidateClass="UISwitch"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

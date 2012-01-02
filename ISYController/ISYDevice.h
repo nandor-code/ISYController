@@ -23,6 +23,7 @@ enum eISYDeviceType
 @property (nonatomic, copy) NSString* sName;
 @property (nonatomic, copy) NSString* sID;
 @property (nonatomic, copy) NSString* sType;
+@property (nonatomic, copy) NSNumber* fValue;
 
 - (id)initWithType:(enum eISYDeviceType)type;
 - (id)initWithType:(enum eISYDeviceType)type withName:(NSString*)name;
