@@ -13,6 +13,7 @@
 @synthesize deviceType = _deviceType;
 @synthesize sName      = _sName;
 @synthesize sID        = _sID;
+@synthesize sType      = _sType;
 
 + (NSString*)getDeviceTypeByID:(NSString*)typeID
 {
@@ -35,6 +36,8 @@
     if( _sName == nil )
         _sName = [[NSString alloc] init];
     
+    //NSLog( @"Dev %@ name(%@)", self, _sName );
+    
     return _sName;
 }
 
@@ -43,7 +46,19 @@
     if( _sID == nil )
         _sID = [[NSString alloc] init];
     
+    //NSLog( @"Dev %@ addr(%@)", self, _sID );
+
     return _sID;
+}
+
+- (NSString*)sType
+{
+    if( _sType == nil )
+        _sType = [[NSString alloc] init];
+    
+    //NSLog( @"Dev %@ type(%@)", self, _sType );
+
+    return _sType;
 }
 
 - (id)initWithType:(enum eISYDeviceType)type
@@ -73,6 +88,11 @@
 - (void)setDeviceID:(NSString *)deviceID
 {
     self.sID = deviceID;
+}
+
+- (void)setDeviceTypeName:(NSString *)deviceType
+{
+    self.sType = deviceType;
 }
 
 - (NSComparisonResult)compareDevices:(ISYDevice *)p

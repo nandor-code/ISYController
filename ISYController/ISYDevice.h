@@ -22,12 +22,15 @@ enum eISYDeviceType
 @property enum eISYDeviceType deviceType;
 @property (nonatomic, copy) NSString* sName;
 @property (nonatomic, copy) NSString* sID;
+@property (nonatomic, copy) NSString* sType;
 
 - (id)initWithType:(enum eISYDeviceType)type;
 - (id)initWithType:(enum eISYDeviceType)type withName:(NSString*)name;
 
 - (void)setDeviceName:(NSString *)deviceName;
 - (void)setDeviceID:(NSString *)deviceID;
+- (void)setDeviceTypeName:(NSString *)deviceType;
+
 - (NSComparisonResult)compareDevices:(ISYDevice *)p;
 
 @end

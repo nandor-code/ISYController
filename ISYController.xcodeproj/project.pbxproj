@@ -13,6 +13,11 @@
 		7A9DE2E214AADA140077BA86 /* Light_On.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A9DE2E014AADA140077BA86 /* Light_On.png */; };
 		7A9DE2E314AADA140077BA86 /* Light_Off.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A9DE2E114AADA140077BA86 /* Light_Off.png */; };
 		7A9DE2E714AE3D830077BA86 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A9DE2E614AE3D830077BA86 /* MainStoryboard_iPad.storyboard */; };
+		7ACE40C014B151B80095E89B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ACE40BF14B151B80095E89B /* QuartzCore.framework */; };
+		7ACE40C614B160C10095E89B /* ISYController.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ACE40C514B160C00095E89B /* ISYController.png */; };
+		7ACE40D014B161450095E89B /* ISYController@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ACE40CF14B161450095E89B /* ISYController@2x.png */; };
+		7ACE40D214B1614D0095E89B /* ISYController_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ACE40D114B1614D0095E89B /* ISYController_iPad.png */; };
+		7ACE40D514B163610095E89B /* ISYGeneralParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACE40D414B163610095E89B /* ISYGeneralParser.m */; };
 		7AEFB97514A4ECD800337F48 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AEFB97414A4ECD800337F48 /* UIKit.framework */; };
 		7AEFB97714A4ECD800337F48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AEFB97614A4ECD800337F48 /* Foundation.framework */; };
 		7AEFB97914A4ECD800337F48 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AEFB97814A4ECD800337F48 /* CoreGraphics.framework */; };
@@ -36,6 +41,12 @@
 		7A9DE2E014AADA140077BA86 /* Light_On.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Light_On.png; sourceTree = "<group>"; };
 		7A9DE2E114AADA140077BA86 /* Light_Off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Light_Off.png; sourceTree = "<group>"; };
 		7A9DE2E614AE3D830077BA86 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		7ACE40BF14B151B80095E89B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7ACE40C514B160C00095E89B /* ISYController.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ISYController.png; sourceTree = SOURCE_ROOT; };
+		7ACE40CF14B161450095E89B /* ISYController@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ISYController@2x.png"; sourceTree = SOURCE_ROOT; };
+		7ACE40D114B1614D0095E89B /* ISYController_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ISYController_iPad.png; sourceTree = SOURCE_ROOT; };
+		7ACE40D314B163610095E89B /* ISYGeneralParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYGeneralParser.h; sourceTree = "<group>"; };
+		7ACE40D414B163610095E89B /* ISYGeneralParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYGeneralParser.m; sourceTree = "<group>"; };
 		7AEFB97014A4ECD800337F48 /* ISYController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ISYController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AEFB97414A4ECD800337F48 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7AEFB97614A4ECD800337F48 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -67,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ACE40C014B151B80095E89B /* QuartzCore.framework in Frameworks */,
 				7AEFB9A514A4ED9300337F48 /* libxml2.dylib in Frameworks */,
 				7AEFB97514A4ECD800337F48 /* UIKit.framework in Frameworks */,
 				7AEFB97714A4ECD800337F48 /* Foundation.framework in Frameworks */,
@@ -77,6 +89,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7ACE40D614B177C20095E89B /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				7ACE40D314B163610095E89B /* ISYGeneralParser.h */,
+				7ACE40D414B163610095E89B /* ISYGeneralParser.m */,
+			);
+			name = Parsers;
+			sourceTree = "<group>";
+		};
 		7AEFB96514A4ECD800337F48 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +118,7 @@
 		7AEFB97314A4ECD800337F48 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7ACE40BF14B151B80095E89B /* QuartzCore.framework */,
 				7AEFB9A414A4ED9300337F48 /* libxml2.dylib */,
 				7AEFB97414A4ECD800337F48 /* UIKit.framework */,
 				7AEFB97614A4ECD800337F48 /* Foundation.framework */,
@@ -142,6 +164,7 @@
 			children = (
 				7AEFB99D14A4ED2200337F48 /* ISYBrain.h */,
 				7AEFB99E14A4ED2200337F48 /* ISYBrain.m */,
+				7ACE40D614B177C20095E89B /* Parsers */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -168,6 +191,9 @@
 		7AEFB9A714A4EDE400337F48 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7ACE40D114B1614D0095E89B /* ISYController_iPad.png */,
+				7ACE40CF14B161450095E89B /* ISYController@2x.png */,
+				7ACE40C514B160C00095E89B /* ISYController.png */,
 				7A9DE2E014AADA140077BA86 /* Light_On.png */,
 				7A9DE2E114AADA140077BA86 /* Light_Off.png */,
 				7A8B709D14A7EBC900A434B6 /* devices_icon.png */,
@@ -236,6 +262,9 @@
 				7A9DE2E214AADA140077BA86 /* Light_On.png in Resources */,
 				7A9DE2E314AADA140077BA86 /* Light_Off.png in Resources */,
 				7A9DE2E714AE3D830077BA86 /* MainStoryboard_iPad.storyboard in Resources */,
+				7ACE40C614B160C10095E89B /* ISYController.png in Resources */,
+				7ACE40D014B161450095E89B /* ISYController@2x.png in Resources */,
+				7ACE40D214B1614D0095E89B /* ISYController_iPad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +283,7 @@
 				7AEFB9A314A4ED3A00337F48 /* ISYDevice.m in Sources */,
 				7AEFB9AF14A5408700337F48 /* LightDetailsViewController.m in Sources */,
 				7AF2383C14A65F59009854CC /* ISYControllerConfigViewController.m in Sources */,
+				7ACE40D514B163610095E89B /* ISYGeneralParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

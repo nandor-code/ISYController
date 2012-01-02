@@ -8,6 +8,7 @@
 
 #import "ISYControllerDeviceViewController.h"
 #import "dispatch/dispatch.h"
+#import "QuartzCore/QuartzCore.h"
 
 @interface ISYControllerDeviceViewController() <LightDetailsViewControllerDelegate>
 @property (nonatomic) BOOL bHaveValidData;
@@ -63,6 +64,8 @@
     self.delegate = (ISYControllerAppDelegate *)[[UIApplication sharedApplication] delegate];
     
     self.brain = self.delegate.brain;
+    
+    self.refreshView.layer.cornerRadius = 20.0f;
 }
 
 - (void)viewDidAppear:(BOOL)animated

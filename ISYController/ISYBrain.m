@@ -8,15 +8,13 @@
 
 #import "ISYBrain.h"
 
-
-@interface ISYBrain()
-@property (nonatomic, strong) NSMutableString* sCurrentText;
-@property (nonatomic) BOOL bError;
-@end
-
 @interface NSURLRequest (DummyInterface)
 + (BOOL)allowsAnyHTTPSCertificateForHost:(NSString*)host;
 + (void)setAllowsAnyHTTPSCertificate:(BOOL)allow forHost:(NSString*)host;
+@end
+
+@interface ISYBrain() <ISYParserBrainDelgate>
+@property (nonatomic) BOOL bError;
 @end
 
 @implementation ISYBrain
@@ -24,8 +22,6 @@
 @synthesize isyDevicesByType = _isyDevicesByType;
 @synthesize isySceneStack    = _isySceneStack;
 @synthesize isyDeviceStack   = _isyDeviceStack;
-@synthesize sCurrentText     = _sCurrentText;
-@synthesize curState         = _curState;
 @synthesize sServerAddress   = _sServerAddress;
 @synthesize bError           = _bError;
 
@@ -51,14 +47,6 @@
         _isyDeviceStack = [[NSMutableArray alloc] init];
     
     return _isyDeviceStack;
-}
-
-- (NSMutableString *)sCurrentText
-{
-    if( _sCurrentText == nil )
-        _sCurrentText = [[NSMutableString alloc] init];
-    
-    return _sCurrentText;
 }
 
 - (NSString *)sServerAddress
@@ -112,11 +100,14 @@
     
     NSXMLParser* xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
     
-    [xmlParser setDelegate:self];
+    ISYGeneralParser* isyParser = [[ISYGeneralParser alloc] initWithDelegate:self];
+        
+    [xmlParser setDelegate:isyParser];    
     
     [xmlParser parse];
     
     xmlParser = nil;
+    isyParser = nil;
     
     if( self.bError )
         return @"ERROR";
@@ -124,16 +115,34 @@
     return @"OK";
 }
 
-- (NSString*)getData:(NSURL*)url
+- (NSNumber*)getLightState:(NSURL*)url
 {
-    [self.sCurrentText setString:@""];
-            
+    self.bError = NO;
+    
+    NSXMLParser* xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
+    
+    ISYGeneralParser* isyParser = [[ISYGeneralParser alloc] initWithDelegate:self];
+    
+    [xmlParser setDelegate:isyParser];
+    
+    [xmlParser parse];
+    
+    xmlParser = nil;
+    
+    isyParser = nil;
+    
+    if( self.bError )
+        return [NSNumber numberWithInt:0];
+
+    
+}
+
+- (NSString*)getData:(NSURL*)url
+{            
     [self.isyDeviceStack removeAllObjects];
     [self.isySceneStack removeAllObjects];
     [self.isyDevicesByType removeAllObjects];
-    
-    self.curState = IB_NONE;
-    
+        
     self.bError = NO;
     
     [NSURLRequest setAllowsAnyHTTPSCertificate:YES
@@ -141,7 +150,9 @@
     
     NSXMLParser* xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
     
-    [xmlParser setDelegate:self];
+    ISYGeneralParser* isyParser = [[ISYGeneralParser alloc] initWithDelegate:self];
+    
+    [xmlParser setDelegate:isyParser];
     
     [xmlParser parse];
         
@@ -158,158 +169,47 @@
 
 #pragma mark Delegate calls
 
-- (void)parser:(NSXMLParser *)parser
-didStartElement:(NSString *)elementName
-  namespaceURI:(NSString *)namespaceURI
- qualifiedName:(NSString *)qName
-    attributes:(NSDictionary *)attributeDict
+- (void)createISYDevice:(ISYDevice*)device
 {
-    if( [elementName isEqualToString:@"node"] )
+    [self.isyDeviceStack addObject:device];  
+    
+    NSArray* arrayForType = [self.isyDevicesByType objectForKey:device.sType];
+    
+    NSMutableArray* mutableArrayForType = nil;
+    
+    if( arrayForType == nil )
     {
-        // new node.
-        ISYDevice* newDevice = [[ISYDevice alloc] initWithType:ID_DEVICE];
-        
-        [self.isyDeviceStack addObject:newDevice];
-        self.curState = IB_DEV;
+        mutableArrayForType = [[NSMutableArray alloc] init];
     }
-    else if( [elementName isEqualToString:@"group"] )
+    else
     {
-        // new node.
-        ISYDevice* newDevice = [[ISYDevice alloc] initWithType:ID_SCENE];
-        
-        [self.isySceneStack addObject:newDevice];
-        self.curState = IB_SCENE;
-    } 
-    else if( [elementName isEqualToString:@"name"] )
-    {
-        switch( self.curState )
-        {
-            case IB_DEV:
-                self.curState = IB_DEV_NAME;
-                break;
-            case IB_SCENE:
-                self.curState = IB_SCENE_NAME;
-                break;
-            default:
-                break;
-        }
+        mutableArrayForType = [arrayForType mutableCopy];
     }
-    else if( [elementName isEqualToString:@"address"] )
-    {
-        switch( self.curState )
-        {
-            case IB_DEV:
-                self.curState = IB_DEV_ADDRESS;
-                break;
-            case IB_SCENE:
-                self.curState = IB_SCENE_ADDRESS;
-                break;
-            default:
-                break;
-        }
-    }
-    else if( [elementName isEqualToString:@"type"] )
-    {
-        switch( self.curState )
-        {
-            case IB_DEV:
-                self.curState = IB_DEV_TYPE;
-                break;
-            default:
-                break;
-        }
-    }
+    
+    [mutableArrayForType addObject:device];
+    
+    [mutableArrayForType sortUsingSelector:@selector(compareDevices:)];
+    
+    [self.isyDevicesByType setObject:[mutableArrayForType copy] forKey:device.sType];
 }
 
-- (void)parser:(NSXMLParser *)parser
- didEndElement:(NSString *)elementName
-  namespaceURI:(NSString *)namespaceURI
- qualifiedName:(NSString *)qName
-{    
-    if (self.sCurrentText.length > 0)
-    {
-        ISYDevice* curDevice = nil;
-        enum eState eNextState = IB_NONE; 
-        
-        switch( self.curState )
-        {
-            case IB_SCENE_ADDRESS:
-            case IB_SCENE_NAME:
-                curDevice = [self.isySceneStack lastObject];
-                eNextState = IB_SCENE;
-                break;
-            case IB_DEV_TYPE:
-            case IB_DEV_ADDRESS:
-            case IB_DEV_NAME:
-                curDevice = [self.isyDeviceStack lastObject];
-                eNextState = IB_DEV;
-                break;
-            default:
-                break;
-        }
-        
-        if( curDevice == nil )
-        {
-            [self.sCurrentText setString:@""];
-            return;
-        }
-
-        switch( self.curState )
-        {
-            case IB_SCENE_ADDRESS:
-            case IB_DEV_ADDRESS:
-                [curDevice setDeviceID:self.sCurrentText];
-                break;
-            case IB_SCENE_NAME:
-            case IB_DEV_NAME:
-                [curDevice setDeviceName:self.sCurrentText];
-                break;
-            case IB_DEV_TYPE:
-                {
-                    NSString* curType = [ISYDevice getDeviceTypeByID:self.sCurrentText];
-                    NSArray* arrayForType = [self.isyDevicesByType objectForKey:curType];
-                    
-                    NSMutableArray* mutableArrayForType = nil;
-                    
-                    if( arrayForType == nil )
-                    {
-                        mutableArrayForType = [[NSMutableArray alloc] init];
-                    }
-                    else
-                    {
-                        mutableArrayForType = [arrayForType mutableCopy];
-                    }
-                                        
-                    [mutableArrayForType addObject:curDevice];
-                    
-                    [mutableArrayForType sortUsingSelector:@selector(compareDevices:)];
-                    
-                    [self.isyDevicesByType setObject:[mutableArrayForType copy] forKey:curType];
-                        
-                }
-                break;
-            default:
-                break;
-        }
-        
-        self.curState = eNextState;
-        [self.sCurrentText setString:@""];
-    }
+- (ISYDevice*)getCurrentDevice
+{
+    return [self.isyDeviceStack lastObject];
 }
 
-// This method can get called multiple times for the
-// text in a single element
-- (void)parser:(NSXMLParser *)parser
-foundCharacters:(NSString *)string
+- (void)createISYScene:(ISYDevice*)device
 {
-    [self.sCurrentText appendString:string];
+    [self.isySceneStack addObject:device];
 }
 
-- (void)parser:(NSXMLParser *)parser
-parseErrorOccurred:(NSError *)parseError
+- (ISYDevice*)getCurrentScene
 {
-    NSLog( @"Error: %@", parseError );
+    return [self.isySceneStack lastObject];
+}
+
+- (void)parseError
+{
     self.bError = YES;
 }
-
 @end

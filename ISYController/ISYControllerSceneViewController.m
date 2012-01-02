@@ -8,6 +8,7 @@
 
 #import "ISYControllerSceneViewController.h"
 #import "dispatch/dispatch.h"
+#import "QuartzCore/QuartzCore.h"
 
 @interface ISYControllerSceneViewController() <LightDetailsViewControllerDelegate>
 - (void)lightDetailsViewControllerClose:(LightDetailsViewController *)controller;
@@ -41,6 +42,8 @@
     self.delegate = (ISYControllerAppDelegate *)[[UIApplication sharedApplication] delegate];
     
     self.brain = self.delegate.brain;
+    
+    self.refreshView.layer.cornerRadius = 20.0f;
 }
 
 - (void)viewDidUnload

@@ -9,28 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <libxml/tree.h>
 #import "ISYDevice.h"
+#import "ISYGeneralParser.h"
 
-@interface ISYBrain : NSObject<NSXMLParserDelegate, NSURLConnectionDataDelegate>
-
-enum eState
-{
-    IB_NONE,
-    IB_DEV,
-    IB_DEV_NAME,
-    IB_DEV_ADDRESS,
-    IB_DEV_TYPE,
-    IB_SCENE,
-    IB_SCENE_NAME,
-    IB_SCENE_ADDRESS
-
-};
+@interface ISYBrain : NSObject <NSURLConnectionDataDelegate>
 
 @property (nonatomic, strong) NSMutableDictionary* isyDevicesByType;
 @property (nonatomic, strong) NSMutableArray* isyDeviceStack;
 @property (nonatomic, strong) NSMutableArray* isySceneStack;
 @property (nonatomic, strong) NSString* sServerAddress;
-
-@property enum eState curState;
 
 - (NSString*)getData:(NSURL*)url;
 - (NSString*)execCmd:(NSURL*)url;
@@ -38,6 +24,8 @@ enum eState
 - (NSMutableArray*)getArrayForType:(enum eISYDeviceType)type;
 - (NSArray*)getDeviceArrayForType:(NSString*)sType;
 - (NSArray*)getAllDeviceTypes;
+
+- (NSNumber*)getLightState:(NSURL*)url;
 
 - (void)setBaseURL:(NSString*)hostName userName:(NSString*)userName passWord:(NSString*)passWord useSSL:(BOOL)bUseSSL;
 
