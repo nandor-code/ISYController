@@ -6,11 +6,11 @@
 //  Copyright (c) 2011 Umbra LLC. All rights reserved.
 //
 
-#import "SceneDetailsViewController.h"
+#import "LightDetailsViewController.h"
 #import "ISYControllerDeviceViewController.h"
 #import "ISYControllerSceneViewController.h"
 
-@implementation SceneDetailsViewController
+@implementation LightDetailsViewController
 
 @synthesize delegate            = _delegate;
 @synthesize sceneNavBar         = _sceneNavBar;

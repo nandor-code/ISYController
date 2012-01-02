@@ -50,23 +50,27 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <connections>
-                                            <segue destination="fgD-EU-q4U" kind="push" identifier="DeviceDetails" id="weF-fG-0FM"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="2" id="TFR-eN-gA5"/>
+                                    <outlet property="delegate" destination="2" id="lff-ig-eKT"/>
                                 </connections>
                             </tableView>
-                            <view hidden="YES" opaque="NO" alpha="0.75" contentMode="scaleToFill" id="52k-mi-fcz">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                            <view hidden="YES" opaque="NO" clipsSubviews="YES" alpha="0.89999997615814209" contentMode="scaleToFill" id="n4q-CA-F11">
+                                <rect key="frame" x="110" y="134" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" animating="YES" style="gray" id="Ga7-9p-lix">
-                                        <rect key="frame" x="150" y="173" width="20" height="20"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Refreshing..." textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="xOS-b9-uJP">
+                                        <rect key="frame" x="3" y="64" width="97" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" animating="YES" style="white" id="Ca8-c8-9Fc">
+                                        <rect key="frame" x="40" y="36" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -84,11 +88,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="deviceTableView" destination="pvq-g7-kHa" id="Qrj-jD-FWY"/>
-                        <outlet property="refreshView" destination="52k-mi-fcz" id="LFJ-aP-jv4"/>
+                        <outlet property="refreshView" destination="n4q-CA-F11" id="scd-qe-Dqx"/>
+                        <segue destination="fgD-EU-q4U" kind="push" identifier="LightDeviceDetails" id="ioj-1w-HLJ"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="148" y="-269"/>
+            <point key="canvasLocation" x="136" y="-269"/>
         </scene>
         <scene sceneID="13">
             <objects>
@@ -120,23 +125,26 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <connections>
-                                            <segue destination="fgD-EU-q4U" kind="push" identifier="SceneDetails" id="WFW-hZ-1AY"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="3" id="yF4-Ul-lMk"/>
                                 </connections>
                             </tableView>
-                            <view hidden="YES" opaque="NO" alpha="0.75" contentMode="scaleToFill" id="b9R-lR-0dO">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                            <view hidden="YES" opaque="NO" clipsSubviews="YES" alpha="0.89999997615814209" contentMode="scaleToFill" id="rnF-4T-o9p">
+                                <rect key="frame" x="110" y="134" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" animating="YES" style="gray" id="xzv-ZJ-DI8">
-                                        <rect key="frame" x="150" y="173" width="20" height="20"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Refreshing..." textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="cta-m2-IdB">
+                                        <rect key="frame" x="3" y="64" width="97" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" animating="YES" style="white" id="96v-57-IjD">
+                                        <rect key="frame" x="40" y="36" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -155,7 +163,7 @@
                     <connections>
                         <outlet property="SceneTableView" destination="LT3-Ya-mhR" id="xWc-bf-X8n"/>
                         <outlet property="refreshButton" destination="9e2-70-zth" id="jLA-qw-Tck"/>
-                        <outlet property="refreshView" destination="b9R-lR-0dO" id="wf3-t0-GDf"/>
+                        <outlet property="refreshView" destination="rnF-4T-o9p" id="vna-s4-T8V"/>
                     </connections>
                 </viewController>
             </objects>
@@ -179,7 +187,7 @@
         <scene sceneID="AlS-12-tfm">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oWB-jv-MjV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController modalTransitionStyle="flipHorizontal" hidesBottomBarWhenPushed="YES" id="fgD-EU-q4U" customClass="SceneDetailsViewController" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" hidesBottomBarWhenPushed="YES" id="fgD-EU-q4U" customClass="LightDetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8ry-se-99C">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -368,14 +376,20 @@
                                     <outlet property="delegate" destination="qci-IG-UVN" id="oc4-Yh-BWK"/>
                                 </connections>
                             </tableView>
-                            <view hidden="YES" opaque="NO" alpha="0.75" contentMode="scaleToFill" id="pHW-XN-jZJ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                            <view hidden="YES" opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" id="pHW-XN-jZJ">
+                                <rect key="frame" x="110" y="134" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" animating="YES" style="gray" id="xdb-6D-8UR">
-                                        <rect key="frame" x="150" y="173" width="20" height="20"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Refreshing..." textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="zuh-lh-RrL">
+                                        <rect key="frame" x="3" y="64" width="97" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" animating="YES" style="white" id="cY8-tp-FdN">
+                                        <rect key="frame" x="40" y="36" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -434,8 +448,8 @@
                 <relationship kind="outlet" name="sceneTableView" candidateClass="UITableView"/>
             </relationships>
         </class>
-        <class className="SceneDetailsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SceneDetailsViewController.h"/>
+        <class className="LightDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LightDetailsViewController.h"/>
             <relationships>
                 <relationship kind="action" name="dim:"/>
                 <relationship kind="action" name="toggled:"/>
@@ -452,7 +466,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="weF-fG-0FM"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -25,7 +25,7 @@
 		7AEFB99F14A4ED2200337F48 /* ISYBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEFB99E14A4ED2200337F48 /* ISYBrain.m */; };
 		7AEFB9A314A4ED3A00337F48 /* ISYDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEFB9A214A4ED3A00337F48 /* ISYDevice.m */; };
 		7AEFB9A514A4ED9300337F48 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AEFB9A414A4ED9300337F48 /* libxml2.dylib */; };
-		7AEFB9AF14A5408700337F48 /* SceneDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEFB9AE14A5408700337F48 /* SceneDetailsViewController.m */; };
+		7AEFB9AF14A5408700337F48 /* LightDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEFB9AE14A5408700337F48 /* LightDetailsViewController.m */; };
 		7AF2383C14A65F59009854CC /* ISYControllerConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF2383B14A65F59009854CC /* ISYControllerConfigViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -56,8 +56,8 @@
 		7AEFB9A114A4ED3A00337F48 /* ISYDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYDevice.h; sourceTree = "<group>"; };
 		7AEFB9A214A4ED3A00337F48 /* ISYDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYDevice.m; sourceTree = "<group>"; };
 		7AEFB9A414A4ED9300337F48 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
-		7AEFB9AD14A5408700337F48 /* SceneDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDetailsViewController.h; sourceTree = "<group>"; };
-		7AEFB9AE14A5408700337F48 /* SceneDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDetailsViewController.m; sourceTree = "<group>"; };
+		7AEFB9AD14A5408700337F48 /* LightDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightDetailsViewController.h; sourceTree = "<group>"; };
+		7AEFB9AE14A5408700337F48 /* LightDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightDetailsViewController.m; sourceTree = "<group>"; };
 		7AF2383A14A65F59009854CC /* ISYControllerConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYControllerConfigViewController.h; sourceTree = "<group>"; };
 		7AF2383B14A65F59009854CC /* ISYControllerConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYControllerConfigViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,8 +119,8 @@
 				7AEFB99114A4ECD900337F48 /* ISYControllerSceneViewController.m */,
 				7AF2383A14A65F59009854CC /* ISYControllerConfigViewController.h */,
 				7AF2383B14A65F59009854CC /* ISYControllerConfigViewController.m */,
-				7AEFB9AD14A5408700337F48 /* SceneDetailsViewController.h */,
-				7AEFB9AE14A5408700337F48 /* SceneDetailsViewController.m */,
+				7AEFB9AD14A5408700337F48 /* LightDetailsViewController.h */,
+				7AEFB9AE14A5408700337F48 /* LightDetailsViewController.m */,
 				7AEFB97B14A4ECD800337F48 /* Supporting Files */,
 			);
 			path = ISYController;
@@ -252,7 +252,7 @@
 				7AEFB99214A4ECD900337F48 /* ISYControllerSceneViewController.m in Sources */,
 				7AEFB99F14A4ED2200337F48 /* ISYBrain.m in Sources */,
 				7AEFB9A314A4ED3A00337F48 /* ISYDevice.m in Sources */,
-				7AEFB9AF14A5408700337F48 /* SceneDetailsViewController.m in Sources */,
+				7AEFB9AF14A5408700337F48 /* LightDetailsViewController.m in Sources */,
 				7AF2383C14A65F59009854CC /* ISYControllerConfigViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

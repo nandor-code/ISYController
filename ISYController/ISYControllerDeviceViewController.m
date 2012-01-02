@@ -9,10 +9,11 @@
 #import "ISYControllerDeviceViewController.h"
 #import "dispatch/dispatch.h"
 
-@interface ISYControllerDeviceViewController()
-
+@interface ISYControllerDeviceViewController() <LightDetailsViewControllerDelegate>
 @property (nonatomic) BOOL bHaveValidData;
-
+- (void)lightDetailsViewControllerClose:(LightDetailsViewController *)controller;
+- (void)toggleDevice:(NSString*)sID setOn:(BOOL)bOn;
+- (void)dimDevice:(NSString*)sID setDim:(int)iValue;
 @end
 
 @implementation ISYControllerDeviceViewController
@@ -146,28 +147,44 @@
 - (void)tableView:(UITableView *)aTableView 
   didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self setSelectedDevice:indexPath];
+    if( self.splitViewController == nil )
+    {
+        // iphone version
+        if( ! [self.sCurType isEqualToString:@""] )
+        {
+            NSIndexPath *indexPath = [self.deviceTableView indexPathForSelectedRow];
+                
+            ISYDevice* curDevice = (ISYDevice*)[[self.brain getDeviceArrayForType:self.sCurType] objectAtIndex:[indexPath row]];
+            
+            [self performSegueWithIdentifier:@"LightDeviceDetails" sender:self];
+        }
+    }
+    else
+    {
+        [self setSelectedDevice:indexPath];
+
+    }
 }
 
-- (void)sceneDetailsViewControllerClose:(SceneDetailsViewController *)controller
+- (void)lightDetailsViewControllerClose:(LightDetailsViewController *)controller
 {
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)setSelectedDevice:(NSIndexPath *)indexPath
 {
-    SceneDetailsViewController *sceneDetailsViewController = [[self.splitViewController viewControllers] lastObject];
+    LightDetailsViewController *lightDetailsViewController = [[self.splitViewController viewControllers] lastObject];
     
-    if( sceneDetailsViewController != nil )
+    if( lightDetailsViewController != nil )
     {
-        sceneDetailsViewController.delegate = self;
+        lightDetailsViewController.delegate = self;
         
         ISYDevice* curDevice = (ISYDevice*)[[self.brain getArrayForType:self.eCurType] objectAtIndex:[indexPath row]];
         
-        sceneDetailsViewController.sCurDeviceName = curDevice.sName;
-        sceneDetailsViewController.sCurDeviceID   = curDevice.sID;
+        lightDetailsViewController.sCurDeviceName = curDevice.sName;
+        lightDetailsViewController.sCurDeviceID   = curDevice.sID;
         
-        [sceneDetailsViewController refreshView];
+        [lightDetailsViewController refreshView];
         
         NSLog( @"Selection of %@", curDevice.sName );     
     }
@@ -224,15 +241,15 @@
 {
     NSIndexPath *indexPath = [self.deviceTableView indexPathForSelectedRow];
 
-	if ([segue.identifier isEqualToString:@"DeviceDetails"])
+	if ([segue.identifier isEqualToString:@"LightDeviceDetails"])
 	{
-		SceneDetailsViewController *sceneDetailsViewController = segue.destinationViewController;
-		sceneDetailsViewController.delegate = self;
+		LightDetailsViewController *lightDetailsViewController = segue.destinationViewController;
+		lightDetailsViewController.delegate = self;
                 
-        ISYDevice* curDevice = (ISYDevice*)[[self.brain getArrayForType:self.eCurType] objectAtIndex:[indexPath row]];
+        ISYDevice* curDevice = (ISYDevice*)[[self.brain getDeviceArrayForType:self.sCurType] objectAtIndex:[indexPath row]];
         
-        sceneDetailsViewController.sCurDeviceName = curDevice.sName;
-        sceneDetailsViewController.sCurDeviceID   = curDevice.sID;
+        lightDetailsViewController.sCurDeviceName = curDevice.sName;
+        lightDetailsViewController.sCurDeviceID   = curDevice.sID;
         
         // clear selection
         [self.deviceTableView deselectRowAtIndexPath:[self.deviceTableView indexPathForSelectedRow] animated:NO];
@@ -244,6 +261,9 @@
         ISYControllerDeviceViewController *deviceController = segue.destinationViewController;
         
         [deviceController setCurType:[[self.brain getAllDeviceTypes] objectAtIndex:[indexPath row]]];
+        
+        // clear selection
+        [self.deviceTableView deselectRowAtIndexPath:[self.deviceTableView indexPathForSelectedRow] animated:NO];
     }
 }
 

@@ -7,7 +7,7 @@
 //
 
 #import "ISYControllerConfigViewController.h"
-#import "SceneDetailsViewController.h"
+#import "LightDetailsViewController.h"
 
 @implementation ISYControllerConfigViewController
 @synthesize hostName;
@@ -52,11 +52,11 @@
     [passWord setText:[[NSUserDefaults standardUserDefaults] stringForKey:@"Password"]];
     useSSLSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"UseSSL"];
 
-    SceneDetailsViewController *sceneDetailsViewController = [[self.splitViewController viewControllers] lastObject];
+    LightDetailsViewController *lightDetailsViewController = [[self.splitViewController viewControllers] lastObject];
     
-    if( sceneDetailsViewController != nil )
+    if( lightDetailsViewController != nil )
     {
-        [sceneDetailsViewController showConfigPage];
+        [lightDetailsViewController showConfigPage];
     }
 }
 

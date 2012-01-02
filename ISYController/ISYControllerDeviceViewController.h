@@ -10,9 +10,9 @@
 #import "ISYBrain.h"
 #import "ISYDevice.h"
 #import "ISYControllerAppDelegate.h"
-#import "SceneDetailsViewController.h"
+#import "LightDetailsViewController.h"
 
-@interface ISYControllerDeviceViewController : UIViewController <SceneDetailsViewControllerDelegate>
+@interface ISYControllerDeviceViewController : UIViewController
 
 @property (nonatomic, assign) ISYControllerAppDelegate* delegate;
 @property (nonatomic, weak) ISYBrain* brain;
@@ -21,10 +21,6 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *refreshButton;
 @property (weak, nonatomic) IBOutlet UIView *refreshView;
 @property (nonatomic, strong) NSString* sCurType;
-
-- (void)sceneDetailsViewControllerClose:(SceneDetailsViewController *)controller;
-- (void)toggleDevice:(NSString*)sID setOn:(BOOL)bOn;
-- (void)dimDevice:(NSString*)sID setDim:(int)iValue;
 
 - (void)setCurType:(NSString*)type;
 

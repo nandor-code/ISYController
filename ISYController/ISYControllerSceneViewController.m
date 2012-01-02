@@ -9,14 +9,20 @@
 #import "ISYControllerSceneViewController.h"
 #import "dispatch/dispatch.h"
 
+@interface ISYControllerSceneViewController() <LightDetailsViewControllerDelegate>
+- (void)lightDetailsViewControllerClose:(LightDetailsViewController *)controller;
+- (void)toggleDevice:(NSString*)sID setOn:(BOOL)bOn;
+- (void)dimDevice:(NSString*)sID setDim:(int)iValue;
+@end
+
 @implementation ISYControllerSceneViewController
 
-@synthesize delegate = _delegate;
-@synthesize brain    = _brain;
-@synthesize eCurType = _eCurType;
-@synthesize sceneTableView = _sceneTableView;
-@synthesize refreshButton = _refreshButton;
-@synthesize refreshView = _refreshView;
+@synthesize delegate        = _delegate;
+@synthesize brain           = _brain;
+@synthesize eCurType        = _eCurType;
+@synthesize sceneTableView  = _sceneTableView;
+@synthesize refreshButton   = _refreshButton;
+@synthesize refreshView     = _refreshView;
 
 - (void)didReceiveMemoryWarning
 {
@@ -84,24 +90,24 @@
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    SceneDetailsViewController *sceneDetailsViewController = [[self.splitViewController viewControllers] lastObject];
+    LightDetailsViewController *lightDetailsViewController = [[self.splitViewController viewControllers] lastObject];
     
-    if( sceneDetailsViewController != nil )
+    if( lightDetailsViewController != nil )
     {
-        sceneDetailsViewController.delegate = self;
+        lightDetailsViewController.delegate = self;
         
         ISYDevice* curDevice = (ISYDevice*)[[self.brain getArrayForType:self.eCurType] objectAtIndex:[indexPath row]];
         
-        sceneDetailsViewController.sCurDeviceName = curDevice.sName;
-        sceneDetailsViewController.sCurDeviceID   = curDevice.sID;
+        lightDetailsViewController.sCurDeviceName = curDevice.sName;
+        lightDetailsViewController.sCurDeviceID   = curDevice.sID;
         
-        [sceneDetailsViewController refreshView];
+        [lightDetailsViewController refreshView];
 
         NSLog( @"Selection of %@", curDevice.sName );     
     }
 }
 
-- (void)sceneDetailsViewControllerClose:(SceneDetailsViewController *)controller
+- (void)lightDetailsViewControllerClose:(LightDetailsViewController *)controller
 {
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -133,15 +139,15 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	if ([segue.identifier isEqualToString:@"SceneDetails"])
 	{
-		SceneDetailsViewController *sceneDetailsViewController = segue.destinationViewController;
-		sceneDetailsViewController.delegate = self;
+		LightDetailsViewController *lightDetailsViewController = segue.destinationViewController;
+		lightDetailsViewController.delegate = self;
         
         NSIndexPath *indexPath = [self.sceneTableView indexPathForSelectedRow];
 
         ISYDevice* curDevice = (ISYDevice*)[[self.brain getArrayForType:self.eCurType] objectAtIndex:[indexPath row]];
         
-        sceneDetailsViewController.sCurDeviceName = curDevice.sName;
-        sceneDetailsViewController.sCurDeviceID   = curDevice.sID;
+        lightDetailsViewController.sCurDeviceName = curDevice.sName;
+        lightDetailsViewController.sCurDeviceID   = curDevice.sID;
         
         // clear selection
         [self.sceneTableView deselectRowAtIndexPath:[self.sceneTableView indexPathForSelectedRow] animated:NO];

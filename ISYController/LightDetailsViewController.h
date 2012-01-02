@@ -8,17 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@class SceneDetailsViewController;
+@class LightDetailsViewController;
 
-@protocol SceneDetailsViewControllerDelegate <NSObject>
-- (void)sceneDetailsViewControllerClose:(SceneDetailsViewController*)controller;
+@protocol LightDetailsViewControllerDelegate <NSObject>
+- (void)lightDetailsViewControllerClose:(LightDetailsViewController*)controller;
 - (void)toggleDevice:(NSString*)sID setOn:(BOOL)bOn;
 - (void)dimDevice:(NSString*)sID setDim:(int)iValue;
 @end
 
-@interface SceneDetailsViewController : UIViewController <UISplitViewControllerDelegate>
+@interface LightDetailsViewController : UIViewController <UISplitViewControllerDelegate>
 
-@property (nonatomic, weak) id <SceneDetailsViewControllerDelegate> delegate;
+@property (nonatomic, weak) id <LightDetailsViewControllerDelegate> delegate;
 
 @property (nonatomic, strong) NSString* sCurDeviceName;
 @property (nonatomic, strong) NSString* sCurDeviceID;
