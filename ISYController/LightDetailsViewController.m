@@ -9,10 +9,16 @@
 #import "LightDetailsViewController.h"
 #import "ISYControllerDeviceViewController.h"
 #import "ISYControllerSceneViewController.h"
+#import "dispatch/dispatch.h"
+
+@interface LightDetailsViewController()
+- (void)updateDevice;
+@end
 
 @implementation LightDetailsViewController
 
 @synthesize delegate            = _delegate;
+@synthesize brain               = _brain;
 @synthesize sceneNavBar         = _sceneNavBar;
 @synthesize switchToggle        = _switchToggle;
 @synthesize sliderBar           = _sliderBar;
@@ -72,14 +78,54 @@
     [self refreshView];
     
     [self.splitViewController setDelegate:self];
+    
+    [self updateDevice];
 }
 
+- (void)updateDevice
+{
+    dispatch_queue_t updateQueue = dispatch_queue_create("UpdateQueue", NULL);
+    dispatch_queue_t viewQueue = dispatch_queue_create("ViewQueue", NULL);
+    
+    dispatch_async(updateQueue, ^{
+        dispatch_sync(viewQueue, ^{
+            [self.brain getLightState:self.sCurDeviceID];
+            [self refreshView];
+            sleep(1);
+            [self updateDevice];
+            
+        });
+    });
+    
+    dispatch_release(updateQueue);
+    //dispatch_release(viewQueue);
+}
+     
 - (void)refreshView
 {
+    ISYDevice* myDevice = [self.brain getDevice:self.sCurDeviceID];
+    
+    if( myDevice )
+    {
+        if( [myDevice.fValue floatValue] == 0.0f )
+        {
+            [self.switchToggle setOn:NO];
+            self.lightbulbImage.image = [UIImage imageNamed:@"Light_Off.png"];    
+            [self.sliderBar setValue:0.0f];
+        }
+        else
+        {
+            [self.switchToggle setOn:YES];
+            self.lightbulbImage.image = [UIImage imageNamed:@"Light_On.png"];    
+            [self.sliderBar setValue:[myDevice.fValue floatValue]];
+        }
+    }
+        
     [self.sceneNavBar setTitle:self.sCurDeviceName];
-    self.lightbulbImage.image = [UIImage imageNamed:@"Light_Off.png"];    
     
     [self.configInstructions setHidden:YES];
+
+    [self.view setNeedsDisplay];
 }
 
 - (void)showConfigPage

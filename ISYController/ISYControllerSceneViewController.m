@@ -103,6 +103,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
         
         lightDetailsViewController.sCurDeviceName = curDevice.sName;
         lightDetailsViewController.sCurDeviceID   = curDevice.sID;
+        lightDetailsViewController.brain          = self.brain;
+
         
         [lightDetailsViewController refreshView];
 
@@ -151,6 +153,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
         
         lightDetailsViewController.sCurDeviceName = curDevice.sName;
         lightDetailsViewController.sCurDeviceID   = curDevice.sID;
+        lightDetailsViewController.brain          = self.brain;
         
         // clear selection
         [self.sceneTableView deselectRowAtIndexPath:[self.sceneTableView indexPathForSelectedRow] animated:NO];

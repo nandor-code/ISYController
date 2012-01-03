@@ -10,7 +10,7 @@
 #import <libxml/tree.h>
 #import "ISYDevice.h"
 
-@protocol ISYParserBrainDelgate <NSObject>
+@protocol ISYGeneralParserBrainDelgate <NSObject>
 - (void)createISYDevice:(ISYDevice*)device;
 - (ISYDevice*)getCurrentDevice;
 - (void)createISYScene:(ISYDevice*)device;
@@ -20,7 +20,7 @@
 
 @interface ISYGeneralParser : NSObject <NSXMLParserDelegate>
 
-@property (nonatomic, weak) id <ISYParserBrainDelgate> delegate;
+@property (nonatomic, weak) id <ISYGeneralParserBrainDelgate> delegate;
 
 enum eState
 {

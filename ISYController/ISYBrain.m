@@ -7,14 +7,17 @@
 //
 
 #import "ISYBrain.h"
+#import "ISYGeneralParser.h"
+#import "ISYStateParser.h"
 
 @interface NSURLRequest (DummyInterface)
 + (BOOL)allowsAnyHTTPSCertificateForHost:(NSString*)host;
 + (void)setAllowsAnyHTTPSCertificate:(BOOL)allow forHost:(NSString*)host;
 @end
 
-@interface ISYBrain() <ISYParserBrainDelgate>
+@interface ISYBrain() <NSURLConnectionDataDelegate, ISYGeneralParserBrainDelgate, ISYStateParserBrainDelgate>
 @property (nonatomic) BOOL bError;
+- (void)setValueForDevice:(NSString*)sDeviceID withValue:(NSNumber*)value;
 @end
 
 @implementation ISYBrain
@@ -115,13 +118,18 @@
     return @"OK";
 }
 
-- (NSNumber*)getLightState:(NSURL*)url
+- (void)getLightState:(NSString*)deviceID
 {
-    self.bError = NO;
+    NSURL* url;
+    
+    url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@/%@", 
+                                         self.sServerAddress, 
+                                         [deviceID stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]
+                                         ] ];
     
     NSXMLParser* xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
     
-    ISYGeneralParser* isyParser = [[ISYGeneralParser alloc] initWithDelegate:self];
+    ISYStateParser* isyParser = [[ISYStateParser alloc] initWithDelegate:self andDeviceID:deviceID];
     
     [xmlParser setDelegate:isyParser];
     
@@ -130,11 +138,29 @@
     xmlParser = nil;
     
     isyParser = nil;
-    
-    if( self.bError )
-        return [NSNumber numberWithInt:0];
+}
 
+- (void)setValueForDevice:(NSString*)sDeviceID withValue:(NSNumber*)value
+{
+    ISYDevice* updateDev = [self getDevice:sDeviceID];
     
+    NSLog( @"Setting Value %g for %@", [value floatValue], updateDev );
+    [updateDev setFValue:value];
+}
+
+- (ISYDevice*)getDevice:(NSString*)deviceID
+{
+    for ( id obj in self.isyDeviceStack ) 
+    {
+        if( [obj isKindOfClass:[ISYDevice class]] )
+        {
+            ISYDevice* curDev = (ISYDevice*)obj;
+            if( [curDev.sID isEqualToString:deviceID] )
+                return curDev;
+        }
+    }
+    
+    return nil;
 }
 
 - (NSString*)getData:(NSURL*)url

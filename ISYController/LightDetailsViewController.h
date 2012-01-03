@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ISYBrain.h"
 
 @class LightDetailsViewController;
 
@@ -19,6 +20,7 @@
 @interface LightDetailsViewController : UIViewController <UISplitViewControllerDelegate>
 
 @property (nonatomic, weak) id <LightDetailsViewControllerDelegate> delegate;
+@property (nonatomic, weak) ISYBrain* brain;
 
 @property (nonatomic, strong) NSString* sCurDeviceName;
 @property (nonatomic, strong) NSString* sCurDeviceID;

@@ -201,6 +201,7 @@
         
         lightDetailsViewController.sCurDeviceName = curDevice.sName;
         lightDetailsViewController.sCurDeviceID   = curDevice.sID;
+        lightDetailsViewController.brain          = self.brain;
         
         [lightDetailsViewController refreshView];
         
@@ -268,6 +269,7 @@
         
         lightDetailsViewController.sCurDeviceName = curDevice.sName;
         lightDetailsViewController.sCurDeviceID   = curDevice.sID;
+        lightDetailsViewController.brain          = self.brain;
         
         // clear selection
         [self.deviceTableView deselectRowAtIndexPath:[self.deviceTableView indexPathForSelectedRow] animated:NO];

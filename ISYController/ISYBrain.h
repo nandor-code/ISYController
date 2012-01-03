@@ -9,9 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <libxml/tree.h>
 #import "ISYDevice.h"
-#import "ISYGeneralParser.h"
 
-@interface ISYBrain : NSObject <NSURLConnectionDataDelegate>
+@interface ISYBrain : NSObject
 
 @property (nonatomic, strong) NSMutableDictionary* isyDevicesByType;
 @property (nonatomic, strong) NSMutableArray* isyDeviceStack;
@@ -25,7 +24,9 @@
 - (NSArray*)getDeviceArrayForType:(NSString*)sType;
 - (NSArray*)getAllDeviceTypes;
 
-- (NSNumber*)getLightState:(NSURL*)url;
+- (void)getLightState:(NSString*)deviceID;
+
+- (ISYDevice*)getDevice:(NSString*)deviceID;
 
 - (void)setBaseURL:(NSString*)hostName userName:(NSString*)userName passWord:(NSString*)passWord useSSL:(BOOL)bUseSSL;
 
