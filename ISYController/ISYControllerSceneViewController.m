@@ -132,7 +132,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
         url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@/%@/cmd/DFOF", self.brain.sServerAddress, [sID stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] ]];
     }
     
-    [self.brain execCmd:url];
+    [self.brain execCmd:url forDevice:sID];
 }
 
 - (void)dimDevice:(NSString*)sID setDim:(int)iValue

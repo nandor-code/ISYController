@@ -24,15 +24,15 @@
 
 @property (nonatomic, strong) NSString* sCurDeviceName;
 @property (nonatomic, strong) NSString* sCurDeviceID;
+@property (nonatomic) BOOL bCurrentlyOn;
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *sceneNavBar;
-@property (weak, nonatomic) IBOutlet UISwitch *switchToggle;
 @property (weak, nonatomic) IBOutlet UISlider *sliderBar;
 @property (weak, nonatomic) IBOutlet UIImageView *lightbulbImage;
 @property (weak, nonatomic) IBOutlet UIView *configInstructions;
 
-- (IBAction)toggled:(id)sender;
 - (IBAction)dim:(id)sender;
+- (IBAction)handleTap:(id)sender;
 
 - (void)refreshView;
 - (void)showConfigPage;

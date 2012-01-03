@@ -97,9 +97,15 @@
     }
 }
 
-- (NSString*)execCmd:(NSURL*)url
+- (NSString*)execCmd:(NSURL*)url forDevice:(NSString*)deviceID
 {
     self.bError = NO;
+    
+    // lock the device from updates until we are done.
+    
+    ISYDevice* isyDevice = [self getDevice:deviceID];
+    
+    isyDevice.bLocked = YES;
     
     NSXMLParser* xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
     
@@ -112,6 +118,8 @@
     xmlParser = nil;
     isyParser = nil;
     
+    isyDevice.bLocked = NO;
+
     if( self.bError )
         return @"ERROR";
     
@@ -120,6 +128,11 @@
 
 - (void)getLightState:(NSString*)deviceID
 {
+    ISYDevice* updateDev = [self getDevice:deviceID];
+
+    if( updateDev.bLocked )
+        return;
+    
     NSURL* url;
     
     url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@/%@", 
@@ -144,8 +157,8 @@
 {
     ISYDevice* updateDev = [self getDevice:sDeviceID];
     
-    NSLog( @"Setting Value %g for %@", [value floatValue], updateDev );
-    [updateDev setFValue:value];
+    NSLog( @"Setting Value %g for %@ Locked = %d", [value floatValue], updateDev, updateDev.bLocked );
+    [updateDev setDeviceValue:value];
 }
 
 - (ISYDevice*)getDevice:(NSString*)deviceID

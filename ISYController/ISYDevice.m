@@ -15,6 +15,7 @@
 @synthesize sID        = _sID;
 @synthesize sType      = _sType;
 @synthesize fValue     = _fValue;
+@synthesize bLocked    = _bLocked;
 
 + (NSString*)getDeviceTypeByID:(NSString*)typeID
 {
@@ -38,6 +39,8 @@
     
     self.deviceType = type;
     
+    self.bLocked = NO;
+    
     return self;
 }
 
@@ -53,17 +56,34 @@
 
 - (void)setDeviceName:(NSString *)deviceName
 {
+    if( self.bLocked )
+        return;
+
     self.sName = deviceName;
 }
 
 - (void)setDeviceID:(NSString *)deviceID
 {
+    if( self.bLocked )
+        return;
+
     self.sID = deviceID;
 }
 
 - (void)setDeviceTypeName:(NSString *)deviceType
 {
+    if( self.bLocked )
+        return;
+
     self.sType = deviceType;
+}
+
+- (void)setDeviceValue:(NSNumber*)deviceValue
+{
+    if( self.bLocked )
+        return;
+    
+    self.fValue = deviceValue;
 }
 
 - (NSComparisonResult)compareDevices:(ISYDevice *)p

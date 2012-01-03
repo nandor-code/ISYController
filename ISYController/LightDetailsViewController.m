@@ -12,7 +12,11 @@
 #import "dispatch/dispatch.h"
 
 @interface LightDetailsViewController()
+
+@property (nonatomic) BOOL bStopUpdates;
+
 - (void)updateDevice;
+
 @end
 
 @implementation LightDetailsViewController
@@ -20,12 +24,13 @@
 @synthesize delegate            = _delegate;
 @synthesize brain               = _brain;
 @synthesize sceneNavBar         = _sceneNavBar;
-@synthesize switchToggle        = _switchToggle;
 @synthesize sliderBar           = _sliderBar;
 @synthesize lightbulbImage      = _lightbulbImage;
 @synthesize configInstructions  = _configInstructions;
 @synthesize sCurDeviceName      = _sCurDeviceName;
 @synthesize sCurDeviceID        = _sCurDeviceID;
+@synthesize bStopUpdates        = _bStopUpdates;
+@synthesize bCurrentlyOn        = _bCurrentlyOn;
 
 - (NSString*)sCurDeviceName
 {
@@ -75,6 +80,8 @@
 {
     [super viewDidLoad];
     
+    self.bStopUpdates = NO;
+    
     [self refreshView];
     
     [self.splitViewController setDelegate:self];
@@ -89,8 +96,11 @@
     
     dispatch_async(updateQueue, ^{
         dispatch_sync(viewQueue, ^{
-            [self.brain getLightState:self.sCurDeviceID];
-            [self refreshView];
+            if( !self.bStopUpdates )
+            {
+                [self.brain getLightState:self.sCurDeviceID];
+                [self refreshView];
+            }
             sleep(1);
             [self updateDevice];
             
@@ -103,21 +113,30 @@
      
 - (void)refreshView
 {
+    if( self.bStopUpdates )
+        return;
+    
     ISYDevice* myDevice = [self.brain getDevice:self.sCurDeviceID];
     
     if( myDevice )
     {
         if( [myDevice.fValue floatValue] == 0.0f )
         {
-            [self.switchToggle setOn:NO];
+            self.bCurrentlyOn = NO;
+            
             self.lightbulbImage.image = [UIImage imageNamed:@"Light_Off.png"];    
-            [self.sliderBar setValue:0.0f];
+            
+            if( self.sliderBar.value != 0.0f )
+                [self.sliderBar setValue:0.0f];
         }
         else
         {
-            [self.switchToggle setOn:YES];
-            self.lightbulbImage.image = [UIImage imageNamed:@"Light_On.png"];    
-            [self.sliderBar setValue:[myDevice.fValue floatValue]];
+            self.bCurrentlyOn = YES;
+
+            self.lightbulbImage.image = [UIImage imageNamed:@"Light_On.png"];  
+            
+            if( self.sliderBar.value != [myDevice.fValue floatValue] )
+                [self.sliderBar setValue:[myDevice.fValue floatValue]];
         }
     }
         
@@ -125,6 +144,7 @@
     
     [self.configInstructions setHidden:YES];
 
+    [self.lightbulbImage setNeedsDisplay];
     [self.view setNeedsDisplay];
 }
 
@@ -136,7 +156,6 @@
 - (void)viewDidUnload
 {
     [self setSceneNavBar:nil];
-    [self setSwitchToggle:nil];
     [self setSliderBar:nil];
     [self setLightbulbImage:nil];
     [self setConfigInstructions:nil];
@@ -151,13 +170,17 @@
     return YES;
 }
 
-- (IBAction)toggled:(id)sender
+- (IBAction)handleTap:(id)sender
 {
-    BOOL bOn = !self.switchToggle.on;
+    self.bStopUpdates = YES;
+        
+    self.bCurrentlyOn = !self.bCurrentlyOn;
     
-	[self.delegate toggleDevice:self.sCurDeviceID setOn:bOn];
+	[self.delegate toggleDevice:self.sCurDeviceID setOn:self.bCurrentlyOn];
     
-    if( bOn )
+    [self.brain getLightState:self.sCurDeviceID];
+    
+    if( self.bCurrentlyOn )
     {
         self.lightbulbImage.image = [UIImage imageNamed:@"Light_On.png"];
     }
@@ -165,10 +188,14 @@
     {
         self.lightbulbImage.image = [UIImage imageNamed:@"Light_Off.png"];
     }
+    
+    self.bStopUpdates = NO;
 }
 
 - (IBAction)dim:(id)sender
 {
+    self.bStopUpdates = YES;
+
     int iValue = (int)self.sliderBar.value;
     
     if( iValue > 1 )
@@ -182,6 +209,8 @@
         self.lightbulbImage.image = [UIImage imageNamed:@"Light_Off.png"];
 
     }
+
+    self.bStopUpdates = NO;
 }
 
 // split view controls

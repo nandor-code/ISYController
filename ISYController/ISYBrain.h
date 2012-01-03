@@ -18,7 +18,7 @@
 @property (nonatomic, strong) NSString* sServerAddress;
 
 - (NSString*)getData:(NSURL*)url;
-- (NSString*)execCmd:(NSURL*)url;
+- (NSString*)execCmd:(NSURL*)url forDevice:(NSString*)deviceID;
 
 - (NSMutableArray*)getArrayForType:(enum eISYDeviceType)type;
 - (NSArray*)getDeviceArrayForType:(NSString*)sType;

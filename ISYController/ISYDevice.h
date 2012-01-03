@@ -24,6 +24,7 @@ enum eISYDeviceType
 @property (nonatomic, copy) NSString* sID;
 @property (nonatomic, copy) NSString* sType;
 @property (nonatomic, copy) NSNumber* fValue;
+@property (nonatomic) BOOL bLocked;
 
 - (id)initWithType:(enum eISYDeviceType)type;
 - (id)initWithType:(enum eISYDeviceType)type withName:(NSString*)name;
@@ -31,6 +32,7 @@ enum eISYDeviceType
 - (void)setDeviceName:(NSString *)deviceName;
 - (void)setDeviceID:(NSString *)deviceID;
 - (void)setDeviceTypeName:(NSString *)deviceType;
+- (void)setDeviceValue:(NSNumber*)deviceValue;
 
 - (NSComparisonResult)compareDevices:(ISYDevice *)p;
 
