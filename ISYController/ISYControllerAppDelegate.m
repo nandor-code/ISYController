@@ -7,6 +7,7 @@
 //
 
 #import "ISYControllerAppDelegate.h"
+#import "ISYServiceExample.h"
 
 @implementation ISYControllerAppDelegate
 
@@ -47,6 +48,9 @@
     {
         self.tabBar = (UITabBarController*)self.window.rootViewController;
     }
+    
+    ISYServiceExample* example1 = [[ISYServiceExample alloc] init];
+    [example1 run];
     
     return YES;
 }

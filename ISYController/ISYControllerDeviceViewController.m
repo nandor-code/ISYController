@@ -170,9 +170,9 @@
         // iphone version
         if( ! [self.sCurType isEqualToString:@""] )
         {
-            NSIndexPath *indexPath = [self.deviceTableView indexPathForSelectedRow];
+            //NSIndexPath *indexPath = [self.deviceTableView indexPathForSelectedRow];
                 
-            ISYDevice* curDevice = (ISYDevice*)[[self.brain getDeviceArrayForType:self.sCurType] objectAtIndex:[indexPath row]];
+            //ISYDevice* curDevice = (ISYDevice*)[[self.brain getDeviceArrayForType:self.sCurType] objectAtIndex:[indexPath row]];
             
             [self performSegueWithIdentifier:@"LightDeviceDetails" sender:self];
         }

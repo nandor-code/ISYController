@@ -8,6 +8,114 @@
 
 /* Begin PBXBuildFile section */
 		7A0442E514B2576D00A5E4DB /* ISYStateParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0442E414B2576D00A5E4DB /* ISYStateParser.m */; };
+		7A2D297014B4DFFC0012C059 /* ISYAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D289914B4DFFC0012C059 /* ISYAction.m */; };
+		7A2D297114B4DFFC0012C059 /* ISYActions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D289B14B4DFFC0012C059 /* ISYActions.m */; };
+		7A2D297214B4DFFC0012C059 /* ISYAddNodeParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D289D14B4DFFC0012C059 /* ISYAddNodeParam.m */; };
+		7A2D297314B4DFFC0012C059 /* ISYBatchModeParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D289F14B4DFFC0012C059 /* ISYBatchModeParam.m */; };
+		7A2D297414B4DFFC0012C059 /* ISYBatteryDeviceWriteModeParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28A114B4DFFC0012C059 /* ISYBatteryDeviceWriteModeParam.m */; };
+		7A2D297514B4DFFC0012C059 /* ISYconfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28A314B4DFFC0012C059 /* ISYconfiguration.m */; };
+		7A2D297614B4DFFC0012C059 /* ISYControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28A514B4DFFC0012C059 /* ISYControl.m */; };
+		7A2D297714B4DFFC0012C059 /* ISYControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28A714B4DFFC0012C059 /* ISYControls.m */; };
+		7A2D297814B4DFFC0012C059 /* ISYCredentialsParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28A914B4DFFC0012C059 /* ISYCredentialsParam.m */; };
+		7A2D297914B4DFFC0012C059 /* ISYCurrentSystemStatusParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28AB14B4DFFC0012C059 /* ISYCurrentSystemStatusParam.m */; };
+		7A2D297A14B4DFFC0012C059 /* ISYDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28AD14B4DFFC0012C059 /* ISYDateTime.m */; };
+		7A2D297B14B4DFFC0012C059 /* ISYDBG.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28AF14B4DFFC0012C059 /* ISYDBG.m */; };
+		7A2D297C14B4DFFC0012C059 /* ISYDDNSHost.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28B114B4DFFC0012C059 /* ISYDDNSHost.m */; };
+		7A2D297D14B4DFFC0012C059 /* ISYDDNSHostAndIPParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28B314B4DFFC0012C059 /* ISYDDNSHostAndIPParam.m */; };
+		7A2D297E14B4DFFC0012C059 /* ISYDDNSHostParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28B514B4DFFC0012C059 /* ISYDDNSHostParam.m */; };
+		7A2D297F14B4DFFC0012C059 /* ISYDebugOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28B714B4DFFC0012C059 /* ISYDebugOptions.m */; };
+		7A2D298014B4DFFC0012C059 /* ISYDeviceRoot.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28B914B4DFFC0012C059 /* ISYDeviceRoot.m */; };
+		7A2D298114B4DFFC0012C059 /* ISYDeviceSpecifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28BB14B4DFFC0012C059 /* ISYDeviceSpecifications.m */; };
+		7A2D298214B4DFFC0012C059 /* ISYDiscoverNodesParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28BD14B4DFFC0012C059 /* ISYDiscoverNodesParam.m */; };
+		7A2D298314B4DFFC0012C059 /* ISYDriverError.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28BF14B4DFFC0012C059 /* ISYDriverError.m */; };
+		7A2D298414B4DFFC0012C059 /* ISYEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28C114B4DFFC0012C059 /* ISYEmpty.m */; };
+		7A2D298514B4DFFC0012C059 /* ISYEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28C314B4DFFC0012C059 /* ISYEvent.m */; };
+		7A2D298614B4DFFC0012C059 /* ISYFeature.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28C514B4DFFC0012C059 /* ISYFeature.m */; };
+		7A2D298714B4DFFC0012C059 /* ISYFeatures.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28C714B4DFFC0012C059 /* ISYFeatures.m */; };
+		7A2D298814B4DFFC0012C059 /* ISYfolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28C914B4DFFC0012C059 /* ISYfolder.m */; };
+		7A2D298914B4DFFC0012C059 /* ISYGetVariableParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28CB14B4DFFC0012C059 /* ISYGetVariableParam.m */; };
+		7A2D298A14B4DFFC0012C059 /* ISYGetVariablesParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28CD14B4DFFC0012C059 /* ISYGetVariablesParam.m */; };
+		7A2D298B14B4DFFC0012C059 /* ISYgroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28CF14B4DFFC0012C059 /* ISYgroup.m */; };
+		7A2D298C14B4DFFC0012C059 /* ISYIDNameNodeTypeParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28D114B4DFFC0012C059 /* ISYIDNameNodeTypeParam.m */; };
+		7A2D298D14B4DFFC0012C059 /* ISYIDNameParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28D314B4DFFC0012C059 /* ISYIDNameParam.m */; };
+		7A2D298E14B4DFFC0012C059 /* ISYIDParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28D514B4DFFC0012C059 /* ISYIDParam.m */; };
+		7A2D298F14B4DFFC0012C059 /* ISYInternetAccessParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28D714B4DFFC0012C059 /* ISYInternetAccessParam.m */; };
+		7A2D299014B4DFFC0012C059 /* ISYIsSubscribedParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28D914B4DFFC0012C059 /* ISYIsSubscribedParam.m */; };
+		7A2D299114B4DFFC0012C059 /* ISYLastError.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28DB14B4DFFC0012C059 /* ISYLastError.m */; };
+		7A2D299214B4DFFC0012C059 /* ISYLinkingModeParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28DD14B4DFFC0012C059 /* ISYLinkingModeParam.m */; };
+		7A2D299314B4DFFC0012C059 /* ISYMoveNodeParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28DF14B4DFFC0012C059 /* ISYMoveNodeParam.m */; };
+		7A2D299414B4DFFC0012C059 /* ISYNameParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28E114B4DFFC0012C059 /* ISYNameParam.m */; };
+		7A2D299514B4DFFC0012C059 /* ISYnode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28E314B4DFFC0012C059 /* ISYnode.m */; };
+		7A2D299614B4DFFC0012C059 /* ISYNodeControllerParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28E514B4DFFC0012C059 /* ISYNodeControllerParam.m */; };
+		7A2D299714B4DFFC0012C059 /* ISYNodeGroupParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28E714B4DFFC0012C059 /* ISYNodeGroupParam.m */; };
+		7A2D299814B4DFFC0012C059 /* ISYNodeHierarchyParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28E914B4DFFC0012C059 /* ISYNodeHierarchyParam.m */; };
+		7A2D299914B4DFFC0012C059 /* ISYNodeParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28EB14B4DFFC0012C059 /* ISYNodeParam.m */; };
+		7A2D299A14B4DFFC0012C059 /* ISYNodeParent.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28ED14B4DFFC0012C059 /* ISYNodeParent.m */; };
+		7A2D299B14B4DFFC0012C059 /* ISYnodes.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28EF14B4DFFC0012C059 /* ISYnodes.m */; };
+		7A2D299C14B4DFFC0012C059 /* ISYNotificationsOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28F114B4DFFC0012C059 /* ISYNotificationsOptions.m */; };
+		7A2D299D14B4DFFC0012C059 /* ISYNTPOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28F314B4DFFC0012C059 /* ISYNTPOptions.m */; };
+		7A2D299E14B4DFFC0012C059 /* ISYPowerInfoParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28F514B4DFFC0012C059 /* ISYPowerInfoParam.m */; };
+		7A2D299F14B4DFFC0012C059 /* ISYProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28F714B4DFFC0012C059 /* ISYProduct.m */; };
+		7A2D29A014B4DFFC0012C059 /* ISYProgramOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28F914B4DFFC0012C059 /* ISYProgramOptions.m */; };
+		7A2D29A114B4DFFC0012C059 /* ISYQueryParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28FB14B4DFFC0012C059 /* ISYQueryParam.m */; };
+		7A2D29A214B4DFFC0012C059 /* ISYReplaceDeviceParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28FD14B4DFFC0012C059 /* ISYReplaceDeviceParam.m */; };
+		7A2D29A314B4DFFC0012C059 /* ISYRestoreDeviceParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D28FF14B4DFFC0012C059 /* ISYRestoreDeviceParam.m */; };
+		7A2D29A414B4DFFC0012C059 /* ISYRestoreDevicesParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D290114B4DFFC0012C059 /* ISYRestoreDevicesParam.m */; };
+		7A2D29A514B4DFFC0012C059 /* ISYSceneProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D290314B4DFFC0012C059 /* ISYSceneProfile.m */; };
+		7A2D29A614B4DFFC0012C059 /* ISYSceneProfiles.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D290514B4DFFC0012C059 /* ISYSceneProfiles.m */; };
+		7A2D29A714B4DFFC0012C059 /* ISYSecuritySystemActionParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D290714B4DFFC0012C059 /* ISYSecuritySystemActionParam.m */; };
+		7A2D29A814B4DFFC0012C059 /* ISYService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D290914B4DFFC0012C059 /* ISYService.m */; };
+		7A2D29A914B4DFFC0012C059 /* ISYServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D290B14B4DFFC0012C059 /* ISYServices.m */; };
+		7A2D29AA14B4DFFC0012C059 /* ISYSetDebugLevelParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D290D14B4DFFC0012C059 /* ISYSetDebugLevelParam.m */; };
+		7A2D29AB14B4DFFC0012C059 /* ISYSetNodeEnabledParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D290F14B4DFFC0012C059 /* ISYSetNodeEnabledParam.m */; };
+		7A2D29AC14B4DFFC0012C059 /* ISYSetSceneProfileParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D291114B4DFFC0012C059 /* ISYSetSceneProfileParam.m */; };
+		7A2D29AD14B4DFFC0012C059 /* ISYSetVariableParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D291314B4DFFC0012C059 /* ISYSetVariableParam.m */; };
+		7A2D29AE14B4DFFC0012C059 /* ISYSMTPConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D291514B4DFFC0012C059 /* ISYSMTPConfiguration.m */; };
+		7A2D29AF14B4DFFC0012C059 /* ISYStopNodesDiscoveryParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D291714B4DFFC0012C059 /* ISYStopNodesDiscoveryParam.m */; };
+		7A2D29B014B4DFFC0012C059 /* ISYSubscription.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D291914B4DFFC0012C059 /* ISYSubscription.m */; };
+		7A2D29B114B4DFFC0012C059 /* ISYSubscriptionParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D291B14B4DFFC0012C059 /* ISYSubscriptionParam.m */; };
+		7A2D29B214B4DFFC0012C059 /* ISYSystemOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D291D14B4DFFC0012C059 /* ISYSystemOptions.m */; };
+		7A2D29B314B4DFFC0012C059 /* ISYSystemStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D291F14B4DFFC0012C059 /* ISYSystemStatus.m */; };
+		7A2D29B414B4DFFC0012C059 /* ISYUDIDefaultResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D292114B4DFFC0012C059 /* ISYUDIDefaultResponse.m */; };
+		7A2D29B514B4DFFC0012C059 /* ISYUDIIntResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D292314B4DFFC0012C059 /* ISYUDIIntResponse.m */; };
+		7A2D29B614B4DFFC0012C059 /* ISYUDIServiceParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D292514B4DFFC0012C059 /* ISYUDIServiceParam.m */; };
+		7A2D29B714B4DFFC0012C059 /* ISYUDITimeResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D292714B4DFFC0012C059 /* ISYUDITimeResponse.m */; };
+		7A2D29B814B4DFFC0012C059 /* ISYUDLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D292914B4DFFC0012C059 /* ISYUDLink.m */; };
+		7A2D29B914B4DFFC0012C059 /* ISYUDNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D292B14B4DFFC0012C059 /* ISYUDNode.m */; };
+		7A2D29BA14B4DFFC0012C059 /* ISYUnsubscriptionParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D292D14B4DFFC0012C059 /* ISYUnsubscriptionParam.m */; };
+		7A2D29BB14B4DFFC0012C059 /* ISYUPnPInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D292F14B4DFFC0012C059 /* ISYUPnPInfo.m */; };
+		7A2D29BC14B4DFFC0012C059 /* ISYUPnPSpecifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D293114B4DFFC0012C059 /* ISYUPnPSpecifications.m */; };
+		7A2D29BD14B4DFFC0012C059 /* ISYVariable.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D293314B4DFFC0012C059 /* ISYVariable.m */; };
+		7A2D29BE14B4DFFC0012C059 /* ISYVariables.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D293514B4DFFC0012C059 /* ISYVariables.m */; };
+		7A2D29BF14B4DFFC0012C059 /* Soap+Prefix.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D293714B4DFFC0012C059 /* Soap+Prefix.m */; };
+		7A2D29C014B4DFFC0012C059 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D293A14B4DFFC0012C059 /* NSData+Base64.m */; };
+		7A2D29C114B4DFFC0012C059 /* NSMutableArray+Soap.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D293C14B4DFFC0012C059 /* NSMutableArray+Soap.m */; };
+		7A2D29C214B4DFFC0012C059 /* Soap.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D293E14B4DFFC0012C059 /* Soap.m */; };
+		7A2D29C314B4DFFC0012C059 /* SoapArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D294014B4DFFC0012C059 /* SoapArray.m */; };
+		7A2D29C414B4DFFC0012C059 /* SoapFault.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D294314B4DFFC0012C059 /* SoapFault.m */; };
+		7A2D29C514B4DFFC0012C059 /* SoapHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D294514B4DFFC0012C059 /* SoapHandler.m */; };
+		7A2D29C614B4DFFC0012C059 /* SoapLiteral.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D294714B4DFFC0012C059 /* SoapLiteral.m */; };
+		7A2D29C714B4DFFC0012C059 /* SoapNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D294914B4DFFC0012C059 /* SoapNil.m */; };
+		7A2D29C814B4DFFC0012C059 /* SoapObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D294B14B4DFFC0012C059 /* SoapObject.m */; };
+		7A2D29C914B4DFFC0012C059 /* SoapParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D294D14B4DFFC0012C059 /* SoapParameter.m */; };
+		7A2D29CA14B4DFFC0012C059 /* SoapReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D294F14B4DFFC0012C059 /* SoapReachability.m */; };
+		7A2D29CB14B4DFFC0012C059 /* SoapRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D295114B4DFFC0012C059 /* SoapRequest.m */; };
+		7A2D29CC14B4DFFC0012C059 /* SoapService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D295314B4DFFC0012C059 /* SoapService.m */; };
+		7A2D29CD14B4DFFC0012C059 /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D295614B4DFFC0012C059 /* CTidy.m */; };
+		7A2D29CE14B4DFFC0012C059 /* CXHTMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D295814B4DFFC0012C059 /* CXHTMLDocument.m */; };
+		7A2D29CF14B4DFFC0012C059 /* CXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D295A14B4DFFC0012C059 /* CXMLDocument.m */; };
+		7A2D29D014B4DFFC0012C059 /* CXMLDocument_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D295C14B4DFFC0012C059 /* CXMLDocument_CreationExtensions.m */; };
+		7A2D29D114B4DFFC0012C059 /* CXMLDocument_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D295E14B4DFFC0012C059 /* CXMLDocument_PrivateExtensions.m */; };
+		7A2D29D214B4DFFC0012C059 /* CXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D296014B4DFFC0012C059 /* CXMLElement.m */; };
+		7A2D29D314B4DFFC0012C059 /* CXMLElement_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D296214B4DFFC0012C059 /* CXMLElement_CreationExtensions.m */; };
+		7A2D29D414B4DFFC0012C059 /* CXMLElement_ElementTreeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D296414B4DFFC0012C059 /* CXMLElement_ElementTreeExtensions.m */; };
+		7A2D29D514B4DFFC0012C059 /* CXMLNamespaceNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D296614B4DFFC0012C059 /* CXMLNamespaceNode.m */; };
+		7A2D29D614B4DFFC0012C059 /* CXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D296814B4DFFC0012C059 /* CXMLNode.m */; };
+		7A2D29D714B4DFFC0012C059 /* CXMLNode_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D296A14B4DFFC0012C059 /* CXMLNode_CreationExtensions.m */; };
+		7A2D29D814B4DFFC0012C059 /* CXMLNode_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D296C14B4DFFC0012C059 /* CXMLNode_PrivateExtensions.m */; };
+		7A2D29D914B4DFFC0012C059 /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D296E14B4DFFC0012C059 /* CXMLNode_XPathExtensions.m */; };
+		7A2D29DE14B4E6180012C059 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2D29DD14B4E6180012C059 /* SystemConfiguration.framework */; };
+		7A2D29E114B4E6D60012C059 /* ISYServiceExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D29E014B4E6D60012C059 /* ISYServiceExample.m */; };
 		7A8B70A014A7EBC900A434B6 /* devices_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A8B709D14A7EBC900A434B6 /* devices_icon.png */; };
 		7A8B70A114A7EBC900A434B6 /* scenes_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A8B709E14A7EBC900A434B6 /* scenes_icon.png */; };
 		7A8B70A214A7EBC900A434B6 /* settings_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A8B709F14A7EBC900A434B6 /* settings_icon.png */; };
@@ -38,6 +146,223 @@
 /* Begin PBXFileReference section */
 		7A0442E314B2576D00A5E4DB /* ISYStateParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYStateParser.h; sourceTree = "<group>"; };
 		7A0442E414B2576D00A5E4DB /* ISYStateParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYStateParser.m; sourceTree = "<group>"; };
+		7A2D289814B4DFFC0012C059 /* ISYAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYAction.h; sourceTree = "<group>"; };
+		7A2D289914B4DFFC0012C059 /* ISYAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYAction.m; sourceTree = "<group>"; };
+		7A2D289A14B4DFFC0012C059 /* ISYActions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYActions.h; sourceTree = "<group>"; };
+		7A2D289B14B4DFFC0012C059 /* ISYActions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYActions.m; sourceTree = "<group>"; };
+		7A2D289C14B4DFFC0012C059 /* ISYAddNodeParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYAddNodeParam.h; sourceTree = "<group>"; };
+		7A2D289D14B4DFFC0012C059 /* ISYAddNodeParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYAddNodeParam.m; sourceTree = "<group>"; };
+		7A2D289E14B4DFFC0012C059 /* ISYBatchModeParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYBatchModeParam.h; sourceTree = "<group>"; };
+		7A2D289F14B4DFFC0012C059 /* ISYBatchModeParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYBatchModeParam.m; sourceTree = "<group>"; };
+		7A2D28A014B4DFFC0012C059 /* ISYBatteryDeviceWriteModeParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYBatteryDeviceWriteModeParam.h; sourceTree = "<group>"; };
+		7A2D28A114B4DFFC0012C059 /* ISYBatteryDeviceWriteModeParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYBatteryDeviceWriteModeParam.m; sourceTree = "<group>"; };
+		7A2D28A214B4DFFC0012C059 /* ISYconfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYconfiguration.h; sourceTree = "<group>"; };
+		7A2D28A314B4DFFC0012C059 /* ISYconfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYconfiguration.m; sourceTree = "<group>"; };
+		7A2D28A414B4DFFC0012C059 /* ISYControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYControl.h; sourceTree = "<group>"; };
+		7A2D28A514B4DFFC0012C059 /* ISYControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYControl.m; sourceTree = "<group>"; };
+		7A2D28A614B4DFFC0012C059 /* ISYControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYControls.h; sourceTree = "<group>"; };
+		7A2D28A714B4DFFC0012C059 /* ISYControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYControls.m; sourceTree = "<group>"; };
+		7A2D28A814B4DFFC0012C059 /* ISYCredentialsParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYCredentialsParam.h; sourceTree = "<group>"; };
+		7A2D28A914B4DFFC0012C059 /* ISYCredentialsParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYCredentialsParam.m; sourceTree = "<group>"; };
+		7A2D28AA14B4DFFC0012C059 /* ISYCurrentSystemStatusParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYCurrentSystemStatusParam.h; sourceTree = "<group>"; };
+		7A2D28AB14B4DFFC0012C059 /* ISYCurrentSystemStatusParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYCurrentSystemStatusParam.m; sourceTree = "<group>"; };
+		7A2D28AC14B4DFFC0012C059 /* ISYDateTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYDateTime.h; sourceTree = "<group>"; };
+		7A2D28AD14B4DFFC0012C059 /* ISYDateTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYDateTime.m; sourceTree = "<group>"; };
+		7A2D28AE14B4DFFC0012C059 /* ISYDBG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYDBG.h; sourceTree = "<group>"; };
+		7A2D28AF14B4DFFC0012C059 /* ISYDBG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYDBG.m; sourceTree = "<group>"; };
+		7A2D28B014B4DFFC0012C059 /* ISYDDNSHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYDDNSHost.h; sourceTree = "<group>"; };
+		7A2D28B114B4DFFC0012C059 /* ISYDDNSHost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYDDNSHost.m; sourceTree = "<group>"; };
+		7A2D28B214B4DFFC0012C059 /* ISYDDNSHostAndIPParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYDDNSHostAndIPParam.h; sourceTree = "<group>"; };
+		7A2D28B314B4DFFC0012C059 /* ISYDDNSHostAndIPParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYDDNSHostAndIPParam.m; sourceTree = "<group>"; };
+		7A2D28B414B4DFFC0012C059 /* ISYDDNSHostParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYDDNSHostParam.h; sourceTree = "<group>"; };
+		7A2D28B514B4DFFC0012C059 /* ISYDDNSHostParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYDDNSHostParam.m; sourceTree = "<group>"; };
+		7A2D28B614B4DFFC0012C059 /* ISYDebugOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYDebugOptions.h; sourceTree = "<group>"; };
+		7A2D28B714B4DFFC0012C059 /* ISYDebugOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYDebugOptions.m; sourceTree = "<group>"; };
+		7A2D28B814B4DFFC0012C059 /* ISYDeviceRoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYDeviceRoot.h; sourceTree = "<group>"; };
+		7A2D28B914B4DFFC0012C059 /* ISYDeviceRoot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYDeviceRoot.m; sourceTree = "<group>"; };
+		7A2D28BA14B4DFFC0012C059 /* ISYDeviceSpecifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYDeviceSpecifications.h; sourceTree = "<group>"; };
+		7A2D28BB14B4DFFC0012C059 /* ISYDeviceSpecifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYDeviceSpecifications.m; sourceTree = "<group>"; };
+		7A2D28BC14B4DFFC0012C059 /* ISYDiscoverNodesParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYDiscoverNodesParam.h; sourceTree = "<group>"; };
+		7A2D28BD14B4DFFC0012C059 /* ISYDiscoverNodesParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYDiscoverNodesParam.m; sourceTree = "<group>"; };
+		7A2D28BE14B4DFFC0012C059 /* ISYDriverError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYDriverError.h; sourceTree = "<group>"; };
+		7A2D28BF14B4DFFC0012C059 /* ISYDriverError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYDriverError.m; sourceTree = "<group>"; };
+		7A2D28C014B4DFFC0012C059 /* ISYEmpty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYEmpty.h; sourceTree = "<group>"; };
+		7A2D28C114B4DFFC0012C059 /* ISYEmpty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYEmpty.m; sourceTree = "<group>"; };
+		7A2D28C214B4DFFC0012C059 /* ISYEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYEvent.h; sourceTree = "<group>"; };
+		7A2D28C314B4DFFC0012C059 /* ISYEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYEvent.m; sourceTree = "<group>"; };
+		7A2D28C414B4DFFC0012C059 /* ISYFeature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYFeature.h; sourceTree = "<group>"; };
+		7A2D28C514B4DFFC0012C059 /* ISYFeature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYFeature.m; sourceTree = "<group>"; };
+		7A2D28C614B4DFFC0012C059 /* ISYFeatures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYFeatures.h; sourceTree = "<group>"; };
+		7A2D28C714B4DFFC0012C059 /* ISYFeatures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYFeatures.m; sourceTree = "<group>"; };
+		7A2D28C814B4DFFC0012C059 /* ISYfolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYfolder.h; sourceTree = "<group>"; };
+		7A2D28C914B4DFFC0012C059 /* ISYfolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYfolder.m; sourceTree = "<group>"; };
+		7A2D28CA14B4DFFC0012C059 /* ISYGetVariableParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYGetVariableParam.h; sourceTree = "<group>"; };
+		7A2D28CB14B4DFFC0012C059 /* ISYGetVariableParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYGetVariableParam.m; sourceTree = "<group>"; };
+		7A2D28CC14B4DFFC0012C059 /* ISYGetVariablesParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYGetVariablesParam.h; sourceTree = "<group>"; };
+		7A2D28CD14B4DFFC0012C059 /* ISYGetVariablesParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYGetVariablesParam.m; sourceTree = "<group>"; };
+		7A2D28CE14B4DFFC0012C059 /* ISYgroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYgroup.h; sourceTree = "<group>"; };
+		7A2D28CF14B4DFFC0012C059 /* ISYgroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYgroup.m; sourceTree = "<group>"; };
+		7A2D28D014B4DFFC0012C059 /* ISYIDNameNodeTypeParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYIDNameNodeTypeParam.h; sourceTree = "<group>"; };
+		7A2D28D114B4DFFC0012C059 /* ISYIDNameNodeTypeParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYIDNameNodeTypeParam.m; sourceTree = "<group>"; };
+		7A2D28D214B4DFFC0012C059 /* ISYIDNameParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYIDNameParam.h; sourceTree = "<group>"; };
+		7A2D28D314B4DFFC0012C059 /* ISYIDNameParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYIDNameParam.m; sourceTree = "<group>"; };
+		7A2D28D414B4DFFC0012C059 /* ISYIDParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYIDParam.h; sourceTree = "<group>"; };
+		7A2D28D514B4DFFC0012C059 /* ISYIDParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYIDParam.m; sourceTree = "<group>"; };
+		7A2D28D614B4DFFC0012C059 /* ISYInternetAccessParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYInternetAccessParam.h; sourceTree = "<group>"; };
+		7A2D28D714B4DFFC0012C059 /* ISYInternetAccessParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYInternetAccessParam.m; sourceTree = "<group>"; };
+		7A2D28D814B4DFFC0012C059 /* ISYIsSubscribedParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYIsSubscribedParam.h; sourceTree = "<group>"; };
+		7A2D28D914B4DFFC0012C059 /* ISYIsSubscribedParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYIsSubscribedParam.m; sourceTree = "<group>"; };
+		7A2D28DA14B4DFFC0012C059 /* ISYLastError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYLastError.h; sourceTree = "<group>"; };
+		7A2D28DB14B4DFFC0012C059 /* ISYLastError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYLastError.m; sourceTree = "<group>"; };
+		7A2D28DC14B4DFFC0012C059 /* ISYLinkingModeParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYLinkingModeParam.h; sourceTree = "<group>"; };
+		7A2D28DD14B4DFFC0012C059 /* ISYLinkingModeParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYLinkingModeParam.m; sourceTree = "<group>"; };
+		7A2D28DE14B4DFFC0012C059 /* ISYMoveNodeParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYMoveNodeParam.h; sourceTree = "<group>"; };
+		7A2D28DF14B4DFFC0012C059 /* ISYMoveNodeParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYMoveNodeParam.m; sourceTree = "<group>"; };
+		7A2D28E014B4DFFC0012C059 /* ISYNameParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYNameParam.h; sourceTree = "<group>"; };
+		7A2D28E114B4DFFC0012C059 /* ISYNameParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYNameParam.m; sourceTree = "<group>"; };
+		7A2D28E214B4DFFC0012C059 /* ISYnode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYnode.h; sourceTree = "<group>"; };
+		7A2D28E314B4DFFC0012C059 /* ISYnode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYnode.m; sourceTree = "<group>"; };
+		7A2D28E414B4DFFC0012C059 /* ISYNodeControllerParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYNodeControllerParam.h; sourceTree = "<group>"; };
+		7A2D28E514B4DFFC0012C059 /* ISYNodeControllerParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYNodeControllerParam.m; sourceTree = "<group>"; };
+		7A2D28E614B4DFFC0012C059 /* ISYNodeGroupParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYNodeGroupParam.h; sourceTree = "<group>"; };
+		7A2D28E714B4DFFC0012C059 /* ISYNodeGroupParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYNodeGroupParam.m; sourceTree = "<group>"; };
+		7A2D28E814B4DFFC0012C059 /* ISYNodeHierarchyParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYNodeHierarchyParam.h; sourceTree = "<group>"; };
+		7A2D28E914B4DFFC0012C059 /* ISYNodeHierarchyParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYNodeHierarchyParam.m; sourceTree = "<group>"; };
+		7A2D28EA14B4DFFC0012C059 /* ISYNodeParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYNodeParam.h; sourceTree = "<group>"; };
+		7A2D28EB14B4DFFC0012C059 /* ISYNodeParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYNodeParam.m; sourceTree = "<group>"; };
+		7A2D28EC14B4DFFC0012C059 /* ISYNodeParent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYNodeParent.h; sourceTree = "<group>"; };
+		7A2D28ED14B4DFFC0012C059 /* ISYNodeParent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYNodeParent.m; sourceTree = "<group>"; };
+		7A2D28EE14B4DFFC0012C059 /* ISYnodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYnodes.h; sourceTree = "<group>"; };
+		7A2D28EF14B4DFFC0012C059 /* ISYnodes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYnodes.m; sourceTree = "<group>"; };
+		7A2D28F014B4DFFC0012C059 /* ISYNotificationsOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYNotificationsOptions.h; sourceTree = "<group>"; };
+		7A2D28F114B4DFFC0012C059 /* ISYNotificationsOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYNotificationsOptions.m; sourceTree = "<group>"; };
+		7A2D28F214B4DFFC0012C059 /* ISYNTPOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYNTPOptions.h; sourceTree = "<group>"; };
+		7A2D28F314B4DFFC0012C059 /* ISYNTPOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYNTPOptions.m; sourceTree = "<group>"; };
+		7A2D28F414B4DFFC0012C059 /* ISYPowerInfoParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYPowerInfoParam.h; sourceTree = "<group>"; };
+		7A2D28F514B4DFFC0012C059 /* ISYPowerInfoParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYPowerInfoParam.m; sourceTree = "<group>"; };
+		7A2D28F614B4DFFC0012C059 /* ISYProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYProduct.h; sourceTree = "<group>"; };
+		7A2D28F714B4DFFC0012C059 /* ISYProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYProduct.m; sourceTree = "<group>"; };
+		7A2D28F814B4DFFC0012C059 /* ISYProgramOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYProgramOptions.h; sourceTree = "<group>"; };
+		7A2D28F914B4DFFC0012C059 /* ISYProgramOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYProgramOptions.m; sourceTree = "<group>"; };
+		7A2D28FA14B4DFFC0012C059 /* ISYQueryParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYQueryParam.h; sourceTree = "<group>"; };
+		7A2D28FB14B4DFFC0012C059 /* ISYQueryParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYQueryParam.m; sourceTree = "<group>"; };
+		7A2D28FC14B4DFFC0012C059 /* ISYReplaceDeviceParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYReplaceDeviceParam.h; sourceTree = "<group>"; };
+		7A2D28FD14B4DFFC0012C059 /* ISYReplaceDeviceParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYReplaceDeviceParam.m; sourceTree = "<group>"; };
+		7A2D28FE14B4DFFC0012C059 /* ISYRestoreDeviceParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYRestoreDeviceParam.h; sourceTree = "<group>"; };
+		7A2D28FF14B4DFFC0012C059 /* ISYRestoreDeviceParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYRestoreDeviceParam.m; sourceTree = "<group>"; };
+		7A2D290014B4DFFC0012C059 /* ISYRestoreDevicesParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYRestoreDevicesParam.h; sourceTree = "<group>"; };
+		7A2D290114B4DFFC0012C059 /* ISYRestoreDevicesParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYRestoreDevicesParam.m; sourceTree = "<group>"; };
+		7A2D290214B4DFFC0012C059 /* ISYSceneProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYSceneProfile.h; sourceTree = "<group>"; };
+		7A2D290314B4DFFC0012C059 /* ISYSceneProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYSceneProfile.m; sourceTree = "<group>"; };
+		7A2D290414B4DFFC0012C059 /* ISYSceneProfiles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYSceneProfiles.h; sourceTree = "<group>"; };
+		7A2D290514B4DFFC0012C059 /* ISYSceneProfiles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYSceneProfiles.m; sourceTree = "<group>"; };
+		7A2D290614B4DFFC0012C059 /* ISYSecuritySystemActionParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYSecuritySystemActionParam.h; sourceTree = "<group>"; };
+		7A2D290714B4DFFC0012C059 /* ISYSecuritySystemActionParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYSecuritySystemActionParam.m; sourceTree = "<group>"; };
+		7A2D290814B4DFFC0012C059 /* ISYService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYService.h; sourceTree = "<group>"; };
+		7A2D290914B4DFFC0012C059 /* ISYService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYService.m; sourceTree = "<group>"; };
+		7A2D290A14B4DFFC0012C059 /* ISYServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYServices.h; sourceTree = "<group>"; };
+		7A2D290B14B4DFFC0012C059 /* ISYServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYServices.m; sourceTree = "<group>"; };
+		7A2D290C14B4DFFC0012C059 /* ISYSetDebugLevelParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYSetDebugLevelParam.h; sourceTree = "<group>"; };
+		7A2D290D14B4DFFC0012C059 /* ISYSetDebugLevelParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYSetDebugLevelParam.m; sourceTree = "<group>"; };
+		7A2D290E14B4DFFC0012C059 /* ISYSetNodeEnabledParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYSetNodeEnabledParam.h; sourceTree = "<group>"; };
+		7A2D290F14B4DFFC0012C059 /* ISYSetNodeEnabledParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYSetNodeEnabledParam.m; sourceTree = "<group>"; };
+		7A2D291014B4DFFC0012C059 /* ISYSetSceneProfileParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYSetSceneProfileParam.h; sourceTree = "<group>"; };
+		7A2D291114B4DFFC0012C059 /* ISYSetSceneProfileParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYSetSceneProfileParam.m; sourceTree = "<group>"; };
+		7A2D291214B4DFFC0012C059 /* ISYSetVariableParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYSetVariableParam.h; sourceTree = "<group>"; };
+		7A2D291314B4DFFC0012C059 /* ISYSetVariableParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYSetVariableParam.m; sourceTree = "<group>"; };
+		7A2D291414B4DFFC0012C059 /* ISYSMTPConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYSMTPConfiguration.h; sourceTree = "<group>"; };
+		7A2D291514B4DFFC0012C059 /* ISYSMTPConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYSMTPConfiguration.m; sourceTree = "<group>"; };
+		7A2D291614B4DFFC0012C059 /* ISYStopNodesDiscoveryParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYStopNodesDiscoveryParam.h; sourceTree = "<group>"; };
+		7A2D291714B4DFFC0012C059 /* ISYStopNodesDiscoveryParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYStopNodesDiscoveryParam.m; sourceTree = "<group>"; };
+		7A2D291814B4DFFC0012C059 /* ISYSubscription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYSubscription.h; sourceTree = "<group>"; };
+		7A2D291914B4DFFC0012C059 /* ISYSubscription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYSubscription.m; sourceTree = "<group>"; };
+		7A2D291A14B4DFFC0012C059 /* ISYSubscriptionParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYSubscriptionParam.h; sourceTree = "<group>"; };
+		7A2D291B14B4DFFC0012C059 /* ISYSubscriptionParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYSubscriptionParam.m; sourceTree = "<group>"; };
+		7A2D291C14B4DFFC0012C059 /* ISYSystemOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYSystemOptions.h; sourceTree = "<group>"; };
+		7A2D291D14B4DFFC0012C059 /* ISYSystemOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYSystemOptions.m; sourceTree = "<group>"; };
+		7A2D291E14B4DFFC0012C059 /* ISYSystemStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYSystemStatus.h; sourceTree = "<group>"; };
+		7A2D291F14B4DFFC0012C059 /* ISYSystemStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYSystemStatus.m; sourceTree = "<group>"; };
+		7A2D292014B4DFFC0012C059 /* ISYUDIDefaultResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYUDIDefaultResponse.h; sourceTree = "<group>"; };
+		7A2D292114B4DFFC0012C059 /* ISYUDIDefaultResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYUDIDefaultResponse.m; sourceTree = "<group>"; };
+		7A2D292214B4DFFC0012C059 /* ISYUDIIntResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYUDIIntResponse.h; sourceTree = "<group>"; };
+		7A2D292314B4DFFC0012C059 /* ISYUDIIntResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYUDIIntResponse.m; sourceTree = "<group>"; };
+		7A2D292414B4DFFC0012C059 /* ISYUDIServiceParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYUDIServiceParam.h; sourceTree = "<group>"; };
+		7A2D292514B4DFFC0012C059 /* ISYUDIServiceParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYUDIServiceParam.m; sourceTree = "<group>"; };
+		7A2D292614B4DFFC0012C059 /* ISYUDITimeResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYUDITimeResponse.h; sourceTree = "<group>"; };
+		7A2D292714B4DFFC0012C059 /* ISYUDITimeResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYUDITimeResponse.m; sourceTree = "<group>"; };
+		7A2D292814B4DFFC0012C059 /* ISYUDLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYUDLink.h; sourceTree = "<group>"; };
+		7A2D292914B4DFFC0012C059 /* ISYUDLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYUDLink.m; sourceTree = "<group>"; };
+		7A2D292A14B4DFFC0012C059 /* ISYUDNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYUDNode.h; sourceTree = "<group>"; };
+		7A2D292B14B4DFFC0012C059 /* ISYUDNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYUDNode.m; sourceTree = "<group>"; };
+		7A2D292C14B4DFFC0012C059 /* ISYUnsubscriptionParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYUnsubscriptionParam.h; sourceTree = "<group>"; };
+		7A2D292D14B4DFFC0012C059 /* ISYUnsubscriptionParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYUnsubscriptionParam.m; sourceTree = "<group>"; };
+		7A2D292E14B4DFFC0012C059 /* ISYUPnPInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYUPnPInfo.h; sourceTree = "<group>"; };
+		7A2D292F14B4DFFC0012C059 /* ISYUPnPInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYUPnPInfo.m; sourceTree = "<group>"; };
+		7A2D293014B4DFFC0012C059 /* ISYUPnPSpecifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYUPnPSpecifications.h; sourceTree = "<group>"; };
+		7A2D293114B4DFFC0012C059 /* ISYUPnPSpecifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYUPnPSpecifications.m; sourceTree = "<group>"; };
+		7A2D293214B4DFFC0012C059 /* ISYVariable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYVariable.h; sourceTree = "<group>"; };
+		7A2D293314B4DFFC0012C059 /* ISYVariable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYVariable.m; sourceTree = "<group>"; };
+		7A2D293414B4DFFC0012C059 /* ISYVariables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYVariables.h; sourceTree = "<group>"; };
+		7A2D293514B4DFFC0012C059 /* ISYVariables.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYVariables.m; sourceTree = "<group>"; };
+		7A2D293614B4DFFC0012C059 /* Soap+Prefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Soap+Prefix.h"; sourceTree = "<group>"; };
+		7A2D293714B4DFFC0012C059 /* Soap+Prefix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Soap+Prefix.m"; sourceTree = "<group>"; };
+		7A2D293914B4DFFC0012C059 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		7A2D293A14B4DFFC0012C059 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		7A2D293B14B4DFFC0012C059 /* NSMutableArray+Soap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Soap.h"; sourceTree = "<group>"; };
+		7A2D293C14B4DFFC0012C059 /* NSMutableArray+Soap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Soap.m"; sourceTree = "<group>"; };
+		7A2D293D14B4DFFC0012C059 /* Soap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Soap.h; sourceTree = "<group>"; };
+		7A2D293E14B4DFFC0012C059 /* Soap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Soap.m; sourceTree = "<group>"; };
+		7A2D293F14B4DFFC0012C059 /* SoapArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapArray.h; sourceTree = "<group>"; };
+		7A2D294014B4DFFC0012C059 /* SoapArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapArray.m; sourceTree = "<group>"; };
+		7A2D294114B4DFFC0012C059 /* SoapDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapDelegate.h; sourceTree = "<group>"; };
+		7A2D294214B4DFFC0012C059 /* SoapFault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapFault.h; sourceTree = "<group>"; };
+		7A2D294314B4DFFC0012C059 /* SoapFault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapFault.m; sourceTree = "<group>"; };
+		7A2D294414B4DFFC0012C059 /* SoapHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapHandler.h; sourceTree = "<group>"; };
+		7A2D294514B4DFFC0012C059 /* SoapHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapHandler.m; sourceTree = "<group>"; };
+		7A2D294614B4DFFC0012C059 /* SoapLiteral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapLiteral.h; sourceTree = "<group>"; };
+		7A2D294714B4DFFC0012C059 /* SoapLiteral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapLiteral.m; sourceTree = "<group>"; };
+		7A2D294814B4DFFC0012C059 /* SoapNil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapNil.h; sourceTree = "<group>"; };
+		7A2D294914B4DFFC0012C059 /* SoapNil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapNil.m; sourceTree = "<group>"; };
+		7A2D294A14B4DFFC0012C059 /* SoapObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapObject.h; sourceTree = "<group>"; };
+		7A2D294B14B4DFFC0012C059 /* SoapObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapObject.m; sourceTree = "<group>"; };
+		7A2D294C14B4DFFC0012C059 /* SoapParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapParameter.h; sourceTree = "<group>"; };
+		7A2D294D14B4DFFC0012C059 /* SoapParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapParameter.m; sourceTree = "<group>"; };
+		7A2D294E14B4DFFC0012C059 /* SoapReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapReachability.h; sourceTree = "<group>"; };
+		7A2D294F14B4DFFC0012C059 /* SoapReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapReachability.m; sourceTree = "<group>"; };
+		7A2D295014B4DFFC0012C059 /* SoapRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapRequest.h; sourceTree = "<group>"; };
+		7A2D295114B4DFFC0012C059 /* SoapRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapRequest.m; sourceTree = "<group>"; };
+		7A2D295214B4DFFC0012C059 /* SoapService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapService.h; sourceTree = "<group>"; };
+		7A2D295314B4DFFC0012C059 /* SoapService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapService.m; sourceTree = "<group>"; };
+		7A2D295514B4DFFC0012C059 /* CTidy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTidy.h; sourceTree = "<group>"; };
+		7A2D295614B4DFFC0012C059 /* CTidy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTidy.m; sourceTree = "<group>"; };
+		7A2D295714B4DFFC0012C059 /* CXHTMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXHTMLDocument.h; sourceTree = "<group>"; };
+		7A2D295814B4DFFC0012C059 /* CXHTMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXHTMLDocument.m; sourceTree = "<group>"; };
+		7A2D295914B4DFFC0012C059 /* CXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument.h; sourceTree = "<group>"; };
+		7A2D295A14B4DFFC0012C059 /* CXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument.m; sourceTree = "<group>"; };
+		7A2D295B14B4DFFC0012C059 /* CXMLDocument_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument_CreationExtensions.h; sourceTree = "<group>"; };
+		7A2D295C14B4DFFC0012C059 /* CXMLDocument_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument_CreationExtensions.m; sourceTree = "<group>"; };
+		7A2D295D14B4DFFC0012C059 /* CXMLDocument_PrivateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument_PrivateExtensions.h; sourceTree = "<group>"; };
+		7A2D295E14B4DFFC0012C059 /* CXMLDocument_PrivateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument_PrivateExtensions.m; sourceTree = "<group>"; };
+		7A2D295F14B4DFFC0012C059 /* CXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement.h; sourceTree = "<group>"; };
+		7A2D296014B4DFFC0012C059 /* CXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement.m; sourceTree = "<group>"; };
+		7A2D296114B4DFFC0012C059 /* CXMLElement_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement_CreationExtensions.h; sourceTree = "<group>"; };
+		7A2D296214B4DFFC0012C059 /* CXMLElement_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement_CreationExtensions.m; sourceTree = "<group>"; };
+		7A2D296314B4DFFC0012C059 /* CXMLElement_ElementTreeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement_ElementTreeExtensions.h; sourceTree = "<group>"; };
+		7A2D296414B4DFFC0012C059 /* CXMLElement_ElementTreeExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement_ElementTreeExtensions.m; sourceTree = "<group>"; };
+		7A2D296514B4DFFC0012C059 /* CXMLNamespaceNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNamespaceNode.h; sourceTree = "<group>"; };
+		7A2D296614B4DFFC0012C059 /* CXMLNamespaceNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNamespaceNode.m; sourceTree = "<group>"; };
+		7A2D296714B4DFFC0012C059 /* CXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode.h; sourceTree = "<group>"; };
+		7A2D296814B4DFFC0012C059 /* CXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode.m; sourceTree = "<group>"; };
+		7A2D296914B4DFFC0012C059 /* CXMLNode_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_CreationExtensions.h; sourceTree = "<group>"; };
+		7A2D296A14B4DFFC0012C059 /* CXMLNode_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_CreationExtensions.m; sourceTree = "<group>"; };
+		7A2D296B14B4DFFC0012C059 /* CXMLNode_PrivateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_PrivateExtensions.h; sourceTree = "<group>"; };
+		7A2D296C14B4DFFC0012C059 /* CXMLNode_PrivateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_PrivateExtensions.m; sourceTree = "<group>"; };
+		7A2D296D14B4DFFC0012C059 /* CXMLNode_XPathExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_XPathExtensions.h; sourceTree = "<group>"; };
+		7A2D296E14B4DFFC0012C059 /* CXMLNode_XPathExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_XPathExtensions.m; sourceTree = "<group>"; };
+		7A2D296F14B4DFFC0012C059 /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
+		7A2D29DD14B4E6180012C059 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7A2D29DF14B4E6D60012C059 /* ISYServiceExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISYServiceExample.h; sourceTree = "<group>"; };
+		7A2D29E014B4E6D60012C059 /* ISYServiceExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISYServiceExample.m; sourceTree = "<group>"; };
 		7A8B709D14A7EBC900A434B6 /* devices_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = devices_icon.png; sourceTree = "<group>"; };
 		7A8B709E14A7EBC900A434B6 /* scenes_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scenes_icon.png; sourceTree = "<group>"; };
 		7A8B709F14A7EBC900A434B6 /* settings_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings_icon.png; sourceTree = "<group>"; };
@@ -81,6 +406,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A2D29DE14B4E6180012C059 /* SystemConfiguration.framework in Frameworks */,
 				7ACE40C014B151B80095E89B /* QuartzCore.framework in Frameworks */,
 				7AEFB9A514A4ED9300337F48 /* libxml2.dylib in Frameworks */,
 				7AEFB97514A4ECD800337F48 /* UIKit.framework in Frameworks */,
@@ -92,6 +418,253 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A2D289714B4DFFC0012C059 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				7A2D289814B4DFFC0012C059 /* ISYAction.h */,
+				7A2D289914B4DFFC0012C059 /* ISYAction.m */,
+				7A2D289A14B4DFFC0012C059 /* ISYActions.h */,
+				7A2D289B14B4DFFC0012C059 /* ISYActions.m */,
+				7A2D289C14B4DFFC0012C059 /* ISYAddNodeParam.h */,
+				7A2D289D14B4DFFC0012C059 /* ISYAddNodeParam.m */,
+				7A2D289E14B4DFFC0012C059 /* ISYBatchModeParam.h */,
+				7A2D289F14B4DFFC0012C059 /* ISYBatchModeParam.m */,
+				7A2D28A014B4DFFC0012C059 /* ISYBatteryDeviceWriteModeParam.h */,
+				7A2D28A114B4DFFC0012C059 /* ISYBatteryDeviceWriteModeParam.m */,
+				7A2D28A214B4DFFC0012C059 /* ISYconfiguration.h */,
+				7A2D28A314B4DFFC0012C059 /* ISYconfiguration.m */,
+				7A2D28A414B4DFFC0012C059 /* ISYControl.h */,
+				7A2D28A514B4DFFC0012C059 /* ISYControl.m */,
+				7A2D28A614B4DFFC0012C059 /* ISYControls.h */,
+				7A2D28A714B4DFFC0012C059 /* ISYControls.m */,
+				7A2D28A814B4DFFC0012C059 /* ISYCredentialsParam.h */,
+				7A2D28A914B4DFFC0012C059 /* ISYCredentialsParam.m */,
+				7A2D28AA14B4DFFC0012C059 /* ISYCurrentSystemStatusParam.h */,
+				7A2D28AB14B4DFFC0012C059 /* ISYCurrentSystemStatusParam.m */,
+				7A2D28AC14B4DFFC0012C059 /* ISYDateTime.h */,
+				7A2D28AD14B4DFFC0012C059 /* ISYDateTime.m */,
+				7A2D28AE14B4DFFC0012C059 /* ISYDBG.h */,
+				7A2D28AF14B4DFFC0012C059 /* ISYDBG.m */,
+				7A2D28B014B4DFFC0012C059 /* ISYDDNSHost.h */,
+				7A2D28B114B4DFFC0012C059 /* ISYDDNSHost.m */,
+				7A2D28B214B4DFFC0012C059 /* ISYDDNSHostAndIPParam.h */,
+				7A2D28B314B4DFFC0012C059 /* ISYDDNSHostAndIPParam.m */,
+				7A2D28B414B4DFFC0012C059 /* ISYDDNSHostParam.h */,
+				7A2D28B514B4DFFC0012C059 /* ISYDDNSHostParam.m */,
+				7A2D28B614B4DFFC0012C059 /* ISYDebugOptions.h */,
+				7A2D28B714B4DFFC0012C059 /* ISYDebugOptions.m */,
+				7A2D28B814B4DFFC0012C059 /* ISYDeviceRoot.h */,
+				7A2D28B914B4DFFC0012C059 /* ISYDeviceRoot.m */,
+				7A2D28BA14B4DFFC0012C059 /* ISYDeviceSpecifications.h */,
+				7A2D28BB14B4DFFC0012C059 /* ISYDeviceSpecifications.m */,
+				7A2D28BC14B4DFFC0012C059 /* ISYDiscoverNodesParam.h */,
+				7A2D28BD14B4DFFC0012C059 /* ISYDiscoverNodesParam.m */,
+				7A2D28BE14B4DFFC0012C059 /* ISYDriverError.h */,
+				7A2D28BF14B4DFFC0012C059 /* ISYDriverError.m */,
+				7A2D28C014B4DFFC0012C059 /* ISYEmpty.h */,
+				7A2D28C114B4DFFC0012C059 /* ISYEmpty.m */,
+				7A2D28C214B4DFFC0012C059 /* ISYEvent.h */,
+				7A2D28C314B4DFFC0012C059 /* ISYEvent.m */,
+				7A2D28C414B4DFFC0012C059 /* ISYFeature.h */,
+				7A2D28C514B4DFFC0012C059 /* ISYFeature.m */,
+				7A2D28C614B4DFFC0012C059 /* ISYFeatures.h */,
+				7A2D28C714B4DFFC0012C059 /* ISYFeatures.m */,
+				7A2D28C814B4DFFC0012C059 /* ISYfolder.h */,
+				7A2D28C914B4DFFC0012C059 /* ISYfolder.m */,
+				7A2D28CA14B4DFFC0012C059 /* ISYGetVariableParam.h */,
+				7A2D28CB14B4DFFC0012C059 /* ISYGetVariableParam.m */,
+				7A2D28CC14B4DFFC0012C059 /* ISYGetVariablesParam.h */,
+				7A2D28CD14B4DFFC0012C059 /* ISYGetVariablesParam.m */,
+				7A2D28CE14B4DFFC0012C059 /* ISYgroup.h */,
+				7A2D28CF14B4DFFC0012C059 /* ISYgroup.m */,
+				7A2D28D014B4DFFC0012C059 /* ISYIDNameNodeTypeParam.h */,
+				7A2D28D114B4DFFC0012C059 /* ISYIDNameNodeTypeParam.m */,
+				7A2D28D214B4DFFC0012C059 /* ISYIDNameParam.h */,
+				7A2D28D314B4DFFC0012C059 /* ISYIDNameParam.m */,
+				7A2D28D414B4DFFC0012C059 /* ISYIDParam.h */,
+				7A2D28D514B4DFFC0012C059 /* ISYIDParam.m */,
+				7A2D28D614B4DFFC0012C059 /* ISYInternetAccessParam.h */,
+				7A2D28D714B4DFFC0012C059 /* ISYInternetAccessParam.m */,
+				7A2D28D814B4DFFC0012C059 /* ISYIsSubscribedParam.h */,
+				7A2D28D914B4DFFC0012C059 /* ISYIsSubscribedParam.m */,
+				7A2D28DA14B4DFFC0012C059 /* ISYLastError.h */,
+				7A2D28DB14B4DFFC0012C059 /* ISYLastError.m */,
+				7A2D28DC14B4DFFC0012C059 /* ISYLinkingModeParam.h */,
+				7A2D28DD14B4DFFC0012C059 /* ISYLinkingModeParam.m */,
+				7A2D28DE14B4DFFC0012C059 /* ISYMoveNodeParam.h */,
+				7A2D28DF14B4DFFC0012C059 /* ISYMoveNodeParam.m */,
+				7A2D28E014B4DFFC0012C059 /* ISYNameParam.h */,
+				7A2D28E114B4DFFC0012C059 /* ISYNameParam.m */,
+				7A2D28E214B4DFFC0012C059 /* ISYnode.h */,
+				7A2D28E314B4DFFC0012C059 /* ISYnode.m */,
+				7A2D28E414B4DFFC0012C059 /* ISYNodeControllerParam.h */,
+				7A2D28E514B4DFFC0012C059 /* ISYNodeControllerParam.m */,
+				7A2D28E614B4DFFC0012C059 /* ISYNodeGroupParam.h */,
+				7A2D28E714B4DFFC0012C059 /* ISYNodeGroupParam.m */,
+				7A2D28E814B4DFFC0012C059 /* ISYNodeHierarchyParam.h */,
+				7A2D28E914B4DFFC0012C059 /* ISYNodeHierarchyParam.m */,
+				7A2D28EA14B4DFFC0012C059 /* ISYNodeParam.h */,
+				7A2D28EB14B4DFFC0012C059 /* ISYNodeParam.m */,
+				7A2D28EC14B4DFFC0012C059 /* ISYNodeParent.h */,
+				7A2D28ED14B4DFFC0012C059 /* ISYNodeParent.m */,
+				7A2D28EE14B4DFFC0012C059 /* ISYnodes.h */,
+				7A2D28EF14B4DFFC0012C059 /* ISYnodes.m */,
+				7A2D28F014B4DFFC0012C059 /* ISYNotificationsOptions.h */,
+				7A2D28F114B4DFFC0012C059 /* ISYNotificationsOptions.m */,
+				7A2D28F214B4DFFC0012C059 /* ISYNTPOptions.h */,
+				7A2D28F314B4DFFC0012C059 /* ISYNTPOptions.m */,
+				7A2D28F414B4DFFC0012C059 /* ISYPowerInfoParam.h */,
+				7A2D28F514B4DFFC0012C059 /* ISYPowerInfoParam.m */,
+				7A2D28F614B4DFFC0012C059 /* ISYProduct.h */,
+				7A2D28F714B4DFFC0012C059 /* ISYProduct.m */,
+				7A2D28F814B4DFFC0012C059 /* ISYProgramOptions.h */,
+				7A2D28F914B4DFFC0012C059 /* ISYProgramOptions.m */,
+				7A2D28FA14B4DFFC0012C059 /* ISYQueryParam.h */,
+				7A2D28FB14B4DFFC0012C059 /* ISYQueryParam.m */,
+				7A2D28FC14B4DFFC0012C059 /* ISYReplaceDeviceParam.h */,
+				7A2D28FD14B4DFFC0012C059 /* ISYReplaceDeviceParam.m */,
+				7A2D28FE14B4DFFC0012C059 /* ISYRestoreDeviceParam.h */,
+				7A2D28FF14B4DFFC0012C059 /* ISYRestoreDeviceParam.m */,
+				7A2D290014B4DFFC0012C059 /* ISYRestoreDevicesParam.h */,
+				7A2D290114B4DFFC0012C059 /* ISYRestoreDevicesParam.m */,
+				7A2D290214B4DFFC0012C059 /* ISYSceneProfile.h */,
+				7A2D290314B4DFFC0012C059 /* ISYSceneProfile.m */,
+				7A2D290414B4DFFC0012C059 /* ISYSceneProfiles.h */,
+				7A2D290514B4DFFC0012C059 /* ISYSceneProfiles.m */,
+				7A2D290614B4DFFC0012C059 /* ISYSecuritySystemActionParam.h */,
+				7A2D290714B4DFFC0012C059 /* ISYSecuritySystemActionParam.m */,
+				7A2D290814B4DFFC0012C059 /* ISYService.h */,
+				7A2D290914B4DFFC0012C059 /* ISYService.m */,
+				7A2D290A14B4DFFC0012C059 /* ISYServices.h */,
+				7A2D290B14B4DFFC0012C059 /* ISYServices.m */,
+				7A2D290C14B4DFFC0012C059 /* ISYSetDebugLevelParam.h */,
+				7A2D290D14B4DFFC0012C059 /* ISYSetDebugLevelParam.m */,
+				7A2D290E14B4DFFC0012C059 /* ISYSetNodeEnabledParam.h */,
+				7A2D290F14B4DFFC0012C059 /* ISYSetNodeEnabledParam.m */,
+				7A2D291014B4DFFC0012C059 /* ISYSetSceneProfileParam.h */,
+				7A2D291114B4DFFC0012C059 /* ISYSetSceneProfileParam.m */,
+				7A2D291214B4DFFC0012C059 /* ISYSetVariableParam.h */,
+				7A2D291314B4DFFC0012C059 /* ISYSetVariableParam.m */,
+				7A2D291414B4DFFC0012C059 /* ISYSMTPConfiguration.h */,
+				7A2D291514B4DFFC0012C059 /* ISYSMTPConfiguration.m */,
+				7A2D291614B4DFFC0012C059 /* ISYStopNodesDiscoveryParam.h */,
+				7A2D291714B4DFFC0012C059 /* ISYStopNodesDiscoveryParam.m */,
+				7A2D291814B4DFFC0012C059 /* ISYSubscription.h */,
+				7A2D291914B4DFFC0012C059 /* ISYSubscription.m */,
+				7A2D291A14B4DFFC0012C059 /* ISYSubscriptionParam.h */,
+				7A2D291B14B4DFFC0012C059 /* ISYSubscriptionParam.m */,
+				7A2D291C14B4DFFC0012C059 /* ISYSystemOptions.h */,
+				7A2D291D14B4DFFC0012C059 /* ISYSystemOptions.m */,
+				7A2D291E14B4DFFC0012C059 /* ISYSystemStatus.h */,
+				7A2D291F14B4DFFC0012C059 /* ISYSystemStatus.m */,
+				7A2D292014B4DFFC0012C059 /* ISYUDIDefaultResponse.h */,
+				7A2D292114B4DFFC0012C059 /* ISYUDIDefaultResponse.m */,
+				7A2D292214B4DFFC0012C059 /* ISYUDIIntResponse.h */,
+				7A2D292314B4DFFC0012C059 /* ISYUDIIntResponse.m */,
+				7A2D292414B4DFFC0012C059 /* ISYUDIServiceParam.h */,
+				7A2D292514B4DFFC0012C059 /* ISYUDIServiceParam.m */,
+				7A2D292614B4DFFC0012C059 /* ISYUDITimeResponse.h */,
+				7A2D292714B4DFFC0012C059 /* ISYUDITimeResponse.m */,
+				7A2D292814B4DFFC0012C059 /* ISYUDLink.h */,
+				7A2D292914B4DFFC0012C059 /* ISYUDLink.m */,
+				7A2D292A14B4DFFC0012C059 /* ISYUDNode.h */,
+				7A2D292B14B4DFFC0012C059 /* ISYUDNode.m */,
+				7A2D292C14B4DFFC0012C059 /* ISYUnsubscriptionParam.h */,
+				7A2D292D14B4DFFC0012C059 /* ISYUnsubscriptionParam.m */,
+				7A2D292E14B4DFFC0012C059 /* ISYUPnPInfo.h */,
+				7A2D292F14B4DFFC0012C059 /* ISYUPnPInfo.m */,
+				7A2D293014B4DFFC0012C059 /* ISYUPnPSpecifications.h */,
+				7A2D293114B4DFFC0012C059 /* ISYUPnPSpecifications.m */,
+				7A2D293214B4DFFC0012C059 /* ISYVariable.h */,
+				7A2D293314B4DFFC0012C059 /* ISYVariable.m */,
+				7A2D293414B4DFFC0012C059 /* ISYVariables.h */,
+				7A2D293514B4DFFC0012C059 /* ISYVariables.m */,
+				7A2D293614B4DFFC0012C059 /* Soap+Prefix.h */,
+				7A2D293714B4DFFC0012C059 /* Soap+Prefix.m */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		7A2D293814B4DFFC0012C059 /* Soap */ = {
+			isa = PBXGroup;
+			children = (
+				7A2D293914B4DFFC0012C059 /* NSData+Base64.h */,
+				7A2D293A14B4DFFC0012C059 /* NSData+Base64.m */,
+				7A2D293B14B4DFFC0012C059 /* NSMutableArray+Soap.h */,
+				7A2D293C14B4DFFC0012C059 /* NSMutableArray+Soap.m */,
+				7A2D293D14B4DFFC0012C059 /* Soap.h */,
+				7A2D293E14B4DFFC0012C059 /* Soap.m */,
+				7A2D293F14B4DFFC0012C059 /* SoapArray.h */,
+				7A2D294014B4DFFC0012C059 /* SoapArray.m */,
+				7A2D294114B4DFFC0012C059 /* SoapDelegate.h */,
+				7A2D294214B4DFFC0012C059 /* SoapFault.h */,
+				7A2D294314B4DFFC0012C059 /* SoapFault.m */,
+				7A2D294414B4DFFC0012C059 /* SoapHandler.h */,
+				7A2D294514B4DFFC0012C059 /* SoapHandler.m */,
+				7A2D294614B4DFFC0012C059 /* SoapLiteral.h */,
+				7A2D294714B4DFFC0012C059 /* SoapLiteral.m */,
+				7A2D294814B4DFFC0012C059 /* SoapNil.h */,
+				7A2D294914B4DFFC0012C059 /* SoapNil.m */,
+				7A2D294A14B4DFFC0012C059 /* SoapObject.h */,
+				7A2D294B14B4DFFC0012C059 /* SoapObject.m */,
+				7A2D294C14B4DFFC0012C059 /* SoapParameter.h */,
+				7A2D294D14B4DFFC0012C059 /* SoapParameter.m */,
+				7A2D294E14B4DFFC0012C059 /* SoapReachability.h */,
+				7A2D294F14B4DFFC0012C059 /* SoapReachability.m */,
+				7A2D295014B4DFFC0012C059 /* SoapRequest.h */,
+				7A2D295114B4DFFC0012C059 /* SoapRequest.m */,
+				7A2D295214B4DFFC0012C059 /* SoapService.h */,
+				7A2D295314B4DFFC0012C059 /* SoapService.m */,
+			);
+			path = Soap;
+			sourceTree = "<group>";
+		};
+		7A2D295414B4DFFC0012C059 /* TouchXML */ = {
+			isa = PBXGroup;
+			children = (
+				7A2D295514B4DFFC0012C059 /* CTidy.h */,
+				7A2D295614B4DFFC0012C059 /* CTidy.m */,
+				7A2D295714B4DFFC0012C059 /* CXHTMLDocument.h */,
+				7A2D295814B4DFFC0012C059 /* CXHTMLDocument.m */,
+				7A2D295914B4DFFC0012C059 /* CXMLDocument.h */,
+				7A2D295A14B4DFFC0012C059 /* CXMLDocument.m */,
+				7A2D295B14B4DFFC0012C059 /* CXMLDocument_CreationExtensions.h */,
+				7A2D295C14B4DFFC0012C059 /* CXMLDocument_CreationExtensions.m */,
+				7A2D295D14B4DFFC0012C059 /* CXMLDocument_PrivateExtensions.h */,
+				7A2D295E14B4DFFC0012C059 /* CXMLDocument_PrivateExtensions.m */,
+				7A2D295F14B4DFFC0012C059 /* CXMLElement.h */,
+				7A2D296014B4DFFC0012C059 /* CXMLElement.m */,
+				7A2D296114B4DFFC0012C059 /* CXMLElement_CreationExtensions.h */,
+				7A2D296214B4DFFC0012C059 /* CXMLElement_CreationExtensions.m */,
+				7A2D296314B4DFFC0012C059 /* CXMLElement_ElementTreeExtensions.h */,
+				7A2D296414B4DFFC0012C059 /* CXMLElement_ElementTreeExtensions.m */,
+				7A2D296514B4DFFC0012C059 /* CXMLNamespaceNode.h */,
+				7A2D296614B4DFFC0012C059 /* CXMLNamespaceNode.m */,
+				7A2D296714B4DFFC0012C059 /* CXMLNode.h */,
+				7A2D296814B4DFFC0012C059 /* CXMLNode.m */,
+				7A2D296914B4DFFC0012C059 /* CXMLNode_CreationExtensions.h */,
+				7A2D296A14B4DFFC0012C059 /* CXMLNode_CreationExtensions.m */,
+				7A2D296B14B4DFFC0012C059 /* CXMLNode_PrivateExtensions.h */,
+				7A2D296C14B4DFFC0012C059 /* CXMLNode_PrivateExtensions.m */,
+				7A2D296D14B4DFFC0012C059 /* CXMLNode_XPathExtensions.h */,
+				7A2D296E14B4DFFC0012C059 /* CXMLNode_XPathExtensions.m */,
+				7A2D296F14B4DFFC0012C059 /* TouchXML.h */,
+			);
+			path = TouchXML;
+			sourceTree = "<group>";
+		};
+		7A2D29DA14B4E0030012C059 /* WSDL */ = {
+			isa = PBXGroup;
+			children = (
+				7A2D29DF14B4E6D60012C059 /* ISYServiceExample.h */,
+				7A2D29E014B4E6D60012C059 /* ISYServiceExample.m */,
+				7A2D289714B4DFFC0012C059 /* Generated */,
+				7A2D293814B4DFFC0012C059 /* Soap */,
+				7A2D295414B4DFFC0012C059 /* TouchXML */,
+			);
+			name = WSDL;
+			sourceTree = "<group>";
+		};
 		7ACE40D614B177C20095E89B /* Parsers */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +696,7 @@
 		7AEFB97314A4ECD800337F48 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7A2D29DD14B4E6180012C059 /* SystemConfiguration.framework */,
 				7ACE40BF14B151B80095E89B /* QuartzCore.framework */,
 				7AEFB9A414A4ED9300337F48 /* libxml2.dylib */,
 				7AEFB97414A4ECD800337F48 /* UIKit.framework */,
@@ -135,6 +709,7 @@
 		7AEFB97A14A4ECD800337F48 /* ISYController */ = {
 			isa = PBXGroup;
 			children = (
+				7A2D29DA14B4E0030012C059 /* WSDL */,
 				7AEFB9A614A4EDBD00337F48 /* UI */,
 				7AEFB99C14A4ECF900337F48 /* Model */,
 				7AEFB9A014A4ED2700337F48 /* Data Structures */,
@@ -290,6 +865,113 @@
 				7AF2383C14A65F59009854CC /* ISYControllerConfigViewController.m in Sources */,
 				7ACE40D514B163610095E89B /* ISYGeneralParser.m in Sources */,
 				7A0442E514B2576D00A5E4DB /* ISYStateParser.m in Sources */,
+				7A2D297014B4DFFC0012C059 /* ISYAction.m in Sources */,
+				7A2D297114B4DFFC0012C059 /* ISYActions.m in Sources */,
+				7A2D297214B4DFFC0012C059 /* ISYAddNodeParam.m in Sources */,
+				7A2D297314B4DFFC0012C059 /* ISYBatchModeParam.m in Sources */,
+				7A2D297414B4DFFC0012C059 /* ISYBatteryDeviceWriteModeParam.m in Sources */,
+				7A2D297514B4DFFC0012C059 /* ISYconfiguration.m in Sources */,
+				7A2D297614B4DFFC0012C059 /* ISYControl.m in Sources */,
+				7A2D297714B4DFFC0012C059 /* ISYControls.m in Sources */,
+				7A2D297814B4DFFC0012C059 /* ISYCredentialsParam.m in Sources */,
+				7A2D297914B4DFFC0012C059 /* ISYCurrentSystemStatusParam.m in Sources */,
+				7A2D297A14B4DFFC0012C059 /* ISYDateTime.m in Sources */,
+				7A2D297B14B4DFFC0012C059 /* ISYDBG.m in Sources */,
+				7A2D297C14B4DFFC0012C059 /* ISYDDNSHost.m in Sources */,
+				7A2D297D14B4DFFC0012C059 /* ISYDDNSHostAndIPParam.m in Sources */,
+				7A2D297E14B4DFFC0012C059 /* ISYDDNSHostParam.m in Sources */,
+				7A2D297F14B4DFFC0012C059 /* ISYDebugOptions.m in Sources */,
+				7A2D298014B4DFFC0012C059 /* ISYDeviceRoot.m in Sources */,
+				7A2D298114B4DFFC0012C059 /* ISYDeviceSpecifications.m in Sources */,
+				7A2D298214B4DFFC0012C059 /* ISYDiscoverNodesParam.m in Sources */,
+				7A2D298314B4DFFC0012C059 /* ISYDriverError.m in Sources */,
+				7A2D298414B4DFFC0012C059 /* ISYEmpty.m in Sources */,
+				7A2D298514B4DFFC0012C059 /* ISYEvent.m in Sources */,
+				7A2D298614B4DFFC0012C059 /* ISYFeature.m in Sources */,
+				7A2D298714B4DFFC0012C059 /* ISYFeatures.m in Sources */,
+				7A2D298814B4DFFC0012C059 /* ISYfolder.m in Sources */,
+				7A2D298914B4DFFC0012C059 /* ISYGetVariableParam.m in Sources */,
+				7A2D298A14B4DFFC0012C059 /* ISYGetVariablesParam.m in Sources */,
+				7A2D298B14B4DFFC0012C059 /* ISYgroup.m in Sources */,
+				7A2D298C14B4DFFC0012C059 /* ISYIDNameNodeTypeParam.m in Sources */,
+				7A2D298D14B4DFFC0012C059 /* ISYIDNameParam.m in Sources */,
+				7A2D298E14B4DFFC0012C059 /* ISYIDParam.m in Sources */,
+				7A2D298F14B4DFFC0012C059 /* ISYInternetAccessParam.m in Sources */,
+				7A2D299014B4DFFC0012C059 /* ISYIsSubscribedParam.m in Sources */,
+				7A2D299114B4DFFC0012C059 /* ISYLastError.m in Sources */,
+				7A2D299214B4DFFC0012C059 /* ISYLinkingModeParam.m in Sources */,
+				7A2D299314B4DFFC0012C059 /* ISYMoveNodeParam.m in Sources */,
+				7A2D299414B4DFFC0012C059 /* ISYNameParam.m in Sources */,
+				7A2D299514B4DFFC0012C059 /* ISYnode.m in Sources */,
+				7A2D299614B4DFFC0012C059 /* ISYNodeControllerParam.m in Sources */,
+				7A2D299714B4DFFC0012C059 /* ISYNodeGroupParam.m in Sources */,
+				7A2D299814B4DFFC0012C059 /* ISYNodeHierarchyParam.m in Sources */,
+				7A2D299914B4DFFC0012C059 /* ISYNodeParam.m in Sources */,
+				7A2D299A14B4DFFC0012C059 /* ISYNodeParent.m in Sources */,
+				7A2D299B14B4DFFC0012C059 /* ISYnodes.m in Sources */,
+				7A2D299C14B4DFFC0012C059 /* ISYNotificationsOptions.m in Sources */,
+				7A2D299D14B4DFFC0012C059 /* ISYNTPOptions.m in Sources */,
+				7A2D299E14B4DFFC0012C059 /* ISYPowerInfoParam.m in Sources */,
+				7A2D299F14B4DFFC0012C059 /* ISYProduct.m in Sources */,
+				7A2D29A014B4DFFC0012C059 /* ISYProgramOptions.m in Sources */,
+				7A2D29A114B4DFFC0012C059 /* ISYQueryParam.m in Sources */,
+				7A2D29A214B4DFFC0012C059 /* ISYReplaceDeviceParam.m in Sources */,
+				7A2D29A314B4DFFC0012C059 /* ISYRestoreDeviceParam.m in Sources */,
+				7A2D29A414B4DFFC0012C059 /* ISYRestoreDevicesParam.m in Sources */,
+				7A2D29A514B4DFFC0012C059 /* ISYSceneProfile.m in Sources */,
+				7A2D29A614B4DFFC0012C059 /* ISYSceneProfiles.m in Sources */,
+				7A2D29A714B4DFFC0012C059 /* ISYSecuritySystemActionParam.m in Sources */,
+				7A2D29A814B4DFFC0012C059 /* ISYService.m in Sources */,
+				7A2D29A914B4DFFC0012C059 /* ISYServices.m in Sources */,
+				7A2D29AA14B4DFFC0012C059 /* ISYSetDebugLevelParam.m in Sources */,
+				7A2D29AB14B4DFFC0012C059 /* ISYSetNodeEnabledParam.m in Sources */,
+				7A2D29AC14B4DFFC0012C059 /* ISYSetSceneProfileParam.m in Sources */,
+				7A2D29AD14B4DFFC0012C059 /* ISYSetVariableParam.m in Sources */,
+				7A2D29AE14B4DFFC0012C059 /* ISYSMTPConfiguration.m in Sources */,
+				7A2D29AF14B4DFFC0012C059 /* ISYStopNodesDiscoveryParam.m in Sources */,
+				7A2D29B014B4DFFC0012C059 /* ISYSubscription.m in Sources */,
+				7A2D29B114B4DFFC0012C059 /* ISYSubscriptionParam.m in Sources */,
+				7A2D29B214B4DFFC0012C059 /* ISYSystemOptions.m in Sources */,
+				7A2D29B314B4DFFC0012C059 /* ISYSystemStatus.m in Sources */,
+				7A2D29B414B4DFFC0012C059 /* ISYUDIDefaultResponse.m in Sources */,
+				7A2D29B514B4DFFC0012C059 /* ISYUDIIntResponse.m in Sources */,
+				7A2D29B614B4DFFC0012C059 /* ISYUDIServiceParam.m in Sources */,
+				7A2D29B714B4DFFC0012C059 /* ISYUDITimeResponse.m in Sources */,
+				7A2D29B814B4DFFC0012C059 /* ISYUDLink.m in Sources */,
+				7A2D29B914B4DFFC0012C059 /* ISYUDNode.m in Sources */,
+				7A2D29BA14B4DFFC0012C059 /* ISYUnsubscriptionParam.m in Sources */,
+				7A2D29BB14B4DFFC0012C059 /* ISYUPnPInfo.m in Sources */,
+				7A2D29BC14B4DFFC0012C059 /* ISYUPnPSpecifications.m in Sources */,
+				7A2D29BD14B4DFFC0012C059 /* ISYVariable.m in Sources */,
+				7A2D29BE14B4DFFC0012C059 /* ISYVariables.m in Sources */,
+				7A2D29BF14B4DFFC0012C059 /* Soap+Prefix.m in Sources */,
+				7A2D29C014B4DFFC0012C059 /* NSData+Base64.m in Sources */,
+				7A2D29C114B4DFFC0012C059 /* NSMutableArray+Soap.m in Sources */,
+				7A2D29C214B4DFFC0012C059 /* Soap.m in Sources */,
+				7A2D29C314B4DFFC0012C059 /* SoapArray.m in Sources */,
+				7A2D29C414B4DFFC0012C059 /* SoapFault.m in Sources */,
+				7A2D29C514B4DFFC0012C059 /* SoapHandler.m in Sources */,
+				7A2D29C614B4DFFC0012C059 /* SoapLiteral.m in Sources */,
+				7A2D29C714B4DFFC0012C059 /* SoapNil.m in Sources */,
+				7A2D29C814B4DFFC0012C059 /* SoapObject.m in Sources */,
+				7A2D29C914B4DFFC0012C059 /* SoapParameter.m in Sources */,
+				7A2D29CA14B4DFFC0012C059 /* SoapReachability.m in Sources */,
+				7A2D29CB14B4DFFC0012C059 /* SoapRequest.m in Sources */,
+				7A2D29CC14B4DFFC0012C059 /* SoapService.m in Sources */,
+				7A2D29CD14B4DFFC0012C059 /* CTidy.m in Sources */,
+				7A2D29CE14B4DFFC0012C059 /* CXHTMLDocument.m in Sources */,
+				7A2D29CF14B4DFFC0012C059 /* CXMLDocument.m in Sources */,
+				7A2D29D014B4DFFC0012C059 /* CXMLDocument_CreationExtensions.m in Sources */,
+				7A2D29D114B4DFFC0012C059 /* CXMLDocument_PrivateExtensions.m in Sources */,
+				7A2D29D214B4DFFC0012C059 /* CXMLElement.m in Sources */,
+				7A2D29D314B4DFFC0012C059 /* CXMLElement_CreationExtensions.m in Sources */,
+				7A2D29D414B4DFFC0012C059 /* CXMLElement_ElementTreeExtensions.m in Sources */,
+				7A2D29D514B4DFFC0012C059 /* CXMLNamespaceNode.m in Sources */,
+				7A2D29D614B4DFFC0012C059 /* CXMLNode.m in Sources */,
+				7A2D29D714B4DFFC0012C059 /* CXMLNode_CreationExtensions.m in Sources */,
+				7A2D29D814B4DFFC0012C059 /* CXMLNode_PrivateExtensions.m in Sources */,
+				7A2D29D914B4DFFC0012C059 /* CXMLNode_XPathExtensions.m in Sources */,
+				7A2D29E114B4E6D60012C059 /* ISYServiceExample.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,12 +1045,16 @@
 		7AEFB99A14A4ECD900337F48 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Nandy Szots (6JGH998FLT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Nandy Szots (6JGH998FLT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ISYController/ISYController-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "ISYController/ISYController-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "41D86A5B-4FA0-4ADB-9041-173CA77376EE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "41D86A5B-4FA0-4ADB-9041-173CA77376EE";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -377,12 +1063,16 @@
 		7AEFB99B14A4ECD900337F48 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Nandy Szots (6JGH998FLT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Nandy Szots (6JGH998FLT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ISYController/ISYController-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "ISYController/ISYController-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "41D86A5B-4FA0-4ADB-9041-173CA77376EE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "41D86A5B-4FA0-4ADB-9041-173CA77376EE";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

@@ -31,6 +31,7 @@
 @synthesize sCurDeviceID        = _sCurDeviceID;
 @synthesize bStopUpdates        = _bStopUpdates;
 @synthesize bCurrentlyOn        = _bCurrentlyOn;
+@synthesize pUpdateTimer        = _pUpdateTimer;
 
 - (NSString*)sCurDeviceName
 {
@@ -87,28 +88,31 @@
     [self.splitViewController setDelegate:self];
     
     [self updateDevice];
+    
+    self.pUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateDevice) userInfo:nil repeats:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self.pUpdateTimer invalidate];
+    self.pUpdateTimer = nil;
+    
+    [super viewWillDisappear:animated];
 }
 
 - (void)updateDevice
 {
     dispatch_queue_t updateQueue = dispatch_queue_create("UpdateQueue", NULL);
-    dispatch_queue_t viewQueue = dispatch_queue_create("ViewQueue", NULL);
     
     dispatch_async(updateQueue, ^{
-        dispatch_sync(viewQueue, ^{
-            if( !self.bStopUpdates )
-            {
-                [self.brain getLightState:self.sCurDeviceID];
-                [self refreshView];
-            }
-            sleep(1);
-            [self updateDevice];
-            
-        });
+        if( !self.bStopUpdates )
+        {
+            [self.brain getLightState:self.sCurDeviceID];
+            [self performSelectorOnMainThread:@selector(refreshView) withObject:self waitUntilDone:YES];
+        }
     });
     
     dispatch_release(updateQueue);
-    //dispatch_release(viewQueue);
 }
      
 - (void)refreshView

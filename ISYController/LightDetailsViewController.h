@@ -24,6 +24,7 @@
 
 @property (nonatomic, strong) NSString* sCurDeviceName;
 @property (nonatomic, strong) NSString* sCurDeviceID;
+@property (nonatomic, strong) NSTimer*  pUpdateTimer;
 @property (nonatomic) BOOL bCurrentlyOn;
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *sceneNavBar;

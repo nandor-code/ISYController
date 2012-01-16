@@ -208,6 +208,7 @@
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="XCH-tG-r8t" appends="YES" id="qx6-Zb-HIr"/>
                                     <outletCollection property="gestureRecognizers" destination="XCH-tG-r8t" appends="YES" id="xvi-La-e7V"/>
+                                    <outletCollection property="gestureRecognizers" destination="EtU-gc-Y2N" appends="YES" id="Lxv-bz-hzh"/>
                                 </connections>
                             </imageView>
                         </subviews>
@@ -234,6 +235,7 @@
                         <outlet property="delegate" destination="y0k-GN-hsh" id="JY9-G6-a0b"/>
                     </connections>
                 </tapGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="EtU-gc-Y2N"/>
             </objects>
             <point key="canvasLocation" x="701" y="-6"/>
         </scene>
@@ -428,6 +430,47 @@
         <image name="scenes_icon.png" width="20" height="25"/>
         <image name="settings_icon.png" width="26" height="28"/>
     </resources>
+    <classes>
+        <class className="ISYControllerConfigViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ISYControllerConfigViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="updated:"/>
+                <relationship kind="outlet" name="hostName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="passWord" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="useSSLSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="userName" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ISYControllerDeviceViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ISYControllerDeviceViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refreshDevices:"/>
+                <relationship kind="outlet" name="deviceTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="refreshButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="refreshView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="ISYControllerSceneViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ISYControllerSceneViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refreshDevices:"/>
+                <relationship kind="outlet" name="refreshButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="refreshView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="sceneTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="LightDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LightDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="dim:"/>
+                <relationship kind="action" name="handleTap:"/>
+                <relationship kind="outlet" name="configInstructions" candidateClass="UIView"/>
+                <relationship kind="outlet" name="lightbulbImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="sceneNavBar" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="sliderBar" candidateClass="UISlider"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
